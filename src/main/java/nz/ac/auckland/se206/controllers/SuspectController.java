@@ -12,11 +12,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 
-public class HistorianController {
+public class SuspectController {
 
-  @FXML private AnchorPane historianPane;
-  @FXML private ImageView historianBg;
-  @FXML private Text historianHead;
+  @FXML private AnchorPane suspectPane;
+  @FXML private ImageView suspectBg;
+  @FXML private Text mainHead;
   @FXML private Rectangle buttonMap;
   @FXML private Rectangle buttonAccuse;
   @FXML private AnchorPane textPane;
