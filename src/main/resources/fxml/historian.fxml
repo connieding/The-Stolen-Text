@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane fx:id="historianPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="historianPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.HistorianController">
    <children>
       <ImageView fx:id="historianBg" fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0" />
       <Text fx:id="mainHead" layoutX="63.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Header" textAlignment="CENTER" wrappingWidth="273.07342529296875">
@@ -29,7 +29,7 @@
             </Text>
             <TextArea fx:id="textHistory" editable="false" layoutX="13.0" layoutY="50.0" prefHeight="226.0" prefWidth="174.0" />
             <TextField fx:id="textEntry" alignment="TOP_LEFT" layoutX="13.0" layoutY="283.0" prefHeight="48.0" prefWidth="174.0" />
-            <Button fx:id="textSend" layoutX="68.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Send" />
+            <Button fx:id="textSend" layoutX="68.0" layoutY="351.0" mnemonicParsing="false" onAction="#onSendMessage" prefHeight="26.0" prefWidth="62.0" text="Send" />
          </children>
       </AnchorPane>
    </children>
