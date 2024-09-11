@@ -1,6 +1,6 @@
 package nz.ac.auckland.se206.speech;
 
-import javax.speech.AudioException;
+// import javax.speech.AudioException;
 import javax.speech.Central;
 import javax.speech.EngineException;
 import javax.speech.synthesis.Synthesizer;
@@ -41,17 +41,18 @@ public class FreeTextToSpeech {
       throw new IllegalArgumentException("Text cannot be null.");
     }
 
-    new Thread(
-            () -> {
-              try {
-                synthesizer.resume();
-                synthesizer.speakPlainText(text, null);
-                synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
-              } catch (final AudioException | InterruptedException e) {
-                throw new TextToSpeechException(e.getMessage());
-              }
-            })
-        .start();
+    // new Thread(
+    //         () -> {
+    //           try {
+    //             synthesizer.resume();
+    //             synthesizer.speakPlainText(text, null);
+    //             synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
+    //           } catch (final AudioException | InterruptedException e) {
+    //             throw new TextToSpeechException(e.getMessage());
+    //           }
+    //         })
+    //     .start();
+    System.out.println(text + " freeTTS");
   }
 
   /**
