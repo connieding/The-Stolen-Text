@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -19,6 +20,7 @@ import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 public class App extends Application {
 
   private static Scene scene;
+  private TimerManager timerManager;
 
   /**
    * The main method that launches the JavaFX application.
@@ -83,11 +85,21 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+
+    timerManager = TimerManager.getInstance();
+    Label timerLabel = (Label) scene.lookup("#lblTimer");
+    timerManager.startTimer(300, timerLabel);
+
     stage.setOnCloseRequest(event -> handleWindowClose(event));
     root.requestFocus();
   }
 
   private void handleWindowClose(WindowEvent event) {
     FreeTextToSpeech.deallocateSynthesizer();
+
+    if (timerManager != null) {
+      timerManager.stopTimer();
+    }
+
   }
 }
