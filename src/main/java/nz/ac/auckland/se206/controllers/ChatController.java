@@ -78,8 +78,8 @@ public class ChatController {
    *
    * @param msg the chat message to append
    */
-  private void appendChatMessage(ChatMessage msg) {
-    txtaChat.appendText(msg.getRole() + ": " + msg.getContent() + "\n\n");
+  private void appendChatMessage(ChatMessage msg, String role) {
+    txtaChat.appendText(role.substring(0,1).toUpperCase() + role.substring(1).toLowerCase() + ": " + msg.getContent() + "\n\n");
   }
 
   /**
@@ -95,7 +95,7 @@ public class ChatController {
       ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
       Choice result = chatCompletionResult.getChoices().iterator().next();
       chatCompletionRequest.addMessage(result.getChatMessage());
-      appendChatMessage(result.getChatMessage());
+      appendChatMessage(result.getChatMessage(), profession);
       FreeTextToSpeech.speak(result.getChatMessage().getContent());
       return result.getChatMessage();
     } catch (ApiProxyException e) {
@@ -119,7 +119,7 @@ public class ChatController {
     }
     txtInput.clear();
     ChatMessage msg = new ChatMessage("user", message);
-    appendChatMessage(msg);
+    appendChatMessage(msg, "Detective");
     runGpt(msg);
   }
 
