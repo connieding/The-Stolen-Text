@@ -32,7 +32,7 @@ public class GameStateContext {
 
     gameState = gameStartedState; // Initial state
 
-    String[] professions = {"Historian", "Archivist", "Collector"};
+    String[] professions = {"historian", "archivist", "collector"};
 
     rectanglesToProfession = new HashMap<>();
     rectanglesToProfession.put("rectPerson1", professions[0]);

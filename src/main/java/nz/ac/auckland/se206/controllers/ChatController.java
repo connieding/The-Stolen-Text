@@ -49,7 +49,7 @@ public class ChatController {
   private String getSystemPrompt() {
     Map<String, String> map = new HashMap<>();
     map.put("profession", profession);
-    return PromptEngineering.getResource("prompts", "chat", "txt");
+    return PromptEngineering.getResource("prompts", profession, "txt");
   }
 
   /**
