@@ -80,17 +80,13 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
-    Parent root = loadFxml("start");
+    Parent root = loadFxml("crimescene");
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-
-    // timerManager = TimerManager.getInstance();
-    // Label timerLabel = (Label) scene.lookup("#lblTimer");
-    // timerManager.startTimer(300, timerLabel);
-
-    // stage.setOnCloseRequest(event -> handleWindowClose(event));
-    // root.requestFocus();
+    timerManager = GameStateContext.getTimerManager();
+    stage.setOnCloseRequest(event -> handleWindowClose(event));
+    root.requestFocus();
   }
 
   private void handleWindowClose(WindowEvent event) {

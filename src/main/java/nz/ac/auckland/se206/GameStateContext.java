@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.scene.input.MouseEvent;
+import nz.ac.auckland.se206.controllers.Controller;
+import nz.ac.auckland.se206.controllers.CrimesceneController;
+import nz.ac.auckland.se206.controllers.RoomController;
 import nz.ac.auckland.se206.states.GameOver;
 import nz.ac.auckland.se206.states.GameStarted;
 import nz.ac.auckland.se206.states.GameState;
@@ -22,9 +25,14 @@ public class GameStateContext {
   private final Guessing guessingState;
   private final GameOver gameOverState;
   private GameState gameState;
+  private Controller currentScene;
+  private static TimerManager timerManager;
+  private Controller crimeScene;
 
   /** Constructs a new GameStateContext and initializes the game states and professions. */
-  public GameStateContext() {
+  public GameStateContext(CrimesceneController crimeScene) {
+
+    this.crimeScene = crimeScene;
 
     gameStartedState = new GameStarted(this);
     guessingState = new Guessing(this);
@@ -41,6 +49,33 @@ public class GameStateContext {
 
     rectIdToGuess = "rectPerson3";
     professionToGuess = rectanglesToProfession.get(rectIdToGuess);
+
+    timerManager = TimerManager.getInstance();
+    timerManager.startTimer(10, this);
+  }
+
+  public GameStateContext(RoomController crimeScene) {
+
+    this.crimeScene = crimeScene;
+
+    gameStartedState = new GameStarted(this);
+    guessingState = new Guessing(this);
+    gameOverState = new GameOver(this);
+
+    gameState = gameStartedState; // Initial state
+
+    String[] professions = {"historian", "archivist", "collector"};
+
+    rectanglesToProfession = new HashMap<>();
+    rectanglesToProfession.put("rectPerson1", professions[0]);
+    rectanglesToProfession.put("rectPerson2", professions[1]);
+    rectanglesToProfession.put("rectPerson3", professions[2]);
+
+    rectIdToGuess = "rectPerson3";
+    professionToGuess = rectanglesToProfession.get(rectIdToGuess);
+
+    timerManager = TimerManager.getInstance();
+    timerManager.startTimer(10, this);
   }
 
   /**
@@ -50,6 +85,22 @@ public class GameStateContext {
    */
   public void setState(GameState state) {
     this.gameState = state;
+  }
+
+  public static TimerManager getTimerManager() {
+    return timerManager;
+  }
+
+  public void setScene(Controller scene) {
+    this.currentScene = scene;
+  }
+
+  public Controller getScene() {
+    return this.currentScene;
+  }
+
+  public void setTime(String string) {
+    this.getScene().setTime(string);
   }
 
   /**

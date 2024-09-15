@@ -7,7 +7,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 
-public class MapController {
+public class MapController implements Controller {
 
   @FXML public AnchorPane mapPane;
   @FXML public ImageView mapBg;
@@ -26,5 +26,11 @@ public class MapController {
   @FXML
   public void initialize() throws ApiProxyException {
     // Any required initialization code can be placed here
+  }
+
+  @Override
+  public void setTime(String timeRemaining) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'setTime'");
   }
 }

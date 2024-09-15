@@ -36,5 +36,10 @@
             <Font size="21.0" />
          </font>
       </Label>
+      <Label fx:id="lblTimer" layoutX="461.0" layoutY="101.0" text="Label">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

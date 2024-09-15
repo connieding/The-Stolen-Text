@@ -15,7 +15,7 @@ import nz.ac.auckland.se206.speech.TextToSpeech;
  * Controller class for the room view. Handles user interactions within the room where the user can
  * chat with customers and guess their profession.
  */
-public class RoomController {
+public class RoomController implements Controller {
 
   @FXML private Rectangle rectCashier;
   @FXML private Rectangle rectPerson1;
@@ -23,10 +23,11 @@ public class RoomController {
   @FXML private Rectangle rectPerson3;
   @FXML private Rectangle rectWaitress;
   @FXML private Label lblProfession;
+  @FXML private Label lblTimer;
   @FXML private Button btnGuess;
 
   private static boolean isFirstTimeInit = true;
-  private static GameStateContext context = new GameStateContext();
+  private GameStateContext context = new GameStateContext(this);
 
   /**
    * Initializes the room view. If it's the first time initialization, it will provide instructions
@@ -34,10 +35,10 @@ public class RoomController {
    */
   @FXML
   public void initialize() {
+    context.setScene(this);
     if (isFirstTimeInit) {
       TextToSpeech.speak(
-          "Chat with the three customers, and guess who is the "
-              + context.getProfessionToGuess());
+          "Chat with the three customers, and guess who is the " + context.getProfessionToGuess());
       isFirstTimeInit = false;
     }
     lblProfession.setText(context.getProfessionToGuess());
@@ -84,5 +85,10 @@ public class RoomController {
   @FXML
   private void handleGuessClick(ActionEvent event) throws IOException {
     context.handleGuessClick();
+  }
+
+  @Override
+  public void setTime(String timeRemaining) {
+    lblTimer.setText(timeRemaining);
   }
 }
