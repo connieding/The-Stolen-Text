@@ -6,11 +6,12 @@ import java.util.Map;
 import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.controllers.Controller;
 import nz.ac.auckland.se206.controllers.CrimesceneController;
-import nz.ac.auckland.se206.controllers.RoomController;
-import nz.ac.auckland.se206.states.GameOver;
-import nz.ac.auckland.se206.states.GameStarted;
+import nz.ac.auckland.se206.states.ArchivistInterview;
+import nz.ac.auckland.se206.states.CollectorInterview;
 import nz.ac.auckland.se206.states.GameState;
-import nz.ac.auckland.se206.states.Guessing;
+import nz.ac.auckland.se206.states.HistorianInterview;
+import nz.ac.auckland.se206.states.InspectingMap;
+import nz.ac.auckland.se206.states.Investigating;
 
 /**
  * Context class for managing the state of the game. Handles transitions between different game
@@ -21,9 +22,11 @@ public class GameStateContext {
   private final String rectIdToGuess;
   private final String professionToGuess;
   private final Map<String, String> rectanglesToProfession;
-  private final GameStarted gameStartedState;
-  private final Guessing guessingState;
-  private final GameOver gameOverState;
+  private final InspectingMap mapState;
+  private final CollectorInterview collectorState;
+  private final ArchivistInterview archivistState;
+  private final HistorianInterview historianState;
+  private final Investigating crimeState;
   private GameState gameState;
   private Controller currentScene;
   private static TimerManager timerManager;
@@ -34,35 +37,13 @@ public class GameStateContext {
 
     this.crimeScene = crimeScene;
 
-    gameStartedState = new GameStarted(this);
-    guessingState = new Guessing(this);
-    gameOverState = new GameOver(this);
+    mapState = new InspectingMap(this);
+    collectorState = new CollectorInterview(this);
+    archivistState = new ArchivistInterview(this);
+    historianState = new HistorianInterview(this);
+    crimeState = new Investigating(this);
 
-    gameState = gameStartedState; // Initial state
-
-    String[] professions = {"historian", "archivist", "collector"};
-
-    rectanglesToProfession = new HashMap<>();
-    rectanglesToProfession.put("rectPerson1", professions[0]);
-    rectanglesToProfession.put("rectPerson2", professions[1]);
-    rectanglesToProfession.put("rectPerson3", professions[2]);
-
-    rectIdToGuess = "rectPerson3";
-    professionToGuess = rectanglesToProfession.get(rectIdToGuess);
-
-    timerManager = TimerManager.getInstance();
-    timerManager.startTimer(10, this);
-  }
-
-  public GameStateContext(RoomController crimeScene) {
-
-    this.crimeScene = crimeScene;
-
-    gameStartedState = new GameStarted(this);
-    guessingState = new Guessing(this);
-    gameOverState = new GameOver(this);
-
-    gameState = gameStartedState; // Initial state
+    gameState = crimeState; // Initial state
 
     String[] professions = {"historian", "archivist", "collector"};
 
@@ -104,33 +85,6 @@ public class GameStateContext {
   }
 
   /**
-   * Gets the initial game started state.
-   *
-   * @return the game started state
-   */
-  public GameState getGameStartedState() {
-    return gameStartedState;
-  }
-
-  /**
-   * Gets the guessing state.
-   *
-   * @return the guessing state
-   */
-  public GameState getGuessingState() {
-    return guessingState;
-  }
-
-  /**
-   * Gets the game over state.
-   *
-   * @return the game over state
-   */
-  public GameState getGameOverState() {
-    return gameOverState;
-  }
-
-  /**
    * Gets the profession to be guessed.
    *
    * @return the profession to guess
@@ -167,14 +121,5 @@ public class GameStateContext {
    */
   public void handleRectangleClick(MouseEvent event, String rectangleId) throws IOException {
     gameState.handleRectangleClick(event, rectangleId);
-  }
-
-  /**
-   * Handles the event when the guess button is clicked.
-   *
-   * @throws IOException if there is an I/O error
-   */
-  public void handleGuessClick() throws IOException {
-    gameState.handleGuessClick();
   }
 }
