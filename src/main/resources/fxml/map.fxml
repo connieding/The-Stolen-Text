@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -28,10 +29,25 @@
             <Font name="Sylfaen" size="15.0" />
          </font>
       </Text>
-      <Rectangle fx:id="suspectTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="205.0" layoutY="96.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
-      <Rectangle fx:id="suspectThree" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="47.0" layoutX="172.0" layoutY="187.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0" />
-      <Rectangle fx:id="crimescene" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="215.0" layoutY="183.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0" />
-      <Rectangle fx:id="suspectOne" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="47.0" layoutX="72.0" layoutY="111.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
-      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="17.0" layoutY="248.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0" />
+      <Rectangle fx:id="suspectTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="205.0" layoutY="96.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Rectangle>
+      <Rectangle fx:id="suspectThree" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="47.0" layoutX="172.0" layoutY="187.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Rectangle>
+      <Rectangle fx:id="crimescene" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="215.0" layoutY="183.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Rectangle>
+      <Rectangle fx:id="suspectOne" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="47.0" layoutX="72.0" layoutY="111.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Rectangle>
+      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="17.0" layoutY="248.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Rectangle>
    </children>
 </AnchorPane>
