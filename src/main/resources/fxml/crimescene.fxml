@@ -14,6 +14,16 @@
          <image>
             <Image url="@../images/crimesceneBackground.jpg" />
          </image></ImageView>
+      <ImageView fitHeight="66.0" fitWidth="62.0" layoutX="7.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/map.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="88.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/accuse.png" />
+         </image>
+      </ImageView>
       <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="14.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
       <Rectangle fx:id="clueOne" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="151.0" layoutX="64.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
       <Rectangle fx:id="clueTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="151.0" layoutX="244.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
@@ -29,14 +39,14 @@
             <Font name="Sylfaen" size="15.0" />
          </font>
       </Text>
-      <ImageView fitHeight="53.0" fitWidth="114.0" layoutX="516.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="-16.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@../images/pocketWatch.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="548.0" layoutY="355.0" prefHeight="35.0" prefWidth="41.0" text="300" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="26.0" prefHeight="35.0" prefWidth="41.0" text="300" textAlignment="CENTER" textFill="#ae8533">
          <font>
-            <Font name="Symeteo_IV50" size="15.0" />
+            <Font name="Symeteo_IV50" size="13.0" />
          </font>
       </Label>
    </children>
