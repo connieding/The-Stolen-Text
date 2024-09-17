@@ -19,20 +19,25 @@
       <Rectangle fx:id="clueTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="151.0" layoutX="244.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
       <Rectangle fx:id="clueThree" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="151.0" layoutX="426.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
       <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-      <ImageView fitHeight="81.0" fitWidth="163.0" layoutX="213.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="98.0" fitWidth="194.0" layoutX="201.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/headerFrame.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="525.0" layoutY="18.0" prefHeight="35.0" prefWidth="41.0" text="300" textAlignment="CENTER" textFill="WHITE">
+      <Text fx:id="crimesceneHead" fill="#ae8533" layoutX="244.0" layoutY="46.726236979166664" strokeType="OUTSIDE" strokeWidth="0.0" text="LIBRARY" textAlignment="CENTER" wrappingWidth="108.5" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="247.5" AnchorPane.topAnchor="35.666666666666664">
          <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Text fx:id="crimesceneHead" fill="#ae8533" layoutX="240.0" layoutY="43.5341796875" strokeType="OUTSIDE" strokeWidth="0.0" text="LIBRARY" textAlignment="CENTER" wrappingWidth="108.5" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="251.5" AnchorPane.topAnchor="31.0">
-         <font>
-            <Font name="Sylfaen" size="17.0" />
+            <Font name="Sylfaen" size="15.0" />
          </font>
       </Text>
+      <ImageView fitHeight="53.0" fitWidth="114.0" layoutX="516.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../images/pocketWatch.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="548.0" layoutY="355.0" prefHeight="35.0" prefWidth="41.0" text="300" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Symeteo_IV50" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
