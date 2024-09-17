@@ -13,14 +13,19 @@
          <image>
             <Image url="@../images/mapBackground.png" />
          </image></ImageView>
+      <ImageView fitHeight="215.0" fitWidth="159.0" layoutX="71.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/mapHeader.png" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="64.0" fitWidth="54.0" layoutX="11.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/judgeHammer.png" />
          </image>
       </ImageView>
-      <Text fx:id="mapHead" layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Map Header" textAlignment="CENTER" wrappingWidth="227.20001220703136">
+      <Text fx:id="mapHead" fill="#ae8533" layoutX="37.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAP" textAlignment="CENTER" wrappingWidth="227.20001220703136">
          <font>
-            <Font size="24.0" />
+            <Font name="Sylfaen" size="15.0" />
          </font>
       </Text>
       <Rectangle fx:id="suspectTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="205.0" layoutY="96.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
