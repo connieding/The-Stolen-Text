@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
@@ -9,20 +10,43 @@
 
 <AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CrimesceneController">
    <children>
-      <ImageView fx:id="crimesceneBg" layoutX="100.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ImageView fx:id="crimesceneBg" fitHeight="400.0" fitWidth="665.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/crimesceneBackground.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="66.0" fitWidth="62.0" layoutX="7.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/map.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="88.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/judgeHammer.png" />
+         </image>
+      </ImageView>
       <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="14.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-      <Rectangle fx:id="clueOne" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="151.0" layoutX="64.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
-      <Rectangle fx:id="clueTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="151.0" layoutX="244.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
+      <Rectangle fx:id="clueOne" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="64.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
+      <Rectangle fx:id="clueTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="151.0" layoutX="241.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
       <Rectangle fx:id="clueThree" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="151.0" layoutX="426.0" layoutY="128.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="112.0" />
-      <Text fx:id="crimesceneHead" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Name" textAlignment="CENTER" wrappingWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
+      <ImageView fitHeight="98.0" fitWidth="194.0" layoutX="201.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/headerFrame.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="crimesceneHead" fill="#ae8533" layoutX="244.0" layoutY="46.726236979166664" strokeType="OUTSIDE" strokeWidth="0.0" text="LIBRARY" textAlignment="CENTER" wrappingWidth="108.5" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="247.5" AnchorPane.topAnchor="35.666666666666664">
          <font>
-            <Font size="24.0" />
+            <Font name="Sylfaen" size="15.0" />
          </font>
       </Text>
-      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-      <Label fx:id="lblTimer" alignment="CENTER_RIGHT" layoutX="450.0" layoutY="8.0" prefHeight="35.0" prefWidth="129.0" text="300" textAlignment="RIGHT">
+      <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="-13.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../images/pocketWatch.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="24.0" prefHeight="35.0" prefWidth="41.0" text="300" textAlignment="CENTER" textFill="#ae8533">
          <font>
-            <Font size="24.0" />
+            <Font name="Sylfaen" size="15.0" />
          </font>
       </Label>
    </children>
