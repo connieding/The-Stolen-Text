@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -81,15 +80,11 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
-    Parent root = loadFxml("room");
+    Parent root = loadFxml("crimescene");
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-
-    timerManager = TimerManager.getInstance();
-    Label timerLabel = (Label) scene.lookup("#lblTimer");
-    timerManager.startTimer(300, timerLabel);
-
+    timerManager = GameStateContext.getTimerManager();
     stage.setOnCloseRequest(event -> handleWindowClose(event));
     root.requestFocus();
   }
@@ -100,6 +95,21 @@ public class App extends Application {
     if (timerManager != null) {
       timerManager.stopTimer();
     }
+  }
 
+  /**
+   * Opens the main screen of the application.
+   *
+   * @param button
+   * @throws IOException
+   */
+  public static void openMainScreen(Node button) throws IOException {
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/crimescene.fxml"));
+    Parent root = loader.load();
+
+    Stage stage = (Stage) button.getScene().getWindow();
+    scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
   }
 }

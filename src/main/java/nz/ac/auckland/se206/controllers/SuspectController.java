@@ -12,7 +12,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 
-public class SuspectController {
+public class SuspectController implements Controller {
 
   @FXML private AnchorPane suspectPane;
   @FXML private ImageView suspectBg;
@@ -37,4 +37,10 @@ public class SuspectController {
 
   @FXML
   private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {}
+
+  @Override
+  public void setTime(String timeRemaining) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'setTime'");
+  }
 }

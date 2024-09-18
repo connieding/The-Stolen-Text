@@ -1,12 +1,15 @@
 package nz.ac.auckland.se206.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.GameStateContext;
 
-public class CrimesceneController {
+public class CrimesceneController implements Controller {
 
   @FXML private AnchorPane crimescenePane;
   @FXML private ImageView crimesceneBg;
@@ -16,4 +19,17 @@ public class CrimesceneController {
   @FXML private Rectangle clueThree;
   @FXML private Text crimesceneHead;
   @FXML private Rectangle buttonAccuse;
+  @FXML private Label lblTimer;
+
+  private GameStateContext context = new GameStateContext(this);
+
+  @Override
+  public void initialize() throws ApiProxyException {
+    context.setScene(this);
+  }
+
+  @Override
+  public void setTime(String timeRemaining) {
+    lblTimer.setText(timeRemaining);
+  }
 }

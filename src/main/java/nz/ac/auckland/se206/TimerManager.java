@@ -26,12 +26,11 @@ public class TimerManager {
 
   private TimerManager() {}
 
-  public void startTimer(int seconds, Label timerLabel) {
+  public void startTimer(int seconds, GameStateContext context) {
     if (timerHandle != null && !timerHandle.isDone()) {
       timerHandle.cancel(true);
     }
 
-    this.timerLabel = timerLabel;
     this.remainingTime = seconds;
 
     scheduler = Executors.newScheduledThreadPool(1);
@@ -42,12 +41,12 @@ public class TimerManager {
                 remainingTime--;
                 Platform.runLater(
                     () -> {
-                      timerLabel.setText(String.valueOf(remainingTime));
+                      context.setTime(String.valueOf(remainingTime));
                     });
               } else {
                 Platform.runLater(
                     () -> {
-                      timerLabel.setText("Time's up!");
+                      context.setTime("Time's up!");
                     });
                 stopTimer();
               }
