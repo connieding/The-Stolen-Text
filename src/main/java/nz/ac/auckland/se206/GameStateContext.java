@@ -36,6 +36,7 @@ public class GameStateContext {
   public GameStateContext(CrimesceneController crimeScene) {
 
     this.crimeScene = crimeScene;
+    this.currentScene = crimeScene;
 
     mapState = new InspectingMap(this);
     collectorState = new CollectorInterview(this);
@@ -77,11 +78,11 @@ public class GameStateContext {
   }
 
   public Controller getScene() {
-    return this.currentScene;
+    return currentScene;
   }
 
   public void setTime(String string) {
-    this.getScene().setTime(string);
+    // this.getScene().setTime(string);
   }
 
   /**

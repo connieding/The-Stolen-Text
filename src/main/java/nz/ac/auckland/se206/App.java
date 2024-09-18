@@ -6,11 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-import nz.ac.auckland.se206.controllers.ChatController;
-import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 
 /**
  * This is the entry point of the JavaFX application. This class initializes and runs the JavaFX
@@ -52,21 +48,11 @@ public class App extends Application {
     return new FXMLLoader(App.class.getResource("/fxml/" + fxml + ".fxml")).load();
   }
 
-  /**
-   * Opens the chat view and sets the profession in the chat controller.
-   *
-   * @param event the mouse event that triggered the method
-   * @param profession the profession to set in the chat controller
-   * @throws IOException if the FXML file is not found
-   */
-  public static void openChat(MouseEvent event, String profession) throws IOException {
-    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/chat.fxml"));
+  public static void openGuessScreen(Node button) throws IOException {
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/guess.fxml"));
     Parent root = loader.load();
 
-    ChatController chatController = loader.getController();
-    chatController.setProfession(profession);
-
-    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage stage = (Stage) button.getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
@@ -84,18 +70,18 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-    timerManager = GameStateContext.getTimerManager();
-    stage.setOnCloseRequest(event -> handleWindowClose(event));
-    root.requestFocus();
+    // timerManager = GameStateContext.getTimerManager();
+    // stage.setOnCloseRequest(event -> handleWindowClose(event));
+    // root.requestFocus();
   }
 
-  private void handleWindowClose(WindowEvent event) {
-    FreeTextToSpeech.deallocateSynthesizer();
+  // private void handleWindowClose(WindowEvent event) {
+  //   FreeTextToSpeech.deallocateSynthesizer();
 
-    if (timerManager != null) {
-      timerManager.stopTimer();
-    }
-  }
+  //   if (timerManager != null) {
+  //     timerManager.stopTimer();
+  //   }
+  // }
 
   /**
    * Opens the main screen of the application.

@@ -17,4 +17,16 @@ public class InspectingMap extends GameState {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'handleRectangleClick'");
   }
+
+  @Override
+  public void handleMapClicked(MouseEvent event, String rectangleId) throws IOException {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'handleMapClicked'");
+  }
+
+  @Override
+  public void handleGuessClicked(MouseEvent event, String rectangleId) throws IOException {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'handleGuessClicked'");
+  }
 }

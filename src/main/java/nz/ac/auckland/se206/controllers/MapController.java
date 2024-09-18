@@ -2,6 +2,7 @@ package nz.ac.auckland.se206.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -32,5 +33,17 @@ public class MapController implements Controller {
   public void setTime(String timeRemaining) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'setTime'");
+  }
+
+  @Override
+  public void handleGuessClicked(MouseEvent event) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'handleGuessClicked'");
+  }
+
+  @Override
+  public void handleMapClicked(MouseEvent event) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'handleMapClicked'");
   }
 }

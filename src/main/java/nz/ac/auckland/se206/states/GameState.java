@@ -25,4 +25,8 @@ public abstract class GameState {
    */
   public abstract void handleRectangleClick(MouseEvent event, String rectangleId)
       throws IOException;
+
+  public abstract void handleMapClicked(MouseEvent event, String rectangleId) throws IOException;
+
+  public abstract void handleGuessClicked(MouseEvent event, String rectangleId) throws IOException;
 }

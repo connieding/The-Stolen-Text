@@ -1,12 +1,15 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameStateContext;
 
 public class CrimesceneController implements Controller {
@@ -32,4 +35,14 @@ public class CrimesceneController implements Controller {
   public void setTime(String timeRemaining) {
     lblTimer.setText(timeRemaining);
   }
+
+  @Override
+  public void handleGuessClicked(MouseEvent event) throws IOException {
+    App.openGuessScreen(buttonAccuse);
+  }
+
+  @Override
+  public void handleMapClicked(MouseEvent event) {}
+
+  public void handleRectangleClicked(MouseEvent event) {}
 }

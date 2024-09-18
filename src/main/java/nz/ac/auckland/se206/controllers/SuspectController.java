@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -42,5 +43,17 @@ public class SuspectController implements Controller {
   public void setTime(String timeRemaining) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'setTime'");
+  }
+
+  @Override
+  public void handleGuessClicked(MouseEvent event) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'handleGuessClicked'");
+  }
+
+  @Override
+  public void handleMapClicked(MouseEvent event) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'handleMapClicked'");
   }
 }
