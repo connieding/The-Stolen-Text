@@ -16,7 +16,7 @@
    <children>
       <ImageView fx:id="historianBg" fitHeight="464.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../images/historianBackground.jpg" />
+            <Image url="@../images/archivistBackground.jpg" />
          </image></ImageView>
       <AnchorPane fx:id="textPane" layoutX="400.0" prefHeight="400.0" prefWidth="200.0">
          <children>
@@ -25,7 +25,7 @@
                   <Image url="@../images/chatBox.png" />
                </image>
             </ImageView>
-            <Text fx:id="textHead" fill="#ae8533" layoutX="22.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HISTORIAN" textAlignment="CENTER" wrappingWidth="157.20501708984375">
+            <Text fx:id="textHead" fill="#ae8533" layoutX="22.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ARCHIVIST" textAlignment="CENTER" wrappingWidth="157.20501708984375">
                <font>
                   <Font name="Sylfaen" size="15.0" />
                </font>
