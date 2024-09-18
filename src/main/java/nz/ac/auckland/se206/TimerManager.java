@@ -58,10 +58,7 @@ public class TimerManager {
   }
 
   public int getTime() {
-    if (this != null) {
-      return remainingTime;
-    }
-    return 0;
+    return remainingTime;
   }
 
   public void stopTimer() {

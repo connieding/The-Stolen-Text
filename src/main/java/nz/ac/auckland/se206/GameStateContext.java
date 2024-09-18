@@ -5,11 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.controllers.Controller;
-import nz.ac.auckland.se206.states.ArchivistInterview;
-import nz.ac.auckland.se206.states.CollectorInterview;
 import nz.ac.auckland.se206.states.GameState;
-import nz.ac.auckland.se206.states.HistorianInterview;
-import nz.ac.auckland.se206.states.InspectingMap;
 import nz.ac.auckland.se206.states.Investigating;
 
 /**
@@ -21,26 +17,16 @@ public class GameStateContext {
   private final String rectIdToGuess;
   private final String professionToGuess;
   private final Map<String, String> rectanglesToProfession;
-  private final InspectingMap mapState;
-  private final CollectorInterview collectorState;
-  private final ArchivistInterview archivistState;
-  private final HistorianInterview historianState;
   private final Investigating crimeState;
   private GameState gameState;
   private Controller currentScene;
   private static TimerManager timerManager;
-  private int time;
 
   /** Constructs a new GameStateContext and initializes the game states and professions. */
   public GameStateContext(Controller scene) {
 
-    this.time = 300;
     this.currentScene = scene;
 
-    mapState = new InspectingMap(this);
-    collectorState = new CollectorInterview(this);
-    archivistState = new ArchivistInterview(this);
-    historianState = new HistorianInterview(this);
     crimeState = new Investigating(this);
 
     gameState = crimeState; // Initial state
@@ -65,20 +51,8 @@ public class GameStateContext {
     this.gameState = state;
   }
 
-  public static TimerManager getTimerManager() {
-    return timerManager;
-  }
-
   public void setScene(Controller scene) {
     currentScene = scene;
-  }
-
-  public Controller getScene() {
-    return currentScene;
-  }
-
-  public void setTime(String string) {
-    this.getScene().setTime(string);
   }
 
   /**
