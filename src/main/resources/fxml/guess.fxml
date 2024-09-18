@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
@@ -14,5 +18,28 @@
             <Image url="@../images/guessBook.png" />
          </image>
       </ImageView>
+      <TextField fx:id="textCulprit" layoutX="27.0" layoutY="65.0" prefHeight="30.0" prefWidth="263.0" />
+      <Text layoutX="30.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHO IS THE CULPRIT?">
+         <font>
+            <Font name="Sylfaen" size="12.0" />
+         </font>
+      </Text>
+      <TextField fx:id="textMotive" layoutX="26.0" layoutY="139.0" prefHeight="77.0" prefWidth="264.0" />
+      <Text layoutX="27.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHAT IS THE MOTIVE?">
+         <font>
+            <Font name="Sylfaen" size="12.0" />
+         </font>
+      </Text>
+      <TextField fx:id="textMotive1" layoutX="26.0" layoutY="260.0" prefHeight="77.0" prefWidth="264.0" />
+      <Text layoutX="27.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHAT IS THE EVIDENCE?">
+         <font>
+            <Font name="Sylfaen" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnSubmit" layoutX="215.0" layoutY="352.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="67.0" text="SUBMIT">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
