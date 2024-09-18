@@ -48,12 +48,11 @@ public class SuspectController implements Controller {
 
   @Override
   public void handleGuessClicked(MouseEvent event) throws IOException {
-    App.openGuessScreen(buttonAccuse);
+    App.openScene(buttonAccuse, "guess");
   }
 
   @Override
-  public void handleMapClicked(MouseEvent event) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'handleMapClicked'");
+  public void handleMapClicked(MouseEvent event) throws IOException {
+    App.openScene(buttonAccuse, "map");
   }
 }
