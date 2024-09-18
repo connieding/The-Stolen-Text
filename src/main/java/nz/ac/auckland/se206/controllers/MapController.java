@@ -1,14 +1,15 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
 
-public class MapController implements Controller {
+public class MapController {
 
   @FXML public AnchorPane mapPane;
   @FXML public ImageView mapBg;
@@ -29,21 +30,9 @@ public class MapController implements Controller {
     // Any required initialization code can be placed here
   }
 
-  @Override
-  public void setTime(String timeRemaining) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'setTime'");
-  }
+  public void handleRectangleClicked() {}
 
-  @Override
-  public void handleGuessClicked(MouseEvent event) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'handleGuessClicked'");
-  }
-
-  @Override
-  public void handleMapClicked(MouseEvent event) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'handleMapClicked'");
+  public void handleGuessClicked() throws IOException {
+    App.openGuessScreen(buttonAccuse);
   }
 }

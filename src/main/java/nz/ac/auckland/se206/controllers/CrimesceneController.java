@@ -42,7 +42,9 @@ public class CrimesceneController implements Controller {
   }
 
   @Override
-  public void handleMapClicked(MouseEvent event) {}
+  public void handleMapClicked(MouseEvent event) throws IOException {
+    App.openMapScreen(buttonMap);
+  }
 
   public void handleRectangleClicked(MouseEvent event) {}
 }

@@ -12,5 +12,5 @@ public interface Controller {
 
   void handleGuessClicked(MouseEvent event) throws IOException;
 
-  void handleMapClicked(MouseEvent event);
+  void handleMapClicked(MouseEvent event) throws IOException;
 }

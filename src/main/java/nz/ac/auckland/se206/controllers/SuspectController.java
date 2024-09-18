@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
 
 public class SuspectController implements Controller {
 
@@ -46,9 +47,8 @@ public class SuspectController implements Controller {
   }
 
   @Override
-  public void handleGuessClicked(MouseEvent event) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'handleGuessClicked'");
+  public void handleGuessClicked(MouseEvent event) throws IOException {
+    App.openGuessScreen(buttonAccuse);
   }
 
   @Override
