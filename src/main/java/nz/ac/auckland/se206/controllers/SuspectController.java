@@ -2,13 +2,14 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
@@ -76,7 +77,7 @@ public class SuspectController implements Controller {
   }
 
   @FXML
-  private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {
+  private void onSendMessage() throws ApiProxyException, IOException {
     String message = textEntry.getText();
     textEntry.setText("");
     // Request response from LLM
@@ -131,5 +132,19 @@ public class SuspectController implements Controller {
       App.hideMap(buttonMap);
     }
     isMapOut = !isMapOut;
+  }
+
+  /**
+   * Sends message on enter key press
+   *
+   * @param event
+   * @throws IOException
+   * @throws ApiProxyException
+   */
+  @FXML
+  private void onKeyPressed(KeyEvent event) throws IOException, ApiProxyException {
+    if (event.getCode().equals(KeyCode.ENTER)) {
+      onSendMessage();
+    }
   }
 }
