@@ -10,7 +10,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
-import nz.ac.auckland.se206.GameStateContext;
 
 public class CrimesceneController implements Controller {
 
@@ -25,13 +24,10 @@ public class CrimesceneController implements Controller {
   @FXML private Label lblTimer;
   @FXML private AnchorPane mapSubScene;
 
-  private GameStateContext context = new GameStateContext(this);
   private boolean isMapOut = false;
 
   @Override
-  public void initialize() throws ApiProxyException {
-    context.setScene(this);
-  }
+  public void initialize() throws ApiProxyException {}
 
   @Override
   public void setTime(String timeRemaining) {
