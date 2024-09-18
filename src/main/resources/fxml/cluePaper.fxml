@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CrimesceneController">
    <children>
-      <ImageView fx:id="crimesceneBg" fitHeight="400.0" fitWidth="665.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="581.0" fitWidth="600.0" layoutY="-176.0" pickOnBounds="true">
          <image>
-            <Image url="@../images/crimesceneBackground.jpg" />
-         </image></ImageView>
+            <Image url="@../images/paperBackground.jpg" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="66.0" fitWidth="62.0" layoutX="7.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/map.png" />
@@ -26,20 +25,7 @@
          </image>
       </ImageView>
       <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="14.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-      <Rectangle fx:id="clueOne" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="190.0" layoutY="316.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="63.0" />
-      <Rectangle fx:id="clueTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="392.0" layoutY="294.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="18.0" />
-      <Rectangle fx:id="clueThree" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="53.0" layoutX="491.0" layoutY="186.0" opacity="0.41" rotate="-90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="54.0" />
       <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-      <ImageView fitHeight="98.0" fitWidth="194.0" layoutX="201.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/headerFrame.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="crimesceneHead" fill="#ae8533" layoutX="244.0" layoutY="46.0595703125" strokeType="OUTSIDE" strokeWidth="0.0" text="LIBRARY" textAlignment="CENTER" wrappingWidth="108.5" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="247.5" AnchorPane.topAnchor="35.0">
-         <font>
-            <Font name="Sylfaen" size="15.0" />
-         </font>
-      </Text>
       <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="-13.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@../images/pocketWatch.png" />
@@ -50,21 +36,16 @@
             <Font name="Sylfaen" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="19.0" fitWidth="54.0" layoutX="196.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="53.0" fitWidth="50.0" layoutX="535.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/glassPile.png" />
+            <Image url="@../images/return.png" />
          </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
       </ImageView>
-      <ImageView fitHeight="13.0" fitWidth="15.0" layoutX="395.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle fx:id="buttonReturn" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="535.0" layoutY="341.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
+      <ImageView fx:id="imageBall" fitHeight="113.0" fitWidth="110.0" layoutX="245.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/paperBallDark.png" />
          </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
       </ImageView>
    </children>
 </AnchorPane>
