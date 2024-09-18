@@ -5,8 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
@@ -25,8 +26,12 @@ public class GuessController {
   @FXML private ImageView circleCollector;
   @FXML private ImageView circleHistorian;
 
-  @FXML private TextField textMotive;
-  @FXML private TextField textEvidence;
+  @FXML private Text archivistTitle;
+  @FXML private Text collectorTitle;
+  @FXML private Text historianTitle;
+
+  @FXML private TextArea textMotive;
+  @FXML private TextArea textEvidence;
 
   private String selectedSuspect = null; // Variable to hold the selected suspect
   private ApiProxyConfig config;
