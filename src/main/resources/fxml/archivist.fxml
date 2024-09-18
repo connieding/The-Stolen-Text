@@ -16,23 +16,23 @@
    <children>
       <ImageView fx:id="historianBg" fitHeight="464.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../images/historianBackground.jpg" />
+            <Image url="@../images/archivistBackground.jpg" />
          </image></ImageView>
       <AnchorPane fx:id="textPane" layoutX="400.0" prefHeight="400.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="209.0" fitWidth="500.0" layoutX="-150.0" layoutY="96.0" pickOnBounds="true" rotate="90.0">
+            <ImageView fitHeight="200.0" fitWidth="500.0" layoutX="-149.0" layoutY="100.0" pickOnBounds="true" rotate="90.0">
                <image>
                   <Image url="@../images/chatBox.png" />
                </image>
             </ImageView>
-            <Text fx:id="textHead" fill="#ae8533" layoutX="21.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HISTORIAN" textAlignment="CENTER" wrappingWidth="157.20501708984375">
+            <Text fx:id="textHead" fill="#ae8533" layoutX="22.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ARCHIVIST" textAlignment="CENTER" wrappingWidth="157.20501708984375">
                <font>
                   <Font name="Sylfaen" size="15.0" />
                </font>
             </Text>
-            <TextArea fx:id="textHistory" editable="false" layoutX="28.0" layoutY="69.0" prefHeight="232.0" prefWidth="144.0" />
-            <TextField fx:id="textEntry" alignment="TOP_LEFT" layoutX="28.0" layoutY="308.0" prefHeight="27.0" prefWidth="146.0" />
-            <Button fx:id="textSend" layoutX="79.0" layoutY="342.0" mnemonicParsing="false" onAction="#onSendMessage" prefHeight="14.0" prefWidth="43.0" text="SEND">
+            <TextArea fx:id="textHistory" editable="false" layoutX="31.0" layoutY="68.0" prefHeight="231.0" prefWidth="140.0" />
+            <TextField fx:id="textEntry" alignment="TOP_LEFT" layoutX="31.0" layoutY="306.0" prefHeight="27.0" prefWidth="140.0" />
+            <Button fx:id="textSend" layoutX="80.0" layoutY="343.0" mnemonicParsing="false" onAction="#onSendMessage" prefHeight="14.0" prefWidth="43.0" text="SEND">
                <font>
                   <Font size="8.0" />
                </font>
