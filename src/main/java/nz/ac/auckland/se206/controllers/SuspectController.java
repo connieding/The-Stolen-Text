@@ -3,6 +3,7 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.SubScene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -29,6 +30,7 @@ public class SuspectController implements Controller {
   @FXML private TextField textEntry;
   @FXML private Button textSend;
   @FXML private Label lblTimer;
+  @FXML private SubScene mapSubScene;
 
   private GameStateContext context = new GameStateContext(this);
 

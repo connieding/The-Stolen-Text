@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 
@@ -48,6 +49,18 @@ public class App extends Application {
    */
   private static Parent loadFxml(final String fxml) throws IOException {
     return new FXMLLoader(App.class.getResource("/fxml/" + fxml + ".fxml")).load();
+  }
+
+  public static void overlayMap(Node button) throws IOException {
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/map.fxml"));
+    Pane root = loader.load();
+    scene = new Scene(root);
+    (((Pane) button.getScene().lookup("#mapSubScene")).getChildren()).add(root);
+    // ((Pane) scene.getRoot()).getChildren().add(button.getScene().lookup("#mapSubScene"));
+  }
+
+  public static void hideMap(Node button) throws IOException {
+    ((Pane) button.getScene().lookup("#mapSubScene")).getChildren().clear();
   }
 
   public static void openScene(Node button, String newScene) throws IOException {

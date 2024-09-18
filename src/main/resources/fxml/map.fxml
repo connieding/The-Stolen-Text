@@ -12,16 +12,11 @@
    <children>
       <ImageView fx:id="mapBg" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/mapBackground.png" />
+            <Image url="@../images/transparent%20map.png" />
          </image></ImageView>
       <ImageView fitHeight="215.0" fitWidth="159.0" layoutX="71.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/mapHeader.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="54.0" layoutX="11.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/judgeHammer.png" />
          </image>
       </ImageView>
       <Text fx:id="mapHead" fill="#ae8533" layoutX="37.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAP" textAlignment="CENTER" wrappingWidth="227.20001220703136">
@@ -29,23 +24,39 @@
             <Font name="Sylfaen" size="15.0" />
          </font>
       </Text>
-      <Rectangle fx:id="historian" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="205.0" layoutY="96.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
+      <ImageView fitHeight="49.0" fitWidth="44.0" layoutX="72.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/istockphoto-1035205010-612x612(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="47.0" layoutX="121.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/istockphoto-1035205010-612x612(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="47.0" layoutX="201.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/istockphoto-1035205010-612x612(4).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="140.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/istockphoto-1035205010-612x612(3).png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="collector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="125.0" layoutY="49.0" onMouseClicked="#handleRectangleClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Rectangle>
-      <Rectangle fx:id="archivist" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="47.0" layoutX="172.0" layoutY="187.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0">
+      <Rectangle fx:id="archivist" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="51.0" layoutX="202.0" layoutY="89.0" onMouseClicked="#handleRectangleClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="39.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Rectangle>
-      <Rectangle fx:id="crimescene" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="215.0" layoutY="183.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0">
+      <Rectangle fx:id="crimescene" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="142.0" layoutY="113.0" onMouseClicked="#handleRectangleClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Rectangle>
-      <Rectangle fx:id="collector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="47.0" layoutX="72.0" layoutY="111.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Rectangle>
-      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="17.0" layoutY="248.0" onMouseClicked="#handleGuessClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0">
+      <Rectangle fx:id="historian" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="47.0" layoutX="75.0" layoutY="102.0" onMouseClicked="#handleRectangleClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Rectangle>

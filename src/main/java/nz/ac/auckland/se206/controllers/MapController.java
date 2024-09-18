@@ -19,7 +19,6 @@ public class MapController {
   @FXML public Rectangle archivist;
   @FXML public Rectangle crimescene;
   @FXML public Rectangle historian;
-  @FXML public Rectangle buttonAccuse;
 
   /**
    * Initializes the map view.
@@ -33,12 +32,9 @@ public class MapController {
 
   public void handleRectangleClicked(MouseEvent event) throws IOException {
 
+    System.out.println("");
     Rectangle clickedRectangle = (Rectangle) event.getSource();
 
     App.openScene(clickedRectangle, clickedRectangle.getId());
-  }
-
-  public void handleGuessClicked() throws IOException {
-    App.openGuessScene(buttonAccuse);
   }
 }

@@ -23,8 +23,10 @@ public class CrimesceneController implements Controller {
   @FXML private Text crimesceneHead;
   @FXML private Rectangle buttonAccuse;
   @FXML private Label lblTimer;
+  @FXML private AnchorPane mapSubScene;
 
   private GameStateContext context = new GameStateContext(this);
+  private boolean isMapOut = false;
 
   @Override
   public void initialize() throws ApiProxyException {
@@ -43,7 +45,15 @@ public class CrimesceneController implements Controller {
 
   @Override
   public void handleMapClicked(MouseEvent event) throws IOException {
-    App.openScene(buttonMap, "map");
+
+    mapSubScene.setVisible(!mapSubScene.isVisible());
+    mapSubScene.setDisable(!mapSubScene.isDisable());
+    if (!isMapOut) {
+      App.overlayMap(buttonMap);
+    } else {
+      App.hideMap(buttonMap);
+    }
+    isMapOut = !isMapOut;
   }
 
   public void handleRectangleClicked(MouseEvent event) {
