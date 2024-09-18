@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -13,6 +14,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameStateContext;
 
 public class SuspectController implements Controller {
 
@@ -26,6 +28,9 @@ public class SuspectController implements Controller {
   @FXML private TextArea textHistory;
   @FXML private TextField textEntry;
   @FXML private Button textSend;
+  @FXML private Label lblTimer;
+
+  private GameStateContext context = new GameStateContext(this);
 
   /**
    * Initializes the historian suspect view.
@@ -34,7 +39,7 @@ public class SuspectController implements Controller {
    */
   @FXML
   public void initialize() throws ApiProxyException {
-    // Any required initialization code can be placed here
+    context.setScene(this);
   }
 
   @FXML
@@ -42,13 +47,12 @@ public class SuspectController implements Controller {
 
   @Override
   public void setTime(String timeRemaining) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'setTime'");
+    lblTimer.setText(timeRemaining);
   }
 
   @Override
   public void handleGuessClicked(MouseEvent event) throws IOException {
-    App.openScene(buttonAccuse, "guess");
+    App.openGuessScene(buttonAccuse);
   }
 
   @Override

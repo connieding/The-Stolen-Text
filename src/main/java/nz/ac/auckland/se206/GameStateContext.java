@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.controllers.Controller;
-import nz.ac.auckland.se206.controllers.CrimesceneController;
 import nz.ac.auckland.se206.states.ArchivistInterview;
 import nz.ac.auckland.se206.states.CollectorInterview;
 import nz.ac.auckland.se206.states.GameState;
@@ -30,13 +29,13 @@ public class GameStateContext {
   private GameState gameState;
   private Controller currentScene;
   private static TimerManager timerManager;
-  private Controller crimeScene;
+  private int time;
 
   /** Constructs a new GameStateContext and initializes the game states and professions. */
-  public GameStateContext(CrimesceneController crimeScene) {
+  public GameStateContext(Controller scene) {
 
-    this.crimeScene = crimeScene;
-    this.currentScene = crimeScene;
+    this.time = 300;
+    this.currentScene = scene;
 
     mapState = new InspectingMap(this);
     collectorState = new CollectorInterview(this);
@@ -55,9 +54,6 @@ public class GameStateContext {
 
     rectIdToGuess = "rectPerson3";
     professionToGuess = rectanglesToProfession.get(rectIdToGuess);
-
-    timerManager = TimerManager.getInstance();
-    timerManager.startTimer(300, this);
   }
 
   /**
@@ -74,7 +70,7 @@ public class GameStateContext {
   }
 
   public void setScene(Controller scene) {
-    this.currentScene = scene;
+    currentScene = scene;
   }
 
   public Controller getScene() {

@@ -38,7 +38,7 @@ public class CrimesceneController implements Controller {
 
   @Override
   public void handleGuessClicked(MouseEvent event) throws IOException {
-    App.openScene(buttonAccuse, "guess");
+    App.openGuessScene(buttonAccuse);
   }
 
   @Override
@@ -46,5 +46,7 @@ public class CrimesceneController implements Controller {
     App.openScene(buttonMap, "map");
   }
 
-  public void handleRectangleClicked(MouseEvent event) {}
+  public void handleRectangleClicked(MouseEvent event) {
+    System.out.println("Clue clicked: " + event.getSource());
+  }
 }

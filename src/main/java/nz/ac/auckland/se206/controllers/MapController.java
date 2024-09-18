@@ -39,6 +39,6 @@ public class MapController {
   }
 
   public void handleGuessClicked() throws IOException {
-    App.openGuessScreen(buttonAccuse);
+    App.openGuessScene(buttonAccuse);
   }
 }

@@ -6,8 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 
 /**
@@ -17,7 +17,7 @@ import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 public class App extends Application {
 
   private static Scene scene;
-  private TimerManager timerManager;
+  private static TimerManager timerManager;
 
   /**
    * The main method that launches the JavaFX application.
@@ -50,16 +50,6 @@ public class App extends Application {
     return new FXMLLoader(App.class.getResource("/fxml/" + fxml + ".fxml")).load();
   }
 
-  public static void openGuessScreen(Node button) throws IOException {
-    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/guess.fxml"));
-    Parent root = loader.load();
-
-    Stage stage = (Stage) button.getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-  }
-
   public static void openScene(Node button, String newScene) throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/" + newScene + ".fxml"));
     Parent root = loader.load();
@@ -68,16 +58,32 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+    handleWindowClose();
+    int remaining = 300;
+    if (timerManager != null) {
+      remaining = timerManager.getTime();
+    }
+    timerManager = TimerManager.getInstance();
+    Label timerLabel = (Label) scene.lookup("#lblTimer");
+    timerManager.startTimer(remaining, timerLabel);
+    stage.setOnCloseRequest(event -> handleWindowClose());
+    root.requestFocus();
   }
 
-  public static void openMapScreen(Node button) throws IOException {
-    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/map.fxml"));
+  public static void openGuessScene(Node button) throws IOException {
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/guess.fxml"));
     Parent root = loader.load();
 
     Stage stage = (Stage) button.getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+    handleWindowClose();
+    timerManager = TimerManager.getInstance();
+    Label timerLabel = (Label) scene.lookup("#lblTimer");
+    timerManager.startTimer(60, timerLabel);
+    stage.setOnCloseRequest(event -> handleWindowClose());
+    root.requestFocus();
   }
 
   /**
@@ -88,36 +94,17 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
-    Parent root = loadFxml("crimescene");
+    Parent root = loadFxml("start");
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-    timerManager = GameStateContext.getTimerManager();
-    stage.setOnCloseRequest(event -> handleWindowClose(event));
-    root.requestFocus();
   }
 
-  private void handleWindowClose(WindowEvent event) {
+  private static void handleWindowClose() {
     FreeTextToSpeech.deallocateSynthesizer();
 
     if (timerManager != null) {
       timerManager.stopTimer();
     }
-  }
-
-  /**
-   * Opens the main screen of the application.
-   *
-   * @param button
-   * @throws IOException
-   */
-  public static void openMainScreen(Node button) throws IOException {
-    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/crimescene.fxml"));
-    Parent root = loader.load();
-
-    Stage stage = (Stage) button.getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
   }
 }
