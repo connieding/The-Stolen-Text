@@ -42,7 +42,9 @@ public class TimerManager {
                 remainingTime--;
                 Platform.runLater(
                     () -> {
-                      if (timerLabel != null) timerLabel.setText(String.valueOf(remainingTime));
+                      int min = remainingTime / 60;
+                      int sec = remainingTime % 60;
+                      if (timerLabel != null) timerLabel.setText(String.format("%d:%d", min, sec));
                     });
               } else {
                 Platform.runLater(
