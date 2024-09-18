@@ -21,7 +21,6 @@ import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
-import nz.ac.auckland.se206.GameStateContext;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class SuspectController implements Controller {
@@ -40,7 +39,6 @@ public class SuspectController implements Controller {
   @FXML private AnchorPane mapSubScene;
 
   private boolean isMapOut = false;
-  private GameStateContext context = new GameStateContext(this);
   private ChatCompletionRequest chatHistory;
 
   /**
@@ -53,7 +51,6 @@ public class SuspectController implements Controller {
 
     String character = textHead.getText().toLowerCase();
 
-    context.setScene(this);
     System.out.println(character);
     textHistory.setText(PromptEngineering.getResource("responses", character, "txt"));
 
