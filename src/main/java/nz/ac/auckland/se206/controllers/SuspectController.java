@@ -29,7 +29,9 @@ public class SuspectController implements Controller {
   @FXML private TextField textEntry;
   @FXML private Button textSend;
   @FXML private Label lblTimer;
+  @FXML private AnchorPane mapSubScene;
 
+  private boolean isMapOut = false;
   private GameStateContext context = new GameStateContext(this);
 
   /**
@@ -57,6 +59,14 @@ public class SuspectController implements Controller {
 
   @Override
   public void handleMapClicked(MouseEvent event) throws IOException {
-    App.openScene(buttonAccuse, "map");
+
+    mapSubScene.setVisible(!mapSubScene.isVisible());
+    mapSubScene.setDisable(!mapSubScene.isDisable());
+    if (!isMapOut) {
+      App.overlayMap(buttonMap);
+    } else {
+      App.hideMap(buttonMap);
+    }
+    isMapOut = !isMapOut;
   }
 }
