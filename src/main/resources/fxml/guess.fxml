@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,25 +15,42 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#68511c" height="411.0" layoutY="-11.0" stroke="#321e07" strokeType="INSIDE" width="600.0" />
-      <ImageView fitHeight="504.0" fitWidth="988.0" layoutX="-219.0" layoutY="-53.0" pickOnBounds="true">
+      <ImageView fitHeight="504.0" fitWidth="988.0" layoutX="-221.0" layoutY="-53.0" pickOnBounds="true">
          <image>
             <Image url="@../images/guessBook.png" />
          </image>
       </ImageView>
-      <TextField fx:id="textCulprit" layoutX="27.0" layoutY="65.0" prefHeight="30.0" prefWidth="263.0" />
-      <Text layoutX="30.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHO IS THE CULPRIT?">
+      <ImageView fitHeight="228.0" fitWidth="434.0" layoutX="219.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/magnifyGlass.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textCulprit" layoutX="28.0" layoutY="64.0" prefHeight="36.0" prefWidth="263.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Text fill="#68380e" layoutX="30.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHO IS THE CULPRIT?">
          <font>
             <Font name="Sylfaen" size="12.0" />
          </font>
       </Text>
-      <TextField fx:id="textMotive" layoutX="26.0" layoutY="139.0" prefHeight="77.0" prefWidth="264.0" />
-      <Text layoutX="27.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHAT IS THE MOTIVE?">
+      <TextField fx:id="textMotive" layoutX="26.0" layoutY="139.0" prefHeight="77.0" prefWidth="264.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Text fill="#68380e" layoutX="27.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHAT IS THE MOTIVE?">
          <font>
             <Font name="Sylfaen" size="12.0" />
          </font>
       </Text>
-      <TextField fx:id="textMotive1" layoutX="26.0" layoutY="260.0" prefHeight="77.0" prefWidth="264.0" />
-      <Text layoutX="27.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHAT IS THE EVIDENCE?">
+      <TextField fx:id="textEvidence" layoutX="26.0" layoutY="260.0" prefHeight="77.0" prefWidth="264.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Text fill="#68380e" layoutX="27.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHAT IS THE EVIDENCE?">
          <font>
             <Font name="Sylfaen" size="12.0" />
          </font>
@@ -40,6 +59,19 @@
          <font>
             <Font size="8.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
+      <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="496.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../images/pocketWatch.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="521.0" layoutY="339.0" prefHeight="35.0" prefWidth="41.0" text="60" textAlignment="CENTER" textFill="#ae8533">
+         <font>
+            <Font name="Sylfaen" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
