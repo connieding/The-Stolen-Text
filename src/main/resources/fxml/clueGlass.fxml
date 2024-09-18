@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CrimesceneController">
+   <children>
+      <ImageView fitHeight="581.0" fitWidth="600.0" layoutY="-176.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/flooring.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="66.0" fitWidth="62.0" layoutX="7.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/map.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="88.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/judgeHammer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="147.0" layoutX="240.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../images/hair.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="14.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
+      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
+      <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="-13.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../images/pocketWatch.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="24.0" prefHeight="35.0" prefWidth="41.0" text="300" textAlignment="CENTER" textFill="#ae8533">
+         <font>
+            <Font name="Sylfaen" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="53.0" fitWidth="50.0" layoutX="535.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/return.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="buttonReturn" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="535.0" layoutY="341.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="280.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/glass1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="183.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/glass2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="292.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/glass3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="185.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/glass4.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
