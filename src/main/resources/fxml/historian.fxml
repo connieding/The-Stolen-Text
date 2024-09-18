@@ -30,8 +30,14 @@
                   <Font name="Sylfaen" size="15.0" />
                </font>
             </Text>
-            <TextArea fx:id="textHistory" editable="false" layoutX="31.0" layoutY="68.0" prefHeight="231.0" prefWidth="140.0" />
-            <TextField fx:id="textEntry" alignment="TOP_LEFT" layoutX="31.0" layoutY="306.0" prefHeight="27.0" prefWidth="140.0" />
+            <TextArea fx:id="textHistory" editable="false" layoutX="31.0" layoutY="68.0" prefHeight="231.0" prefWidth="140.0" wrapText="true">
+               <font>
+                  <Font name="Sylfaen" size="10.0" />
+               </font></TextArea>
+            <TextField fx:id="textEntry" alignment="TOP_LEFT" layoutX="31.0" layoutY="306.0" prefHeight="27.0" prefWidth="140.0">
+               <font>
+                  <Font name="Sylfaen" size="12.0" />
+               </font></TextField>
             <Button fx:id="textSend" layoutX="80.0" layoutY="343.0" mnemonicParsing="false" onAction="#onSendMessage" prefHeight="14.0" prefWidth="43.0" text="SEND">
                <font>
                   <Font size="8.0" />

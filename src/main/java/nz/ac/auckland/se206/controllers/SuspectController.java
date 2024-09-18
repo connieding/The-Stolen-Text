@@ -1,6 +1,7 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,9 +13,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
+import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
+import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
+import nz.ac.auckland.apiproxy.chat.openai.Choice;
+import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameStateContext;
+import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class SuspectController implements Controller {
 
@@ -33,6 +40,7 @@ public class SuspectController implements Controller {
 
   private boolean isMapOut = false;
   private GameStateContext context = new GameStateContext(this);
+  private ChatCompletionRequest chatHistory;
 
   /**
    * Initializes the historian suspect view.
@@ -41,11 +49,66 @@ public class SuspectController implements Controller {
    */
   @FXML
   public void initialize() throws ApiProxyException {
+
+    String character = textHead.getText().toLowerCase();
+
     context.setScene(this);
+    System.out.println(character);
+    textHistory.setText(PromptEngineering.getResource("responses", character, "txt"));
+
+    try {
+      ApiProxyConfig config = ApiProxyConfig.readConfig();
+
+      chatHistory =
+          new ChatCompletionRequest(config)
+              .setN(1)
+              .setTemperature(0.2)
+              .setTopP(0.5)
+              .setMaxTokens(100);
+      chatHistory.addMessage(
+          new ChatMessage("system", PromptEngineering.getResource("prompts", character, "txt")));
+      chatHistory.addMessage(
+          new ChatMessage(
+              "assistant", PromptEngineering.getResource("responses", character, "txt")));
+    } catch (ApiProxyException e) {
+      e.printStackTrace();
+    }
   }
 
   @FXML
-  private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {}
+  private void onSendMessage(ActionEvent event) throws ApiProxyException, IOException {
+    String message = textEntry.getText();
+    textEntry.setText("");
+    // Request response from LLM
+    Task<Void> chatTask =
+        new Task<Void>() {
+
+          @Override
+          protected Void call() {
+            ChatMessage response = new ChatMessage("user", message);
+            chatHistory.addMessage(response);
+
+            try {
+              ChatCompletionResult chatResult = chatHistory.execute();
+              Choice result = chatResult.getChoices().iterator().next();
+              chatHistory.addMessage(result.getChatMessage());
+              textHistory.setText(result.getChatMessage().getContent());
+
+              // Speak the response
+              // TextToSpeech.speak(result.getChatMessage().getContent(), currentSuspectId);
+            } catch (ApiProxyException e) {
+              e.printStackTrace();
+            }
+
+            return null;
+          }
+        };
+
+    // Complete LLM response in a seperate thread, to prevent buffering
+    Thread chatThread = new Thread(chatTask);
+    chatThread.setDaemon(true);
+    chatThread.start();
+  }
 
   @Override
   public void setTime(String timeRemaining) {
