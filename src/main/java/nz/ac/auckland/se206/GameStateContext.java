@@ -57,7 +57,7 @@ public class GameStateContext {
     professionToGuess = rectanglesToProfession.get(rectIdToGuess);
 
     timerManager = TimerManager.getInstance();
-    timerManager.startTimer(10, this);
+    timerManager.startTimer(300, this);
   }
 
   /**
@@ -82,7 +82,7 @@ public class GameStateContext {
   }
 
   public void setTime(String string) {
-    // this.getScene().setTime(string);
+    this.getScene().setTime(string);
   }
 
   /**

@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 
 /**
  * This is the entry point of the JavaFX application. This class initializes and runs the JavaFX
@@ -90,18 +92,18 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-    // timerManager = GameStateContext.getTimerManager();
-    // stage.setOnCloseRequest(event -> handleWindowClose(event));
-    // root.requestFocus();
+    timerManager = GameStateContext.getTimerManager();
+    stage.setOnCloseRequest(event -> handleWindowClose(event));
+    root.requestFocus();
   }
 
-  // private void handleWindowClose(WindowEvent event) {
-  //   FreeTextToSpeech.deallocateSynthesizer();
+  private void handleWindowClose(WindowEvent event) {
+    FreeTextToSpeech.deallocateSynthesizer();
 
-  //   if (timerManager != null) {
-  //     timerManager.stopTimer();
-  //   }
-  // }
+    if (timerManager != null) {
+      timerManager.stopTimer();
+    }
+  }
 
   /**
    * Opens the main screen of the application.
