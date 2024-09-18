@@ -58,6 +58,16 @@ public class App extends Application {
     stage.show();
   }
 
+  public static void openScene(Node button, String newScene) throws IOException {
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/" + newScene + ".fxml"));
+    Parent root = loader.load();
+
+    Stage stage = (Stage) button.getScene().getWindow();
+    scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+  }
+
   public static void openMapScreen(Node button) throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/map.fxml"));
     Parent root = loader.load();

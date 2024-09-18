@@ -3,6 +3,7 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -14,10 +15,10 @@ public class MapController {
   @FXML public AnchorPane mapPane;
   @FXML public ImageView mapBg;
   @FXML public Text mapHead;
-  @FXML public Rectangle suspectTwo;
-  @FXML public Rectangle suspectThree;
+  @FXML public Rectangle collector;
+  @FXML public Rectangle archivist;
   @FXML public Rectangle crimescene;
-  @FXML public Rectangle suspectOne;
+  @FXML public Rectangle historian;
   @FXML public Rectangle buttonAccuse;
 
   /**
@@ -30,7 +31,12 @@ public class MapController {
     // Any required initialization code can be placed here
   }
 
-  public void handleRectangleClicked() {}
+  public void handleRectangleClicked(MouseEvent event) throws IOException {
+
+    Rectangle clickedRectangle = (Rectangle) event.getSource();
+
+    App.openScene(clickedRectangle, clickedRectangle.getId());
+  }
 
   public void handleGuessClicked() throws IOException {
     App.openGuessScreen(buttonAccuse);
