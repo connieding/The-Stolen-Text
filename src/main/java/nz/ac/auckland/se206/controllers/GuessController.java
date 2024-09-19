@@ -1,6 +1,5 @@
 package nz.ac.auckland.se206.controllers;
 
-
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +19,9 @@ import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class GuessController extends Controller {
 
+  @FXML private ImageView archivistSelect;
+  @FXML private ImageView collectorSelect;
+  @FXML private ImageView historianSelect;
 
   @FXML private ImageView circleArchivist;
   @FXML private ImageView circleCollector;
@@ -123,5 +125,4 @@ public class GuessController extends Controller {
       return null;
     }
   }
-
 }
