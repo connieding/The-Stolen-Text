@@ -11,10 +11,11 @@ import javafx.scene.control.Label;
 public class TimerManager {
 
   private static TimerManager instance;
+  private GameData data;
 
-  public static synchronized TimerManager getInstance() {
+  public static synchronized TimerManager getInstance(GameData data) {
     if (instance == null) {
-      instance = new TimerManager();
+      instance = new TimerManager(data);
     }
     return instance;
   }
@@ -24,7 +25,9 @@ public class TimerManager {
   private int remainingTime;
   @FXML private Label timerLabel;
 
-  private TimerManager() {}
+  private TimerManager(GameData data) {
+    this.data = data;
+  }
 
   public void startTimer(int seconds, Label timerLabel) {
     if (timerHandle != null && !timerHandle.isDone()) {
@@ -44,12 +47,17 @@ public class TimerManager {
                     () -> {
                       int min = remainingTime / 60;
                       int sec = remainingTime % 60;
-                      if (timerLabel != null) timerLabel.setText(String.format("%d:%d", min, sec));
+                      if (timerLabel != null)
+                        timerLabel.setText(String.format("%d:%02d", min, sec));
                     });
               } else {
                 Platform.runLater(
                     () -> {
-                      timerLabel.setText("Time's up!");
+                      try {
+                        data.timeUp(timerLabel);
+                      } catch (Exception e) {
+                        e.printStackTrace();
+                      }
                     });
                 stopTimer();
               }
@@ -64,6 +72,7 @@ public class TimerManager {
   }
 
   public void stopTimer() {
+    instance = null;
     if (timerHandle != null && !timerHandle.isDone()) {
       timerHandle.cancel(true);
     }

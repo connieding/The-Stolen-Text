@@ -15,6 +15,8 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameData;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class GuessController extends Controller {
@@ -35,10 +37,11 @@ public class GuessController extends Controller {
   @FXML private TextArea textEvidence;
 
   private String selectedSuspect = null; // Variable to hold the selected suspect
-  private ApiProxyConfig config;
+  private static ApiProxyConfig config;
 
   @FXML
   public void initialize() {
+    GameData.setGuessing(true);
     try {
       config = ApiProxyConfig.readConfig();
     } catch (ApiProxyException e) {
@@ -47,13 +50,13 @@ public class GuessController extends Controller {
 
     hideAllCircles();
 
-    archivistSelect.setOnMouseClicked(event -> setSelectedSuspect("Archivist"));
-    collectorSelect.setOnMouseClicked(event -> setSelectedSuspect("Collector"));
-    historianSelect.setOnMouseClicked(event -> setSelectedSuspect("Historian"));
+    archivistSelect.setOnMouseClicked(event -> setSelectedSuspect("archivist"));
+    collectorSelect.setOnMouseClicked(event -> setSelectedSuspect("collector"));
+    historianSelect.setOnMouseClicked(event -> setSelectedSuspect("historian"));
   }
 
   private void setSelectedSuspect(String suspect) {
-    this.selectedSuspect = suspect;
+    selectedSuspect = suspect;
 
     hideAllCircles();
 
@@ -61,13 +64,13 @@ public class GuessController extends Controller {
     collectorSelect.setOpacity(0.7);
     historianSelect.setOpacity(0.7);
 
-    if (suspect.equals("Archivist")) {
+    if (suspect.equals("archivist")) {
       archivistSelect.setOpacity(1.0);
       circleArchivist.setVisible(true);
-    } else if (suspect.equals("Collector")) {
+    } else if (suspect.equals("collector")) {
       collectorSelect.setOpacity(1.0);
       circleCollector.setVisible(true);
-    } else if (suspect.equals("Historian")) {
+    } else if (suspect.equals("historian")) {
       historianSelect.setOpacity(1.0);
       circleHistorian.setVisible(true);
     }
@@ -80,6 +83,11 @@ public class GuessController extends Controller {
   }
 
   public void handleSubmitClicked() throws ApiProxyException, IOException {
+
+    if (selectedSuspect == null || selectedSuspect != "collector") {
+      App.openScene(textEvidence, "failed");
+    }
+
     String motive = textMotive.getText().trim();
     String evidence = textEvidence.getText().trim();
 
@@ -87,7 +95,7 @@ public class GuessController extends Controller {
 
     String feedback = evaluateExplanation(selectedSuspect, motive, evidence, correctExplanation);
 
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/feedback.fxml"));
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/feedback.fxml"));
     Parent root = loader.load();
 
     FeedbackController feedbackController = loader.getController();
@@ -97,7 +105,7 @@ public class GuessController extends Controller {
     stage.setScene(new Scene(root));
   }
 
-  private String evaluateExplanation(
+  private static String evaluateExplanation(
       String suspect, String motive, String evidence, String correctExplanation)
       throws IOException, ApiProxyException {
     ChatCompletionRequest request =

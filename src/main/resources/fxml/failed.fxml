@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.FeedbackController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#68511c" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <ImageView fitHeight="504.0" fitWidth="988.0" layoutX="-220.0" layoutY="-54.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/guessBook.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="234.0" fitWidth="253.0" layoutX="315.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/headerFrame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="204.0" fitWidth="203.0" layoutX="53.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/scales.png" />
+         </image>
+      </ImageView>
+      <Text fill="#68380e" layoutX="372.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback" textAlignment="CENTER" wrappingWidth="137.289794921875">
+         <font>
+            <Font name="Sylfaen" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="feedbackText" fill="#68380e" layoutX="312.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unlucky, you didn't guess the thief correctly, and they are still at large. Better luck next time!" textAlignment="JUSTIFY" wrappingWidth="263.7367858886719">
+         <font>
+            <Font name="Sylfaen" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#68380e" layoutX="375.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Failed!" textAlignment="CENTER" wrappingWidth="137.289794921875">
+         <font>
+            <Font name="Sylfaen" size="24.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="exitImage" fitHeight="35.0" fitWidth="37.0" layoutX="533.0" layoutY="352.0" onMouseClicked="#handleExitClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/exit.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="retryImage" fitHeight="35.0" fitWidth="41.0" layoutX="482.0" layoutY="349.0" onMouseClicked="#handleRetryClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/retry.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
