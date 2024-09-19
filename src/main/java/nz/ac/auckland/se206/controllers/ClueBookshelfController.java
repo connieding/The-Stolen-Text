@@ -26,13 +26,28 @@ public class ClueBookshelfController extends ClueController {
   private MediaPlayer cluePlayer;
 
   @FXML
-  void bookClick(MouseEvent event) {
+  public void highlightBook(MouseEvent event) {
+    if (!clicked) {
+      buttonClueBook.setOpacity(0.7);
+    }
+  }
+
+  @FXML
+  public void unhighlightBook(MouseEvent event) {
+    if (!clicked) {
+      buttonClueBook.setOpacity(0);
+    }
+  }
+
+  @FXML
+  public void bookClick(MouseEvent event) {
 
     // If the book has not been found, and the book is clicked
     if (image && !clicked) {
 
       // Show the closed book
       imageBook.setImage(new Image(getClass().getResourceAsStream("/images/bookClose.png")));
+      buttonClueBook.setOpacity(0);
     }
 
     // Set the book to have been found, and closed
@@ -41,7 +56,7 @@ public class ClueBookshelfController extends ClueController {
   }
 
   @FXML
-  void openBook(MouseEvent event) {
+  public void openBook(MouseEvent event) {
 
     // If the book is closed, and the book is clicked
     if (!image) {
