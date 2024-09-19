@@ -116,6 +116,9 @@
          <image>
             <Image url="@../images/right-arrow.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
    </children>
 </AnchorPane>
