@@ -24,6 +24,22 @@ public class ClueBookshelfController extends ClueController {
   // Sound has been played
   private boolean sound = false;
   private MediaPlayer cluePlayer;
+  private double mouseX;
+
+  public void initialize() {
+    imageBook.setOnMousePressed(
+        mouseEvent -> {
+          mouseX = mouseEvent.getX();
+        });
+    imageBook.setOnMouseReleased(
+        mouseEvent -> {
+          if (mouseEvent.getX() <= mouseX - 80 & !image) {
+            openBook(mouseEvent);
+          } else if (mouseEvent.getX() >= mouseX + 80 & image) {
+            openBook(mouseEvent);
+          }
+        });
+  }
 
   @FXML
   public void highlightBook(MouseEvent event) {
