@@ -84,6 +84,10 @@ public class GuessController extends Controller {
 
   public void handleSubmitClicked() throws ApiProxyException, IOException {
 
+    if (selectedSuspect == null || selectedSuspect != "collector") {
+      App.openScene(textEvidence, "failed");
+    }
+
     String motive = textMotive.getText().trim();
     String evidence = textEvidence.getText().trim();
 
