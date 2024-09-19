@@ -1,0 +1,20 @@
+Set in a library, a text was stolen. The text is a valuable first-hand account of a particular historical event. 
+Suspects are a historian, who has library access, and a research-driven motive to steal the valuable text, 
+which supposedly invalidates his previous beliefs about a historical event. The librarian, who is short on cash, 
+so potentially wanted to steal the cover to sell, for herself, and an antique collector, who was looking to purchase the book, 
+due to its unique cover. One clue lets you inspect a bookcase, where you find that one of the books is in the wrong order, the book 
+describes the process of rebinding a book. Drops of glue on the bookshelf indicate one of the books has recently been re-bound, 
+so that the cover doesn't match the contents. In fact, the contents are that of the text previously thought to be stolen, meaning the 
+actual theft was of only the cover. The final clue is a red-herring, some property of the historian that was left on the scene. 
+
+The historian is implicated by his possessions on the scene, but absolved by the fact that the cover was stolen, 
+not the actual book, so he had no motive for the theft, and the librarian is absolved by the fact that the thief 
+had to look up how to rebind a book, which the librarian would already know how to do. As such, the collector was the thief, 
+who stole the cover to add to his collection, and planted possessions from the historian, and rebound the book to frame the historian.
+
+THE FEEDBACK SHOULD BE VERY PRECISE
+When the player selects their guess of the thief, the player needs to type out an explanation of why they think that suspect is the thief. The app should provide feedback on whether the guess was correct or not, and why. This requires very well-engineered prompts to GPT to understand the player’s explanation and provide feedback accordingly.
+Therefore, there will be one of three possible outcomes:
+The player guesses incorrectly or runs out of time before making a guess.
+The player guesses correctly, but the explanation is incorrect. The app should provide feedback on why the explanation is incorrect.
+The player guesses correctly, and the explanation is correct. The app should provide feedback on why the explanation is correct.
