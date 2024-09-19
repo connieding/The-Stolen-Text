@@ -35,9 +35,9 @@
          </image>
       </ImageView>
       <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="14.0" layoutY="336.0" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-      <Rectangle fx:id="clueOne" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="198.0" layoutY="318.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="54.0" />
-      <Rectangle fx:id="clueTwo" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="9.0" layoutX="380.0" layoutY="309.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
-      <Rectangle fx:id="clueThree" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutX="448.0" layoutY="178.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="36.0" />
+      <Rectangle fx:id="clueGlass" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="198.0" layoutY="318.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="54.0" />
+      <Rectangle fx:id="cluePaper" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="9.0" layoutX="380.0" layoutY="309.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+      <Rectangle fx:id="clueBookshelf" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutX="448.0" layoutY="178.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="36.0" />
       <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
       <ImageView fitHeight="98.0" fitWidth="194.0" layoutX="201.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -1,5 +1,6 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -8,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
 
 public class CrimesceneController extends Controller {
 
@@ -22,12 +24,10 @@ public class CrimesceneController extends Controller {
   @FXML private Label lblTimer;
   @FXML private AnchorPane mapSubScene;
 
-  private boolean isMapOut = false;
-
   @Override
   public void initialize() throws ApiProxyException {}
 
-  public void handleRectangleClicked(MouseEvent event) {
-    System.out.println("Clue clicked: " + event.getSource());
+  public void handleRectangleClicked(MouseEvent event) throws IOException {
+    App.openScene(((Rectangle) event.getSource()), ((Rectangle) event.getSource()).getId());
   }
 }

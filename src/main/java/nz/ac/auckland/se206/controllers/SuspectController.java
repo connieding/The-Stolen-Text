@@ -4,14 +4,12 @@ import java.io.IOException;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
@@ -26,17 +24,12 @@ public class SuspectController extends Controller {
   @FXML private AnchorPane suspectPane;
   @FXML private ImageView suspectBg;
   @FXML private Text mainHead;
-  @FXML private Rectangle buttonMap;
-  @FXML private Rectangle buttonAccuse;
   @FXML private AnchorPane textPane;
   @FXML private Text textHead;
   @FXML private TextArea textHistory;
   @FXML private TextField textEntry;
   @FXML private Button textSend;
-  @FXML private Label lblTimer;
-  @FXML private AnchorPane mapSubScene;
 
-  private boolean isMapOut = false;
   private ChatCompletionRequest chatHistory;
 
   /**
