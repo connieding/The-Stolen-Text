@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CrimesceneController">
+<AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CluePaperController">
    <children>
       <ImageView fitHeight="581.0" fitWidth="600.0" layoutY="-176.0" pickOnBounds="true">
          <image>
@@ -41,7 +41,7 @@
             <Image url="@../images/return.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="buttonReturn" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="535.0" layoutY="341.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
+      <Rectangle fx:id="buttonReturn" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="535.0" layoutY="341.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
       <ImageView fx:id="imageBall" fitHeight="62.0" fitWidth="131.0" layoutX="252.0" layoutY="255.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/handkerchiefWhite.png" />

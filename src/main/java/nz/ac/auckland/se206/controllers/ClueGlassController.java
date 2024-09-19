@@ -1,3 +1,9 @@
 package nz.ac.auckland.se206.controllers;
 
-public class ClueGlassController extends ClueController {}
+import javafx.fxml.FXML;
+import javafx.scene.shape.Rectangle;
+
+public class ClueGlassController extends ClueController {
+
+  @FXML private Rectangle buttonReturn;
+}
