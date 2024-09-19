@@ -44,8 +44,11 @@ public class SuspectController extends Controller {
 
     character = textHead.getText().toLowerCase();
 
-    System.out.println(character);
-    textHistory.setText(PromptEngineering.getResource("responses", character, "txt"));
+    if (!GameData.hasMetSuspect(character)) {
+      textHistory.setText(PromptEngineering.getResource("responses", character, "txt"));
+    } else {
+      textHistory.setText(PromptEngineering.getResource("returning", character, "txt"));
+    }
 
     try {
       ApiProxyConfig config = ApiProxyConfig.readConfig();
@@ -77,13 +80,13 @@ public class SuspectController extends Controller {
 
     switch (character) {
       case "archivist":
-        GameData.setMetArchivist(true);
+        GameData.setMetSuspect("archivist");
         break;
       case "collector":
-        GameData.setMetCollector(true);
+        GameData.setMetSuspect("collector");
         break;
       case "historian":
-        GameData.setMetHistorian(true);
+        GameData.setMetSuspect("historian");
         break;
     }
 

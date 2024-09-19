@@ -1,6 +1,7 @@
 package nz.ac.auckland.se206;
 
 import java.io.IOException;
+import java.util.HashMap;
 import javafx.scene.control.Label;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.controllers.GuessController;
@@ -8,16 +9,14 @@ import nz.ac.auckland.se206.controllers.GuessController;
 public class GameData {
 
   private GuessController guessController;
-  private static boolean metArchivist;
-  private static boolean metCollector;
-  private static boolean metHistorian;
   private static boolean usedClue;
   private static boolean isGuessing;
+  private static HashMap<String, Boolean> meetings = new HashMap<String, Boolean>();
 
   public GameData() {
-    metArchivist = false;
-    metCollector = false;
-    metHistorian = false;
+    meetings.put("archivist", false);
+    meetings.put("collector", false);
+    meetings.put("historian", false);
     usedClue = false;
     isGuessing = false;
   }
@@ -26,9 +25,9 @@ public class GameData {
     if (isGuessing) {
       guessController.handleSubmitClicked();
     } else if (GameData.hasUsedClue()
-        & GameData.hasMetArchivist()
-        & GameData.hasMetCollector()
-        & GameData.hasMetHistorian()) {
+        & GameData.hasMetSuspect("archivist")
+        & GameData.hasMetSuspect("collector")
+        & GameData.hasMetSuspect("historian")) {
 
       App.openGuessScene(timerLabel);
     } else {
@@ -44,32 +43,16 @@ public class GameData {
     return isGuessing;
   }
 
-  public static boolean hasMetArchivist() {
-    return metArchivist;
-  }
-
-  public static boolean hasMetCollector() {
-    return metCollector;
-  }
-
-  public static boolean hasMetHistorian() {
-    return metHistorian;
+  public static boolean hasMetSuspect(String suspect) {
+    return meetings.get(suspect);
   }
 
   public static boolean hasUsedClue() {
     return usedClue;
   }
 
-  public static void setMetArchivist(boolean metArchivist) {
-    GameData.metArchivist = metArchivist;
-  }
-
-  public static void setMetCollector(boolean metCollector) {
-    GameData.metCollector = metCollector;
-  }
-
-  public static void setMetHistorian(boolean metHistorian) {
-    GameData.metHistorian = metHistorian;
+  public static void setMetSuspect(String suspect) {
+    meetings.replace(suspect, true);
   }
 
   public static void setUsedClue(boolean usedClue) {

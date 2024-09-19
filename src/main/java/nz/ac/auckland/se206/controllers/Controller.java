@@ -27,9 +27,9 @@ public abstract class Controller {
 
   public void handleGuessClicked(MouseEvent event) throws IOException {
     if (GameData.hasUsedClue()
-        & GameData.hasMetArchivist()
-        & GameData.hasMetCollector()
-        & GameData.hasMetHistorian()) {
+        & GameData.hasMetSuspect("archivist")
+        & GameData.hasMetSuspect("collector")
+        & GameData.hasMetSuspect("historian")) {
       App.openGuessScene(buttonAccuse);
     }
   }
