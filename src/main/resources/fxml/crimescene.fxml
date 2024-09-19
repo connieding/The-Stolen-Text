@@ -52,6 +52,7 @@
       <Polygon fx:id="bookshelfClue" fill="RED" layoutX="462.0" layoutY="213.0" opacity="0.0" points="-13.399993896484375, 14.366668701171875, 20.79998779296875, 22.5, 20.79998779296875, -37.09999084472656, -13.399993896484375, -33.899993896484375" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Rectangle fx:id="clueBookshelf" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="168.0" layoutX="423.0" layoutY="129.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="130.0" />
 
+
       <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" >
           <cursor>
               <Cursor fx:constant="HAND" />

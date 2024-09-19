@@ -17,6 +17,7 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.GameData;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class SuspectController extends Controller {
@@ -31,6 +32,7 @@ public class SuspectController extends Controller {
   @FXML private Button textSend;
 
   private ChatCompletionRequest chatHistory;
+  private String character;
 
   /**
    * Initializes the historian suspect view.
@@ -40,10 +42,13 @@ public class SuspectController extends Controller {
   @FXML
   public void initialize() throws ApiProxyException {
 
-    String character = textHead.getText().toLowerCase();
+    character = textHead.getText().toLowerCase();
 
-    System.out.println(character);
-    textHistory.setText(PromptEngineering.getResource("responses", character, "txt"));
+    if (!GameData.hasMetSuspect(character)) {
+      textHistory.setText(PromptEngineering.getResource("responses", character, "txt"));
+    } else {
+      textHistory.setText(PromptEngineering.getResource("returning", character, "txt"));
+    }
 
     try {
       ApiProxyConfig config = ApiProxyConfig.readConfig();
@@ -66,7 +71,25 @@ public class SuspectController extends Controller {
 
   @FXML
   private void onSendMessage() throws ApiProxyException, IOException {
+
     String message = textEntry.getText();
+
+    if (message.isEmpty()) {
+      return;
+    }
+
+    switch (character) {
+      case "archivist":
+        GameData.setMetSuspect("archivist");
+        break;
+      case "collector":
+        GameData.setMetSuspect("collector");
+        break;
+      case "historian":
+        GameData.setMetSuspect("historian");
+        break;
+    }
+
     textEntry.setText("");
     // Request response from LLM
     Task<Void> chatTask =

@@ -11,6 +11,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameData;
 
 public class CrimesceneController extends Controller {
 
@@ -34,6 +35,7 @@ public class CrimesceneController extends Controller {
   public void initialize() throws ApiProxyException {}
 
   public void handleRectangleClicked(MouseEvent event) throws IOException {
+    GameData.setUsedClue(true);
     App.openScene(((Rectangle) event.getSource()), ((Rectangle) event.getSource()).getId());
   }
 
