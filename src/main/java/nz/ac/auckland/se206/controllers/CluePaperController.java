@@ -8,6 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameData;
 
 public class CluePaperController extends ClueController {
 
@@ -40,6 +41,10 @@ public class CluePaperController extends ClueController {
 
     // Play the clue voice after the last image is shown
     if (clickCount == images.length) {
+
+      // Set the clue as used
+      GameData.setUsedClue(true);
+
       try {
         Media clueVoice =
             new Media(App.class.getResource("/sounds/handkerchiefClue.mp3").toURI().toString());

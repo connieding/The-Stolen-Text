@@ -12,6 +12,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameData;
 
 public class ClueGlassController extends ClueController implements Initializable {
 
@@ -27,6 +28,10 @@ public class ClueGlassController extends ClueController implements Initializable
     // Check if all shards are newly dragged
     if (!draggedMap.containsValue(false) && !hasPlayed) {
       hasPlayed = true;
+
+      // Set the clue as used
+      GameData.setUsedClue(true);
+
       // All glasses are dragged
       // Play sound
       try {

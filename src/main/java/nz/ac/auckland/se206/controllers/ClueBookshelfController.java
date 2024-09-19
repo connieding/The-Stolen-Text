@@ -9,6 +9,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameData;
 
 public class ClueBookshelfController extends ClueController {
 
@@ -79,6 +80,9 @@ public class ClueBookshelfController extends ClueController {
 
       // Show the open book
       imageBook.setImage(new Image(getClass().getResourceAsStream("/images/bookOpen.png")));
+
+      // Set the clue as used
+      GameData.setUsedClue(true);
 
       // If the sound has not been played yet
       if (!sound) {
