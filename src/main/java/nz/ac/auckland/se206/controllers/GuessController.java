@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
+import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
@@ -82,7 +83,7 @@ public class GuessController {
     String motive = textMotive.getText().trim();
     String evidence = textEvidence.getText().trim();
 
-    String correctExplanation = PromptEngineering.getResource("prompts", "explanation", "txt");
+    String correctExplanation = PromptEngineering.getResource("prompts", "marking", "txt");
 
     String feedback = evaluateExplanation(selectedSuspect, motive, evidence, correctExplanation);
 
@@ -101,35 +102,27 @@ public class GuessController {
       throws IOException, ApiProxyException {
     ChatCompletionRequest request =
         new ChatCompletionRequest(config)
-            .addMessage("system", "You are a detective game assistant.")
+            .addMessage(new ChatMessage("system", correctExplanation))
             .addMessage(
-                "user",
-                "The player selected: "
-                    + suspect
-                    + ". Motive: "
-                    + motive
-                    + ". Evidence: "
-                    + evidence)
-            .addMessage("system", "The correct explanation is: " + correctExplanation)
-            .addMessage(
-                "system",
-                "Please compare the player's explanation to the correct one and provide feedback.")
+                new ChatMessage(
+                    "user",
+                    "The player selected: "
+                        + suspect
+                        + ". Motive: "
+                        + motive
+                        + ". Evidence: "
+                        + evidence))
             .setMaxTokens(200)
             .setTemperature(0.5);
 
-    ChatCompletionResult result = request.execute();
-
-    Choice firstChoice = null;
-    for (Choice choice : result.getChoices()) {
-      firstChoice = choice;
-      break;
-    }
-
-    if (firstChoice != null) {
+    try {
+      ChatCompletionResult result = request.execute();
+      Choice firstChoice = result.getChoices().iterator().next();
       String responseMessage = firstChoice.getChatMessage().getContent();
       return responseMessage;
-    } else {
-      return " Error: No response received from the AI.";
+    } catch (ApiProxyException e) {
+      e.printStackTrace();
+      return null;
     }
   }
 }
