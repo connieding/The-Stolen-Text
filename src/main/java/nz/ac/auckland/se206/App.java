@@ -73,7 +73,7 @@ public class App extends Application {
     stage.setScene(scene);
     stage.show();
     handleWindowClose();
-    int remaining = 40;
+    int remaining = 300;
     if (timerManager != null) {
       remaining = timerManager.getTime();
     }

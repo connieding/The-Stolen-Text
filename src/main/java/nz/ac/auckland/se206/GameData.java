@@ -14,6 +14,14 @@ public class GameData {
   private static boolean usedClue;
   private static boolean isGuessing;
 
+  public GameData() {
+    metArchivist = false;
+    metCollector = false;
+    metHistorian = false;
+    usedClue = false;
+    isGuessing = false;
+  }
+
   public void timeUp(Label timerLabel) throws ApiProxyException, IOException {
     if (isGuessing) {
       guessController.handleSubmitClicked();
