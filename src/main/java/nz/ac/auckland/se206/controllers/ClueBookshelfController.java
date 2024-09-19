@@ -15,6 +15,7 @@ public class ClueBookshelfController extends ClueController {
 
   @FXML private Rectangle buttonClueBook;
   @FXML private ImageView imageBook;
+  @FXML private ImageView crimesceneBg;
 
   // Book has been found
   private boolean clicked = false;
@@ -61,6 +62,10 @@ public class ClueBookshelfController extends ClueController {
 
     // If the book has not been found, and the book is clicked
     if (image && !clicked) {
+
+      // Set the background to have the book removed
+      crimesceneBg.setImage(
+          new Image(getClass().getResourceAsStream("/images/bookshelfRemoved.jpg")));
 
       // Show the closed book
       imageBook.setImage(new Image(getClass().getResourceAsStream("/images/bookClose.png")));
