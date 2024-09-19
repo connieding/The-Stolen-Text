@@ -101,6 +101,8 @@ public class App extends Application {
   }
 
   public static void reset() {
+    timerManager.stopTimer();
+    timerManager = null;
     data = new GameData();
   }
 

@@ -72,6 +72,7 @@ public class TimerManager {
   }
 
   public void stopTimer() {
+    instance = null;
     if (timerHandle != null && !timerHandle.isDone()) {
       timerHandle.cancel(true);
     }
