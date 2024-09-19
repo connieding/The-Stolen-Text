@@ -6,6 +6,7 @@ public class Draggable {
 
   private double mouseX;
   private double mouseY;
+  private boolean isDragged = false;
 
   public void makeDraggable(Node node) {
 
@@ -20,5 +21,14 @@ public class Draggable {
           node.setLayoutX(mouseEvent.getSceneX() - mouseX);
           node.setLayoutY(mouseEvent.getSceneY() - mouseY);
         });
+
+    node.setOnMouseReleased(
+        mouseEvent -> {
+          ClueGlassController.setDraggedMap(node, true);
+        });
+  }
+
+  public boolean isDragged() {
+    return isDragged;
   }
 }
