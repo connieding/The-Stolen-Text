@@ -42,15 +42,20 @@ public class SuspectController extends Controller {
   @FXML
   public void initialize() throws ApiProxyException {
 
+    // Determine which suspect is being interacted with
     character = textHead.getText().toLowerCase();
 
+    // Set the body text depending on whether the suspect has been met before
     if (!GameData.hasMetSuspect(character)) {
       textHistory.setText(PromptEngineering.getResource("responses", character, "txt"));
     } else {
       textHistory.setText(PromptEngineering.getResource("returning", character, "txt"));
     }
 
+    // Initialize the chat history for the AI
     try {
+
+      // Initialize the configs for the AI
       ApiProxyConfig config = ApiProxyConfig.readConfig();
 
       chatHistory =

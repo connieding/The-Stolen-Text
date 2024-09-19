@@ -11,7 +11,6 @@ import javafx.scene.control.Label;
 public class TimerManager {
 
   private static TimerManager instance;
-  private GameData data;
 
   public static synchronized TimerManager getInstance(GameData data) {
     if (instance == null) {
@@ -20,6 +19,7 @@ public class TimerManager {
     return instance;
   }
 
+  private GameData data;
   private ScheduledExecutorService scheduler;
   private ScheduledFuture<?> timerHandle;
   private int remainingTime;
@@ -30,26 +30,35 @@ public class TimerManager {
   }
 
   public void startTimer(int seconds, Label timerLabel) {
+
+    // Stop the timer if it is already running
     if (timerHandle != null && !timerHandle.isDone()) {
       timerHandle.cancel(true);
     }
 
+    // Initialize the timer variables
     this.timerLabel = timerLabel;
     this.remainingTime = seconds;
 
+    // Start the timer
     scheduler = Executors.newScheduledThreadPool(1);
     timerHandle =
         scheduler.scheduleAtFixedRate(
             () -> {
+
+              // While there is still time remaining, update the timer label
               if (remainingTime > 0) {
                 remainingTime--;
                 Platform.runLater(
                     () -> {
                       int min = remainingTime / 60;
                       int sec = remainingTime % 60;
-                      if (timerLabel != null)
+                      if (timerLabel != null) {
                         timerLabel.setText(String.format("%d:%02d", min, sec));
+                      }
                     });
+
+                // If the time is up, call the timeUp method in the GameData class
               } else {
                 Platform.runLater(
                     () -> {
@@ -59,6 +68,8 @@ public class TimerManager {
                         e.printStackTrace();
                       }
                     });
+
+                // Stop the timer
                 stopTimer();
               }
             },

@@ -64,38 +64,56 @@ public class App extends Application {
   }
 
   public static void openScene(Node button, String newScene) throws IOException {
+
+    // Load the new scene
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/" + newScene + ".fxml"));
     Parent root = loader.load();
-
     Stage stage = (Stage) button.getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+
+    // Close the previous scene
     handleWindowClose();
+
+    // Start the timer
     int remaining = 300;
     if (timerManager != null) {
       remaining = timerManager.getTime();
     }
     timerManager = TimerManager.getInstance(data);
+
+    // Set the timer label
     Label timerLabel = (Label) scene.lookup("#lblTimer");
     timerManager.startTimer(remaining, timerLabel);
+
+    // Ensure the timer stops when the window is closed
     stage.setOnCloseRequest(event -> handleWindowClose());
     root.requestFocus();
   }
 
   public static void openGuessScene(Node button) throws IOException {
+
+    // Load the guess scene
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/guess.fxml"));
     Parent root = loader.load();
-
     Stage stage = (Stage) button.getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+
+    // Tell the game data to use the guess controller
     data.setGuessController(loader.getController());
+
+    // Close the previous scene
     handleWindowClose();
+
+    // Start the timer
     timerManager = TimerManager.getInstance(data);
     Label timerLabel = (Label) scene.lookup("#lblTimer");
     timerManager.startTimer(60, timerLabel);
+
+    // Ensure the timer stops when the window is closed
     stage.setOnCloseRequest(event -> handleWindowClose());
     root.requestFocus();
   }

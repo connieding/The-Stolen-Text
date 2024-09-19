@@ -40,8 +40,12 @@ public class CrimesceneController extends Controller {
   }
 
   public void handleClueEntered(MouseEvent event) {
+
+    // Determine which clue is being hovered over
     Rectangle source = (Rectangle) event.getSource();
     String id = source.getId();
+
+    // Highlight the corresponding clue
     if (id.equals("clueGlass")) {
       shardOne.setOpacity(0.7);
       shardTwo.setOpacity(0.7);
@@ -54,8 +58,12 @@ public class CrimesceneController extends Controller {
   }
 
   public void handleClueExited(MouseEvent event) {
+
+    // Determine which clue is being hovered over
     Rectangle source = (Rectangle) event.getSource();
     String id = source.getId();
+
+    // Unhighlight the corresponding clue
     if (id.equals("clueGlass")) {
       shardOne.setOpacity(0);
       shardTwo.setOpacity(0);

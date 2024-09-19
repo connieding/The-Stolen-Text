@@ -19,12 +19,16 @@ public class CluePaperController extends ClueController {
 
   @FXML
   void handleClickHandkerchief(MouseEvent event) {
+
+    // Increment the click count
     clickCount++;
 
+    // Hide the original background handkerchief image after the first click
     if (clickCount == 1) {
       imageHandkerchief.setVisible(false);
     }
 
+    // Load the images to animate
     Image[] images = {
       new Image(getClass().getResourceAsStream("/images/frame1.png")),
       new Image(getClass().getResourceAsStream("/images/frame2.png")),
@@ -34,6 +38,7 @@ public class CluePaperController extends ClueController {
       new Image(getClass().getResourceAsStream("/images/handkerchief.png")),
     };
 
+    // Play the clue voice after the last image is shown
     if (clickCount == images.length) {
       try {
         Media clueVoice =
@@ -45,6 +50,7 @@ public class CluePaperController extends ClueController {
       }
     }
 
+    // Animate the images
     if (clickCount <= images.length) {
       imageAnimate.setImage(images[clickCount - 1]);
     }
