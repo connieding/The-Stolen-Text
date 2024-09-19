@@ -1,5 +1,6 @@
 package nz.ac.auckland.se206;
 
+import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -44,12 +45,17 @@ public class TimerManager {
                     () -> {
                       int min = remainingTime / 60;
                       int sec = remainingTime % 60;
-                      if (timerLabel != null) timerLabel.setText(String.format("%d:%d", min, sec));
+                      if (timerLabel != null)
+                        timerLabel.setText(String.format("%d:%02d", min, sec));
                     });
               } else {
                 Platform.runLater(
                     () -> {
-                      timerLabel.setText("Time's up!");
+                      try {
+                        App.openGuessScene(timerLabel);
+                      } catch (IOException e) {
+                        e.printStackTrace();
+                      }
                     });
                 stopTimer();
               }
