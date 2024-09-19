@@ -69,6 +69,12 @@ public class SuspectController extends Controller {
   @FXML
   private void onSendMessage() throws ApiProxyException, IOException {
 
+    String message = textEntry.getText();
+
+    if (message.isEmpty()) {
+      return;
+    }
+
     switch (character) {
       case "archivist":
         GameData.setMetArchivist(true);
@@ -81,7 +87,6 @@ public class SuspectController extends Controller {
         break;
     }
 
-    String message = textEntry.getText();
     textEntry.setText("");
     // Request response from LLM
     Task<Void> chatTask =
