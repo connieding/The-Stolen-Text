@@ -73,7 +73,7 @@ public class App extends Application {
     stage.setScene(scene);
     stage.show();
     handleWindowClose();
-    int remaining = 300;
+    int remaining = 40;
     if (timerManager != null) {
       remaining = timerManager.getTime();
     }
@@ -92,6 +92,7 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+    data.setGuessController(loader.getController());
     handleWindowClose();
     timerManager = TimerManager.getInstance(data);
     Label timerLabel = (Label) scene.lookup("#lblTimer");

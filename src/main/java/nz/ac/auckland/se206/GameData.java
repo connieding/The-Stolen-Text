@@ -17,8 +17,14 @@ public class GameData {
   public void timeUp(Label timerLabel) throws ApiProxyException, IOException {
     if (isGuessing) {
       guessController.handleSubmitClicked();
-    } else {
+    } else if (GameData.hasUsedClue()
+        & GameData.hasMetArchivist()
+        & GameData.hasMetCollector()
+        & GameData.hasMetHistorian()) {
+
       App.openGuessScene(timerLabel);
+    } else {
+      App.openScene(timerLabel, "failed");
     }
   }
 

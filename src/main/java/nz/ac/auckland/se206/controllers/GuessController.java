@@ -50,9 +50,9 @@ public class GuessController extends Controller {
 
     hideAllCircles();
 
-    archivistSelect.setOnMouseClicked(event -> setSelectedSuspect("Archivist"));
-    collectorSelect.setOnMouseClicked(event -> setSelectedSuspect("Collector"));
-    historianSelect.setOnMouseClicked(event -> setSelectedSuspect("Historian"));
+    archivistSelect.setOnMouseClicked(event -> setSelectedSuspect("archivist"));
+    collectorSelect.setOnMouseClicked(event -> setSelectedSuspect("collector"));
+    historianSelect.setOnMouseClicked(event -> setSelectedSuspect("historian"));
   }
 
   private void setSelectedSuspect(String suspect) {
@@ -64,13 +64,13 @@ public class GuessController extends Controller {
     collectorSelect.setOpacity(0.7);
     historianSelect.setOpacity(0.7);
 
-    if (suspect.equals("Archivist")) {
+    if (suspect.equals("archivist")) {
       archivistSelect.setOpacity(1.0);
       circleArchivist.setVisible(true);
-    } else if (suspect.equals("Collector")) {
+    } else if (suspect.equals("collector")) {
       collectorSelect.setOpacity(1.0);
       circleCollector.setVisible(true);
-    } else if (suspect.equals("Historian")) {
+    } else if (suspect.equals("historian")) {
       historianSelect.setOpacity(1.0);
       circleHistorian.setVisible(true);
     }
