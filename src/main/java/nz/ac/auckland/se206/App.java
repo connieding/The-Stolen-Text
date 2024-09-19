@@ -57,7 +57,6 @@ public class App extends Application {
     Pane root = loader.load();
     scene = new Scene(root);
     (((Pane) button.getScene().lookup("#mapSubScene")).getChildren()).add(root);
-    // ((Pane) scene.getRoot()).getChildren().add(button.getScene().lookup("#mapSubScene"));
   }
 
   public static void hideMap(Node button) throws IOException {

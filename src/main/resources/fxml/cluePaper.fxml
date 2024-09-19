@@ -24,8 +24,8 @@
             <Image url="@../images/judgeHammer.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="14.0" layoutY="336.0" onMouseClicked="#handleMapClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" onMouseClicked="#handleGuessClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
+      <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="6.0" layoutY="331.0" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="62.0" />
+      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="87.0" layoutY="336.0" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="75.0" />
       <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="-13.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@../images/pocketWatch.png" />
@@ -41,13 +41,13 @@
             <Image url="@../images/return.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="buttonReturn" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="535.0" layoutY="341.0" onMouseClicked="#handleRectangleClicked" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
+      <Rectangle fx:id="buttonReturn" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="535.0" layoutY="341.0" onMouseClicked="#handleRectangleClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
       <ImageView fx:id="imageHandkerchief" fitHeight="62.0" fitWidth="131.0" layoutX="252.0" layoutY="255.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/handkerchiefWhite.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="mapSubScene" disable="true" layoutX="150.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" visible="false" />
       <ImageView fx:id="imageAnimate" fitHeight="322.0" fitWidth="325.0" layoutX="155.0" layoutY="39.0" onMouseClicked="#handleClickHandkerchief" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane fx:id="mapSubScene" disable="true" layoutX="150.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" visible="false" />
    </children>
 </AnchorPane>
