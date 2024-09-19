@@ -10,7 +10,7 @@ import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
 
-public class MapController {
+public class MapController extends Controller {
 
   @FXML public AnchorPane mapPane;
   @FXML public ImageView mapBg;

@@ -17,7 +17,7 @@ import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
-public class GuessController {
+public class GuessController extends Controller {
 
   @FXML private ImageView archivistSelect;
   @FXML private ImageView collectorSelect;

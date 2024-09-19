@@ -4,15 +4,12 @@ import java.io.IOException;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionRequest;
 import nz.ac.auckland.apiproxy.chat.openai.ChatCompletionResult;
@@ -20,25 +17,19 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
-public class SuspectController implements Controller {
+public class SuspectController extends Controller {
 
   @FXML private AnchorPane suspectPane;
   @FXML private ImageView suspectBg;
   @FXML private Text mainHead;
-  @FXML private Rectangle buttonMap;
-  @FXML private Rectangle buttonAccuse;
   @FXML private AnchorPane textPane;
   @FXML private Text textHead;
   @FXML private TextArea textHistory;
   @FXML private TextField textEntry;
   @FXML private Button textSend;
-  @FXML private Label lblTimer;
-  @FXML private AnchorPane mapSubScene;
 
-  private boolean isMapOut = false;
   private ChatCompletionRequest chatHistory;
 
   /**
@@ -106,29 +97,6 @@ public class SuspectController implements Controller {
     Thread chatThread = new Thread(chatTask);
     chatThread.setDaemon(true);
     chatThread.start();
-  }
-
-  @Override
-  public void setTime(String timeRemaining) {
-    lblTimer.setText(timeRemaining);
-  }
-
-  @Override
-  public void handleGuessClicked(MouseEvent event) throws IOException {
-    App.openGuessScene(buttonAccuse);
-  }
-
-  @Override
-  public void handleMapClicked(MouseEvent event) throws IOException {
-
-    mapSubScene.setVisible(!mapSubScene.isVisible());
-    mapSubScene.setDisable(!mapSubScene.isDisable());
-    if (!isMapOut) {
-      App.overlayMap(buttonMap);
-    } else {
-      App.hideMap(buttonMap);
-    }
-    isMapOut = !isMapOut;
   }
 
   /**

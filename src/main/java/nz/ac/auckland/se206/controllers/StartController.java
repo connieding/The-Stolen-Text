@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
 
-public class StartController {
+public class StartController extends Controller {
 
   @FXML private Button startButton;
 
