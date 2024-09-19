@@ -1,9 +1,13 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.net.URISyntaxException;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import nz.ac.auckland.se206.App;
 
 public class CluePaperController extends ClueController {
 
@@ -11,6 +15,7 @@ public class CluePaperController extends ClueController {
   @FXML private ImageView imageHandkerchief;
 
   private int clickCount = 0;
+  private MediaPlayer cluePlayer;
 
   @FXML
   void handleClickHandkerchief(MouseEvent event) {
@@ -28,6 +33,17 @@ public class CluePaperController extends ClueController {
       new Image(getClass().getResourceAsStream("/images/frame5.png")),
       new Image(getClass().getResourceAsStream("/images/handkerchief.png")),
     };
+
+    if (clickCount == images.length) {
+      try {
+        Media clueVoice =
+            new Media(App.class.getResource("/sounds/handkerchiefClue.mp3").toURI().toString());
+        cluePlayer = new MediaPlayer(clueVoice);
+        cluePlayer.play();
+      } catch (URISyntaxException e) {
+        e.printStackTrace();
+      }
+    }
 
     if (clickCount <= images.length) {
       imageAnimate.setImage(images[clickCount - 1]);
