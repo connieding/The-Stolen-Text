@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="581.0" fitWidth="600.0" layoutY="-176.0" pickOnBounds="true">
          <image>
-            <Image url="@../images/paperBackground.jpg" />
+            <Image url="@../images/handkerchiefBackground.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="66.0" fitWidth="62.0" layoutX="7.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
@@ -42,9 +42,9 @@
          </image>
       </ImageView>
       <Rectangle fx:id="buttonReturn" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="535.0" layoutY="341.0" opacity="0.41" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-      <ImageView fx:id="imageBall" fitHeight="113.0" fitWidth="110.0" layoutX="245.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageBall" fitHeight="62.0" fitWidth="131.0" layoutX="252.0" layoutY="255.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/paperBallDark.png" />
+            <Image url="@../images/handkerchiefWhite.png" />
          </image>
       </ImageView>
    </children>
