@@ -31,9 +31,6 @@ public class CluePaperController extends ClueController {
 
     if (clickCount <= images.length) {
       imageAnimate.setImage(images[clickCount - 1]);
-    } else {
-      clickCount = 0;
-      imageAnimate.setImage(images[clickCount]);
     }
   }
 }
