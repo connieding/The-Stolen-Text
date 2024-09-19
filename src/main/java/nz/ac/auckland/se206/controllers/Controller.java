@@ -8,6 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameData;
 
 public abstract class Controller {
 
@@ -25,7 +26,12 @@ public abstract class Controller {
   }
 
   public void handleGuessClicked(MouseEvent event) throws IOException {
-    App.openGuessScene(buttonAccuse);
+    if (GameData.hasUsedClue()
+        & GameData.hasMetArchivist()
+        & GameData.hasMetCollector()
+        & GameData.hasMetHistorian()) {
+      App.openGuessScene(buttonAccuse);
+    }
   }
 
   public void handleMapClicked(MouseEvent event) throws IOException {

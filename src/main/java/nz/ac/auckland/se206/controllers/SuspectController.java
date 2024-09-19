@@ -17,6 +17,7 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.GameData;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class SuspectController extends Controller {
@@ -31,6 +32,7 @@ public class SuspectController extends Controller {
   @FXML private Button textSend;
 
   private ChatCompletionRequest chatHistory;
+  private String character;
 
   /**
    * Initializes the historian suspect view.
@@ -40,7 +42,7 @@ public class SuspectController extends Controller {
   @FXML
   public void initialize() throws ApiProxyException {
 
-    String character = textHead.getText().toLowerCase();
+    character = textHead.getText().toLowerCase();
 
     System.out.println(character);
     textHistory.setText(PromptEngineering.getResource("responses", character, "txt"));
@@ -66,6 +68,19 @@ public class SuspectController extends Controller {
 
   @FXML
   private void onSendMessage() throws ApiProxyException, IOException {
+
+    switch (character) {
+      case "archivist":
+        GameData.setMetArchivist(true);
+        break;
+      case "collector":
+        GameData.setMetCollector(true);
+        break;
+      case "historian":
+        GameData.setMetHistorian(true);
+        break;
+    }
+
     String message = textEntry.getText();
     textEntry.setText("");
     // Request response from LLM
