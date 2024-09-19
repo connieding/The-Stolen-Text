@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -20,10 +19,9 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
-public class SuspectController implements Controller {
+public class SuspectController extends Controller {
 
   @FXML private AnchorPane suspectPane;
   @FXML private ImageView suspectBg;
@@ -106,29 +104,6 @@ public class SuspectController implements Controller {
     Thread chatThread = new Thread(chatTask);
     chatThread.setDaemon(true);
     chatThread.start();
-  }
-
-  @Override
-  public void setTime(String timeRemaining) {
-    lblTimer.setText(timeRemaining);
-  }
-
-  @Override
-  public void handleGuessClicked(MouseEvent event) throws IOException {
-    App.openGuessScene(buttonAccuse);
-  }
-
-  @Override
-  public void handleMapClicked(MouseEvent event) throws IOException {
-
-    mapSubScene.setVisible(!mapSubScene.isVisible());
-    mapSubScene.setDisable(!mapSubScene.isDisable());
-    if (!isMapOut) {
-      App.overlayMap(buttonMap);
-    } else {
-      App.hideMap(buttonMap);
-    }
-    isMapOut = !isMapOut;
   }
 
   /**

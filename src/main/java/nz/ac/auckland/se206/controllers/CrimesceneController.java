@@ -1,6 +1,5 @@
 package nz.ac.auckland.se206.controllers;
 
-import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -9,9 +8,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
-import nz.ac.auckland.se206.App;
 
-public class CrimesceneController implements Controller {
+public class CrimesceneController extends Controller {
 
   @FXML private AnchorPane crimescenePane;
   @FXML private ImageView crimesceneBg;
@@ -28,29 +26,6 @@ public class CrimesceneController implements Controller {
 
   @Override
   public void initialize() throws ApiProxyException {}
-
-  @Override
-  public void setTime(String timeRemaining) {
-    lblTimer.setText(timeRemaining);
-  }
-
-  @Override
-  public void handleGuessClicked(MouseEvent event) throws IOException {
-    App.openGuessScene(buttonAccuse);
-  }
-
-  @Override
-  public void handleMapClicked(MouseEvent event) throws IOException {
-
-    mapSubScene.setVisible(!mapSubScene.isVisible());
-    mapSubScene.setDisable(!mapSubScene.isDisable());
-    if (!isMapOut) {
-      App.overlayMap(buttonMap);
-    } else {
-      App.hideMap(buttonMap);
-    }
-    isMapOut = !isMapOut;
-  }
 
   public void handleRectangleClicked(MouseEvent event) {
     System.out.println("Clue clicked: " + event.getSource());
