@@ -15,6 +15,8 @@ import nz.ac.auckland.apiproxy.chat.openai.ChatMessage;
 import nz.ac.auckland.apiproxy.chat.openai.Choice;
 import nz.ac.auckland.apiproxy.config.ApiProxyConfig;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameData;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 public class GuessController extends Controller {
@@ -35,10 +37,11 @@ public class GuessController extends Controller {
   @FXML private TextArea textEvidence;
 
   private String selectedSuspect = null; // Variable to hold the selected suspect
-  private ApiProxyConfig config;
+  private static ApiProxyConfig config;
 
   @FXML
   public void initialize() {
+    GameData.setGuessing(true);
     try {
       config = ApiProxyConfig.readConfig();
     } catch (ApiProxyException e) {
@@ -53,7 +56,7 @@ public class GuessController extends Controller {
   }
 
   private void setSelectedSuspect(String suspect) {
-    this.selectedSuspect = suspect;
+    selectedSuspect = suspect;
 
     hideAllCircles();
 
@@ -80,6 +83,7 @@ public class GuessController extends Controller {
   }
 
   public void handleSubmitClicked() throws ApiProxyException, IOException {
+
     String motive = textMotive.getText().trim();
     String evidence = textEvidence.getText().trim();
 
@@ -87,7 +91,7 @@ public class GuessController extends Controller {
 
     String feedback = evaluateExplanation(selectedSuspect, motive, evidence, correctExplanation);
 
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/feedback.fxml"));
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/feedback.fxml"));
     Parent root = loader.load();
 
     FeedbackController feedbackController = loader.getController();
@@ -97,7 +101,7 @@ public class GuessController extends Controller {
     stage.setScene(new Scene(root));
   }
 
-  private String evaluateExplanation(
+  private static String evaluateExplanation(
       String suspect, String motive, String evidence, String correctExplanation)
       throws IOException, ApiProxyException {
     ChatCompletionRequest request =

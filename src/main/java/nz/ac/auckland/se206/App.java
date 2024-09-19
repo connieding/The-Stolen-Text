@@ -19,6 +19,7 @@ public class App extends Application {
 
   private static Scene scene;
   private static TimerManager timerManager;
+  private static GameData data;
 
   /**
    * The main method that launches the JavaFX application.
@@ -72,11 +73,11 @@ public class App extends Application {
     stage.setScene(scene);
     stage.show();
     handleWindowClose();
-    int remaining = 15;
+    int remaining = 300;
     if (timerManager != null) {
       remaining = timerManager.getTime();
     }
-    timerManager = TimerManager.getInstance();
+    timerManager = TimerManager.getInstance(data);
     Label timerLabel = (Label) scene.lookup("#lblTimer");
     timerManager.startTimer(remaining, timerLabel);
     stage.setOnCloseRequest(event -> handleWindowClose());
@@ -92,11 +93,15 @@ public class App extends Application {
     stage.setScene(scene);
     stage.show();
     handleWindowClose();
-    timerManager = TimerManager.getInstance();
+    timerManager = TimerManager.getInstance(data);
     Label timerLabel = (Label) scene.lookup("#lblTimer");
     timerManager.startTimer(60, timerLabel);
     stage.setOnCloseRequest(event -> handleWindowClose());
     root.requestFocus();
+  }
+
+  public static void reset() {
+    data = new GameData();
   }
 
   /**
@@ -107,13 +112,14 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
+    data = new GameData();
     Parent root = loadFxml("start");
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
   }
 
-  private static void handleWindowClose() {
+  public static void handleWindowClose() {
     FreeTextToSpeech.deallocateSynthesizer();
 
     if (timerManager != null) {

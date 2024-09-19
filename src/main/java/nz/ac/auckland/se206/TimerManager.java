@@ -1,6 +1,5 @@
 package nz.ac.auckland.se206;
 
-import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -12,10 +11,11 @@ import javafx.scene.control.Label;
 public class TimerManager {
 
   private static TimerManager instance;
+  private GameData data;
 
-  public static synchronized TimerManager getInstance() {
+  public static synchronized TimerManager getInstance(GameData data) {
     if (instance == null) {
-      instance = new TimerManager();
+      instance = new TimerManager(data);
     }
     return instance;
   }
@@ -25,7 +25,9 @@ public class TimerManager {
   private int remainingTime;
   @FXML private Label timerLabel;
 
-  private TimerManager() {}
+  private TimerManager(GameData data) {
+    this.data = data;
+  }
 
   public void startTimer(int seconds, Label timerLabel) {
     if (timerHandle != null && !timerHandle.isDone()) {
@@ -52,8 +54,8 @@ public class TimerManager {
                 Platform.runLater(
                     () -> {
                       try {
-                        App.openGuessScene(timerLabel);
-                      } catch (IOException e) {
+                        data.timeUp(timerLabel);
+                      } catch (Exception e) {
                         e.printStackTrace();
                       }
                     });
