@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
@@ -23,11 +24,34 @@ public class CrimesceneController extends Controller {
   @FXML private Rectangle buttonAccuse;
   @FXML private Label lblTimer;
   @FXML private AnchorPane mapSubScene;
+  @FXML private Polygon shardOne;
+  @FXML private Polygon shardTwo;
+  @FXML private Polygon shardThree;
 
   @Override
   public void initialize() throws ApiProxyException {}
 
   public void handleRectangleClicked(MouseEvent event) throws IOException {
     App.openScene(((Rectangle) event.getSource()), ((Rectangle) event.getSource()).getId());
+  }
+
+  public void handleClueEntered(MouseEvent event) {
+    if (((Rectangle) event.getSource()).getId().equals("clueGlass")) {
+      shardOne.setOpacity(0.7);
+      shardTwo.setOpacity(0.7);
+      shardThree.setOpacity(0.7);
+    } else {
+      ((Polygon) event.getSource()).setOpacity(0);
+    }
+  }
+
+  public void handleClueExited(MouseEvent event) {
+    if (((Rectangle) event.getSource()).getId().equals("clueGlass")) {
+      shardOne.setOpacity(0);
+      shardTwo.setOpacity(0);
+      shardThree.setOpacity(0);
+    } else {
+      ((Rectangle) event.getSource()).setOpacity(0);
+    }
   }
 }
