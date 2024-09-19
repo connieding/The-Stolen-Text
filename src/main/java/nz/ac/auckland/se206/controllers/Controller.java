@@ -36,8 +36,11 @@ public abstract class Controller {
 
   public void handleMapClicked(MouseEvent event) throws IOException {
 
+    // Toggle the map visibility/interaction
     mapSubScene.setVisible(!mapSubScene.isVisible());
     mapSubScene.setDisable(!mapSubScene.isDisable());
+
+    // Toggle the map overlay
     if (!isMapOut) {
       App.overlayMap(buttonMap);
     } else {

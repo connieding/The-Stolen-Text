@@ -15,32 +15,16 @@ import nz.ac.auckland.se206.App;
 
 public class ClueGlassController extends ClueController implements Initializable {
 
-  @FXML private Rectangle buttonReturn;
-  @FXML private ImageView imgGlass1;
-  @FXML private ImageView imgGlass2;
-  @FXML private ImageView imgGlass3;
-  @FXML private ImageView imgGlass4;
-
   private static HashMap<Node, Boolean> draggedMap = new HashMap<>();
   private static MediaPlayer cluePlayer;
   private static boolean hasPlayed = false;
 
-  Draggable draggable = new Draggable();
-
-  @Override
-  public void initialize(URL url, ResourceBundle resourceBundle) {
-    draggable.makeDraggable(imgGlass1);
-    draggable.makeDraggable(imgGlass2);
-    draggable.makeDraggable(imgGlass3);
-    draggable.makeDraggable(imgGlass4);
-    draggedMap.put(imgGlass1, false);
-    draggedMap.put(imgGlass2, false);
-    draggedMap.put(imgGlass3, false);
-    draggedMap.put(imgGlass4, false);
-  }
-
   public static void setDraggedMap(Node imgGlass, boolean isDragged) {
+
+    // Set the current shard to dragged
     draggedMap.replace(imgGlass, isDragged);
+
+    // Check if all shards are newly dragged
     if (!draggedMap.containsValue(false) && !hasPlayed) {
       hasPlayed = true;
       // All glasses are dragged
@@ -54,5 +38,28 @@ public class ClueGlassController extends ClueController implements Initializable
         e.printStackTrace();
       }
     }
+  }
+
+  @FXML private Rectangle buttonReturn;
+  @FXML private ImageView imgGlass1;
+  @FXML private ImageView imgGlass2;
+  @FXML private ImageView imgGlass3;
+  @FXML private ImageView imgGlass4;
+  private Draggable draggable = new Draggable();
+
+  @Override
+  public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    // Make the glass shard draggable
+    draggable.makeDraggable(imgGlass1);
+    draggable.makeDraggable(imgGlass2);
+    draggable.makeDraggable(imgGlass3);
+    draggable.makeDraggable(imgGlass4);
+
+    // Set the glass shards as not dragged
+    draggedMap.put(imgGlass1, false);
+    draggedMap.put(imgGlass2, false);
+    draggedMap.put(imgGlass3, false);
+    draggedMap.put(imgGlass4, false);
   }
 }

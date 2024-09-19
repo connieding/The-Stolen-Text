@@ -12,13 +12,13 @@ import nz.ac.auckland.se206.App;
 
 public class MapController extends Controller {
 
-  @FXML public AnchorPane mapPane;
-  @FXML public ImageView mapBg;
-  @FXML public Text mapHead;
-  @FXML public Rectangle collector;
-  @FXML public Rectangle archivist;
-  @FXML public Rectangle crimescene;
-  @FXML public Rectangle historian;
+  @FXML private AnchorPane mapPane;
+  @FXML private ImageView mapBg;
+  @FXML private Text mapHead;
+  @FXML private Rectangle collector;
+  @FXML private Rectangle archivist;
+  @FXML private Rectangle crimescene;
+  @FXML private Rectangle historian;
 
   /**
    * Initializes the map view.
