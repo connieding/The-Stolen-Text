@@ -27,6 +27,8 @@ public class CrimesceneController extends Controller {
   @FXML private Polygon shardOne;
   @FXML private Polygon shardTwo;
   @FXML private Polygon shardThree;
+  @FXML private Polygon handkerchiefClue;
+  @FXML private Polygon bookshelfClue;
 
   @Override
   public void initialize() throws ApiProxyException {}
@@ -36,22 +38,30 @@ public class CrimesceneController extends Controller {
   }
 
   public void handleClueEntered(MouseEvent event) {
-    if (((Rectangle) event.getSource()).getId().equals("clueGlass")) {
+    Rectangle source = (Rectangle) event.getSource();
+    String id = source.getId();
+    if (id.equals("clueGlass")) {
       shardOne.setOpacity(0.7);
       shardTwo.setOpacity(0.7);
       shardThree.setOpacity(0.7);
+    } else if (id.equals("cluePaper")) {
+      handkerchiefClue.setOpacity(0.7);
     } else {
-      ((Polygon) event.getSource()).setOpacity(0);
+      bookshelfClue.setOpacity(0.7);
     }
   }
 
   public void handleClueExited(MouseEvent event) {
-    if (((Rectangle) event.getSource()).getId().equals("clueGlass")) {
+    Rectangle source = (Rectangle) event.getSource();
+    String id = source.getId();
+    if (id.equals("clueGlass")) {
       shardOne.setOpacity(0);
       shardTwo.setOpacity(0);
       shardThree.setOpacity(0);
+    } else if (id.equals("cluePaper")) {
+      handkerchiefClue.setOpacity(0);
     } else {
-      ((Rectangle) event.getSource()).setOpacity(0);
+      bookshelfClue.setOpacity(0);
     }
   }
 }
