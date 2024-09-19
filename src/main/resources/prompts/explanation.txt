@@ -2,7 +2,7 @@ Set in a library, a text was stolen. The text is a valuable first-hand account o
 Suspects are a historian, who has library access, and a research-driven motive to steal the valuable text, 
 which supposedly invalidates his previous beliefs about a historical event. The librarian, who is short on cash, 
 so potentially wanted to steal the cover to sell, for herself, and an antique collector, who was looking to purchase the book, 
-due to its unique cover. One clue lets you inspect a bookcase, where you find that one of the books is out of order, the book 
+due to its unique cover. One clue lets you inspect a bookcase, where you find that one of the books is in the wrong order, the book 
 describes the process of rebinding a book. Drops of glue on the bookshelf indicate one of the books has recently been re-bound, 
 so that the cover doesn't match the contents. In fact, the contents are that of the text previously thought to be stolen, meaning the 
 actual theft was of only the cover. The final clue is a red-herring, some property of the historian that was left on the scene. 

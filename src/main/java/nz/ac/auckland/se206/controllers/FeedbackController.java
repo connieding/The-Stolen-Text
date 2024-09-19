@@ -1,11 +1,11 @@
 package nz.ac.auckland.se206.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
 
 public class FeedbackController {
 
-  @FXML private TextArea feedbackText;
+  @FXML private Text feedbackText;
 
   // Method to set the feedback message
   public void setFeedback(String feedback) {

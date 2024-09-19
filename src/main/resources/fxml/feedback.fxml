@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.FeedbackController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#68511c" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
       <ImageView fitHeight="504.0" fitWidth="988.0" layoutX="-221.0" layoutY="-53.0" pickOnBounds="true">
@@ -42,7 +42,7 @@
             <Image url="@../images/collectorPortrait.png" />
          </image>
       </ImageView>
-      <Text fill="#68380e" layoutX="311.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Example Feedback: You guessed correctly, but you got the motive wrong, the motive should be to add the cover to his collection, since he is a collector of valuable books. Addidtionally, he rebound it to pin the blame on the librarian if we discovered it." textAlignment="JUSTIFY" wrappingWidth="263.7367858886719">
+      <Text fx:id="feedbackText" fill="#68380e" layoutX="311.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Example Feedback: You guessed correctly, but you got the motive wrong, the motive should be to add the cover to his collection, since he is a collector of valuable books. Addidtionally, he rebound it to pin the blame on the librarian if we discovered it." textAlignment="JUSTIFY" wrappingWidth="263.7367858886719">
          <font>
             <Font name="Sylfaen" size="12.0" />
          </font>
