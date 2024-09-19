@@ -47,7 +47,7 @@
             <Image url="@../images/handkerchiefWhite.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="mapSubScene" disable="true" layoutX="150.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" visible="false" />
       <ImageView fx:id="imageAnimate" fitHeight="322.0" fitWidth="325.0" layoutX="155.0" layoutY="39.0" onMouseClicked="#handleClickHandkerchief" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane fx:id="mapSubScene" disable="true" layoutX="150.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" visible="false" />
    </children>
 </AnchorPane>
