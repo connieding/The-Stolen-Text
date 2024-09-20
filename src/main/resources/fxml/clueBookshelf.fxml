@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.Cursor?>
 
 <AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.ClueBookshelfController">
    <children>
@@ -24,9 +25,21 @@
          </image>
       </ImageView>
       <ImageView fx:id="imageBook" fitHeight="602.0" fitWidth="697.0" layoutX="-45.0" layoutY="-103.0" pickOnBounds="true" preserveRatio="true" />
-      <Rectangle fx:id="buttonClueBook" arcHeight="5.0" arcWidth="5.0" fill="RED" height="239.0" layoutX="162.0" layoutY="115.0" onMouseClicked="#bookClick" onMouseEntered="#highlightBook" onMouseExited="#unhighlightBook" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="29.0" />
-      <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="7.0" layoutY="329.0" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="62.0" />
-      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="87.0" layoutY="336.0" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="75.0" />
+      <Rectangle fx:id="buttonClueBook" arcHeight="5.0" arcWidth="5.0" fill="RED" height="239.0" layoutX="162.0" layoutY="115.0" onMouseClicked="#bookClick" onMouseEntered="#highlightBook" onMouseExited="#unhighlightBook" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="29.0" >
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Rectangle>
+      <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="7.0" layoutY="329.0" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="62.0" >
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Rectangle>
+      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="87.0" layoutY="336.0" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="75.0" >
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Rectangle>
       <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="-13.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@../images/pocketWatch.png" />
@@ -37,12 +50,14 @@
             <Font name="Sylfaen" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="53.0" fitWidth="50.0" layoutX="535.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonReturn" fitHeight="53.0" fitWidth="50.0" layoutX="535.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#handleRectangleClicked">
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
          <image>
             <Image url="@../images/return.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="buttonReturn" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="535.0" layoutY="341.0" onMouseClicked="#handleRectangleClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
       <ImageView fitHeight="45.0" fitWidth="52.0" layoutX="167.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/glueStain.png" />
