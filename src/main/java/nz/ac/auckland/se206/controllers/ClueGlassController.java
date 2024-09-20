@@ -10,7 +10,6 @@ import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 
@@ -45,7 +44,7 @@ public class ClueGlassController extends ClueController implements Initializable
     }
   }
 
-  @FXML private Rectangle buttonReturn;
+  @FXML private ImageView buttonReturn;
   @FXML private ImageView imgGlass1;
   @FXML private ImageView imgGlass2;
   @FXML private ImageView imgGlass3;
