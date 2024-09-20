@@ -37,6 +37,7 @@ public abstract class Controller {
       App.openGuessScene(buttonAccuse);
     } else if (!GameData.hasUsedClue()) {
       try {
+        ClueController.silence();
         Media hintVoice =
             new Media(App.class.getResource("/sounds/guessPreventerTwo.mp3").toURI().toString());
         hintPlayer = new MediaPlayer(hintVoice);
@@ -46,6 +47,7 @@ public abstract class Controller {
       }
     } else {
       try {
+        ClueController.silence();
         Media hintVoice =
             new Media(App.class.getResource("/sounds/guessPreventerOne.mp3").toURI().toString());
         hintPlayer = new MediaPlayer(hintVoice);

@@ -5,8 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 
@@ -16,7 +14,6 @@ public class CluePaperController extends ClueController {
   @FXML private ImageView imageHandkerchief;
 
   private int clickCount = 0;
-  private MediaPlayer cluePlayer;
 
   @FXML
   void handleClickHandkerchief(MouseEvent event) {
@@ -46,10 +43,7 @@ public class CluePaperController extends ClueController {
       GameData.setUsedClue(true);
 
       try {
-        Media clueVoice =
-            new Media(App.class.getResource("/sounds/handkerchiefClue.mp3").toURI().toString());
-        cluePlayer = new MediaPlayer(clueVoice);
-        cluePlayer.play();
+        super.playClue(App.class.getResource("/sounds/handkerchiefClue.mp3").toURI().toString());
       } catch (URISyntaxException e) {
         e.printStackTrace();
       }
