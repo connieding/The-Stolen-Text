@@ -25,11 +25,14 @@ public class ClueBookshelfController extends ClueController {
   private boolean sound = false;
   private double mouseX;
 
+  /** Initialize the book scene to open on drag */
   public void initialize() {
+    // Set the mouse X coordinate when the mouse is pressed
     imageBook.setOnMousePressed(
         mouseEvent -> {
           mouseX = mouseEvent.getX();
         });
+    // If mouse coordinate change horizontally, open/close the book
     imageBook.setOnMouseReleased(
         mouseEvent -> {
           if (mouseEvent.getX() <= mouseX - 80 & !image) {
@@ -40,6 +43,11 @@ public class ClueBookshelfController extends ClueController {
         });
   }
 
+  /**
+   * Highlight the book
+   *
+   * @param event
+   */
   @FXML
   public void highlightBook(MouseEvent event) {
     if (!clicked) {
@@ -47,6 +55,11 @@ public class ClueBookshelfController extends ClueController {
     }
   }
 
+  /**
+   * Unhighlight the book
+   *
+   * @param event
+   */
   @FXML
   public void unhighlightBook(MouseEvent event) {
     if (!clicked) {
