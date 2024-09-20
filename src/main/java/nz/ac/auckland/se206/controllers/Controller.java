@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
@@ -21,6 +23,8 @@ public abstract class Controller {
 
   public abstract void initialize() throws ApiProxyException;
 
+  private MediaPlayer hintPlayer;
+
   public void setTime(String timeRemaining) {
     lblTimer.setText(timeRemaining);
   }
@@ -31,6 +35,24 @@ public abstract class Controller {
         & GameData.hasMetSuspect("collector")
         & GameData.hasMetSuspect("historian")) {
       App.openGuessScene(buttonAccuse);
+    } else if (!GameData.hasUsedClue()) {
+      try {
+        Media hintVoice =
+            new Media(App.class.getResource("/sounds/guessPreventerTwo.mp3").toURI().toString());
+        hintPlayer = new MediaPlayer(hintVoice);
+        hintPlayer.play();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    } else {
+      try {
+        Media hintVoice =
+            new Media(App.class.getResource("/sounds/guessPreventerOne.mp3").toURI().toString());
+        hintPlayer = new MediaPlayer(hintVoice);
+        hintPlayer.play();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 
