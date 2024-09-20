@@ -5,8 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
@@ -25,7 +23,6 @@ public class ClueBookshelfController extends ClueController {
 
   // Sound has been played
   private boolean sound = false;
-  private MediaPlayer cluePlayer;
   private double mouseX;
 
   public void initialize() {
@@ -92,13 +89,7 @@ public class ClueBookshelfController extends ClueController {
       // If the sound has not been played yet
       if (!sound) {
         try {
-
-          // Play the sound
-          Media clueVoice =
-              new Media(App.class.getResource("/sounds/bookClue.mp3").toURI().toString());
-          cluePlayer = new MediaPlayer(clueVoice);
-          cluePlayer.play();
-          sound = true;
+          ClueController.playClue(App.class.getResource("/sounds/bookClue.mp3").toURI().toString());
         } catch (URISyntaxException e) {
           e.printStackTrace();
         }

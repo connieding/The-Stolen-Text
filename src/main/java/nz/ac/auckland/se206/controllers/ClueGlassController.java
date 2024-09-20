@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import nz.ac.auckland.se206.App;
@@ -16,7 +17,6 @@ import nz.ac.auckland.se206.GameData;
 public class ClueGlassController extends ClueController implements Initializable {
 
   private static HashMap<Node, Boolean> draggedMap = new HashMap<>();
-  private static MediaPlayer cluePlayer;
   private static boolean hasPlayed = false;
 
   public static void setDraggedMap(Node imgGlass, boolean isDragged) {
@@ -34,10 +34,7 @@ public class ClueGlassController extends ClueController implements Initializable
       // All glasses are dragged
       // Play sound
       try {
-        Media clueVoice =
-            new Media(App.class.getResource("/sounds/hairClue.mp3").toURI().toString());
-        cluePlayer = new MediaPlayer(clueVoice);
-        cluePlayer.play();
+        ClueController.playClue(App.class.getResource("/sounds/hairClue.mp3").toURI().toString());
       } catch (URISyntaxException e) {
         e.printStackTrace();
       }
