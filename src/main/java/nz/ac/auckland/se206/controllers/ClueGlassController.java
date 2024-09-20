@@ -8,9 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 
