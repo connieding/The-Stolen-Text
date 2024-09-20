@@ -107,7 +107,7 @@
             <Font name="Sylfaen" size="10.0" />
          </font>
       </TextArea>
-      <TextArea fx:id="textEvidence" layoutX="24.0" layoutY="259.0" opacity="0.55" prefHeight="90.0" prefWidth="264.0" text="&#10;" wrapText="true">
+      <TextArea fx:id="textEvidence" layoutX="24.0" layoutY="259.0" opacity="0.55" prefHeight="90.0" prefWidth="264.0" wrapText="true">
          <font>
             <Font name="Sylfaen" size="10.0" />
          </font>
