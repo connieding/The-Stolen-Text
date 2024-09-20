@@ -21,9 +21,9 @@ public abstract class Controller {
 
   protected boolean isMapOut = false;
 
-  public abstract void initialize() throws ApiProxyException;
-
   private MediaPlayer hintPlayer;
+
+  public abstract void initialize() throws ApiProxyException;
 
   public void setTime(String timeRemaining) {
     lblTimer.setText(timeRemaining);
