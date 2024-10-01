@@ -19,11 +19,13 @@ public class MapController extends Controller {
   @FXML private Rectangle archivist;
   @FXML private Rectangle crimescene;
   @FXML private Rectangle historian;
+  @FXML private ImageView suspectShowBackground;
   @FXML private ImageView collectorPortrait;
   @FXML private Text visitCollector;
-  @FXML private ImageView suspectShowBackground;
   @FXML private ImageView archivistPortrait;
+  @FXML private Text visitArchivist;
   @FXML private ImageView historianPortrait;
+  @FXML private Text visitHistorian;
 
   /**
    * Initializes the map view.
@@ -57,8 +59,10 @@ public class MapController extends Controller {
       visitCollector.setOpacity(1);
     } else if (id.equals("archivist")) {
       archivistPortrait.setOpacity(1);
+      visitArchivist.setOpacity(1);
     } else if (id.equals("historian")) {
       historianPortrait.setOpacity(1);
+      visitHistorian.setOpacity(1);
     }
   
   }
@@ -77,8 +81,10 @@ public class MapController extends Controller {
       visitCollector.setOpacity(0);
     } else if (id.equals("archivist")) {
       archivistPortrait.setOpacity(0);
+      visitArchivist.setOpacity(0);
     } else if (id.equals("historian")) {
       historianPortrait.setOpacity(0);
+      visitHistorian.setOpacity(0);
     }
   }
 }
