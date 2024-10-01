@@ -22,6 +22,8 @@ public class MapController extends Controller {
   @FXML private ImageView collectorPortrait;
   @FXML private Text visitCollector;
   @FXML private ImageView suspectShowBackground;
+  @FXML private ImageView archivistPortrait;
+  @FXML private ImageView historianPortrait;
 
   /**
    * Initializes the map view.
@@ -53,7 +55,12 @@ public class MapController extends Controller {
     if (id.equals("collector")) {
       collectorPortrait.setOpacity(1);
       visitCollector.setOpacity(1);
+    } else if (id.equals("archivist")) {
+      archivistPortrait.setOpacity(1);
+    } else if (id.equals("historian")) {
+      historianPortrait.setOpacity(1);
     }
+  
   }
 
   public void handleMouseExited(MouseEvent event) {
@@ -68,6 +75,10 @@ public class MapController extends Controller {
     if (id.equals("collector")) {
       collectorPortrait.setOpacity(0);
       visitCollector.setOpacity(0);
+    } else if (id.equals("archivist")) {
+      archivistPortrait.setOpacity(0);
+    } else if (id.equals("historian")) {
+      historianPortrait.setOpacity(0);
     }
   }
 }
