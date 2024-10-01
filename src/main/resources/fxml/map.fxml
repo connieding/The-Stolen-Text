@@ -39,7 +39,7 @@
             <Image url="@../images/istockphoto-1035205010-612x612(4).png" />
          </image>
       </ImageView>
-      <ImageView fx:id="crimesceneIcon" fitHeight="50.0" fitWidth="40.0" layoutX="140.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="libraryIcon" fitHeight="50.0" fitWidth="40.0" layoutX="140.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/istockphoto-1035205010-612x612(3).png" />
          </image>
@@ -91,6 +91,16 @@
          </font>
       </Text>
       <Text fx:id="visitHistorian" layoutX="95.0" layoutY="233.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visit The Historian" textAlignment="CENTER" wrappingWidth="127.53332519531261">
+         <font>
+            <Font name="Sylfaen" size="12.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="libraryImage" fitHeight="36.0" fitWidth="80.0" layoutX="121.0" layoutY="184.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/librarybgImage.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="visitLibrary" layoutX="95.0" layoutY="233.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Go Back To Library" textAlignment="CENTER" wrappingWidth="127.53332519531261">
          <font>
             <Font name="Sylfaen" size="12.0" />
          </font>

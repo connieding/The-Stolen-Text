@@ -20,13 +20,15 @@ public class MapController extends Controller {
   @FXML private Rectangle crimescene;
   @FXML private Rectangle historian;
   @FXML private ImageView suspectShowBackground;
+  @FXML private ImageView libraryImage;
+  @FXML private Text visitLibrary;
   @FXML private ImageView collectorPortrait;
   @FXML private Text visitCollector;
   @FXML private ImageView archivistPortrait;
   @FXML private Text visitArchivist;
   @FXML private ImageView historianPortrait;
   @FXML private Text visitHistorian;
-  @FXML private ImageView crimesceneIcon;
+  @FXML private ImageView libraryIcon;
   @FXML private ImageView collectorIcon;
   @FXML private ImageView archivistIcon;
   @FXML private ImageView historianIcon;
@@ -71,7 +73,9 @@ public class MapController extends Controller {
       visitHistorian.setOpacity(1);
       historianIcon.setOpacity(0.7);
     } else {
-      crimesceneIcon.setOpacity(0.7);
+      libraryImage.setOpacity(1);
+      visitLibrary.setOpacity(1);
+      libraryIcon.setOpacity(0.7);
     }
   }
 
@@ -97,7 +101,9 @@ public class MapController extends Controller {
       visitHistorian.setOpacity(0);
       historianIcon.setOpacity(1);
     } else {
-      crimesceneIcon.setOpacity(1);
+      libraryImage.setOpacity(0);
+      visitLibrary.setOpacity(0);
+      libraryIcon.setOpacity(1);
     }
   }
 }
