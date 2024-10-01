@@ -24,22 +24,22 @@
             <Font name="Sylfaen" size="15.0" />
          </font>
       </Text>
-      <ImageView fitHeight="49.0" fitWidth="44.0" layoutX="72.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="historianIcon" fitHeight="49.0" fitWidth="44.0" layoutX="72.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/istockphoto-1035205010-612x612(1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="51.0" fitWidth="47.0" layoutX="121.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="collectorIcon" fitHeight="51.0" fitWidth="47.0" layoutX="121.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/istockphoto-1035205010-612x612(2).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="55.0" fitWidth="47.0" layoutX="201.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="archivistIcon" fitHeight="55.0" fitWidth="47.0" layoutX="201.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/istockphoto-1035205010-612x612(4).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="140.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="crimesceneIcon" fitHeight="50.0" fitWidth="40.0" layoutX="140.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/istockphoto-1035205010-612x612(3).png" />
          </image>
