@@ -44,7 +44,7 @@
             <Image url="@../images/istockphoto-1035205010-612x612(3).png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="collector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="125.0" layoutY="49.0" onMouseClicked="#handleRectangleClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
+      <Rectangle fx:id="collector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="125.0" layoutY="49.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Rectangle>
@@ -60,5 +60,15 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Rectangle>
+      <ImageView fx:id="collectorPortrait" fitHeight="47.0" fitWidth="43.0" layoutX="82.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" opacity="0.0">
+         <image>
+            <Image url="@../images/collectorPortrait.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="visitCollector" layoutX="62.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visit The Collector" textAlignment="CENTER" wrappingWidth="126.86663818359386" opacity="0.0">
+         <font>
+            <Font name="Sylfaen" size="15.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

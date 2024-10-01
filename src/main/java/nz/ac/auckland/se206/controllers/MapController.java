@@ -19,6 +19,8 @@ public class MapController extends Controller {
   @FXML private Rectangle archivist;
   @FXML private Rectangle crimescene;
   @FXML private Rectangle historian;
+  @FXML private ImageView collectorPortrait;
+  @FXML private Text visitCollector;
 
   /**
    * Initializes the map view.
@@ -36,5 +38,31 @@ public class MapController extends Controller {
     Rectangle clickedRectangle = (Rectangle) event.getSource();
 
     App.openScene(clickedRectangle, clickedRectangle.getId());
+  }
+
+  public void handleMouseEntered(MouseEvent event) {
+
+    // Determine which scene on map is being hovered over
+    Rectangle source = (Rectangle) event.getSource();
+    String id = source.getId();
+
+    // Show sorresponding suspect scene
+    if (id.equals("collector")) {
+      collectorPortrait.setOpacity(1);
+      visitCollector.setOpacity(1);
+    }
+  }
+
+  public void handleMouseExited(MouseEvent event) {
+
+    // Determine which scene on map is being hovered over
+    Rectangle source = (Rectangle) event.getSource();
+    String id = source.getId();
+
+    // Unshow corresponding suspect scene
+    if (id.equals("collector")) {
+      collectorPortrait.setOpacity(0);
+      visitCollector.setOpacity(0);
+    }
   }
 }
