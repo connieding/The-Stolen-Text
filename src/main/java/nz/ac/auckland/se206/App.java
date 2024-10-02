@@ -3,11 +3,13 @@ package nz.ac.auckland.se206;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import nz.ac.auckland.se206.speech.FreeTextToSpeech;
 
@@ -72,6 +74,11 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+    Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+    double x = bounds.getMinX() + (bounds.getWidth() - scene.getWidth()) * 0.5;
+    double y = bounds.getMinY() + (bounds.getHeight() - scene.getHeight()) * 0.5;
+    stage.setX(x);
+    stage.setY(y);
 
     // Close the previous scene
     handleWindowClose();
