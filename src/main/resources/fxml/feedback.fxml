@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -7,60 +6,60 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.FeedbackController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1.0" fx:controller="nz.ac.auckland.se206.controllers.FeedbackController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#68511c" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
-      <ImageView fitHeight="504.0" fitWidth="988.0" layoutX="-221.0" layoutY="-53.0" pickOnBounds="true">
+      <Rectangle arcHeight="8.5" arcWidth="8.5" fill="#116468.7c" height="680.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1020.0" />
+      <ImageView fitHeight="856.8" fitWidth="1679.6" layoutX="-375.7" layoutY="-90.1" pickOnBounds="true">
          <image>
             <Image url="@../images/guessBook.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="234.0" fitWidth="253.0" layoutX="316.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="397.8" fitWidth="430.09999999999997" layoutX="537.1999999999999" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/headerFrame.png" />
          </image>
       </ImageView>
-      <Text fill="#68380e" layoutX="374.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct!" textAlignment="CENTER" wrappingWidth="137.289794921875">
+      <Text fill="#68380e" layoutX="635.8" layoutY="117.3" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct!" textAlignment="CENTER" wrappingWidth="233.39265136718748">
          <font>
-            <Font name="Sylfaen" size="24.0" />
+            <Font name="Sylfaen" size="40.8" />
          </font>
       </Text>
-      <Text fill="#68380e" layoutX="374.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback" textAlignment="CENTER" wrappingWidth="137.289794921875">
+      <Text fill="#68380e" layoutX="635.8" layoutY="234.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback" textAlignment="CENTER" wrappingWidth="233.39265136718748">
          <font>
-            <Font name="Sylfaen" size="18.0" />
+            <Font name="Sylfaen" size="30.599999999999998" />
          </font>
       </Text>
-      <ImageView fitHeight="116.0" fitWidth="235.0" layoutX="41.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="197.2" fitWidth="399.5" layoutX="69.7" layoutY="450.5" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chatBox.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="78.0" fitWidth="77.0" layoutX="118.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="132.6" fitWidth="130.9" layoutX="200.6" layoutY="484.5" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/collectorPortrait.png" />
          </image>
       </ImageView>
-      <Text fx:id="feedbackText" fill="#68380e" layoutX="311.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Example Feedback: You guessed correctly, but you got the motive wrong, the motive should be to add the cover to his collection, since he is a collector of valuable books. Addidtionally, he rebound it to pin the blame on the librarian if we discovered it." textAlignment="JUSTIFY" wrappingWidth="263.7367858886719">
+      <Text fx:id="feedbackText" fill="#68380e" layoutX="528.6999999999999" layoutY="258.4" strokeType="OUTSIDE" strokeWidth="0.0" text="Example Feedback: You guessed correctly, but you got the motive wrong, the motive should be to add the cover to his collection, since he is a collector of valuable books. Addidtionally, he rebound it to pin the blame on the librarian if we discovered it." textAlignment="JUSTIFY" wrappingWidth="448.3525360107422">
          <font>
-            <Font name="Sylfaen" size="11.0" />
+            <Font name="Sylfaen" size="18.7" />
          </font>
       </Text>
-      <ImageView fitHeight="204.0" fitWidth="203.0" layoutX="55.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="346.8" fitWidth="345.09999999999997" layoutX="93.5" layoutY="86.7" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/scales.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="127.0" fitWidth="123.0" layoutX="91.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="215.9" fitWidth="209.1" layoutX="154.7" layoutY="447.09999999999997" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/circle.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="exitImage" fitHeight="35.0" fitWidth="37.0" layoutX="534.0" layoutY="353.0" onMouseClicked="#handleExitClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="exitImage" fitHeight="59.5" fitWidth="62.9" layoutX="907.8" layoutY="600.1" onMouseClicked="#handleExitClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/exit.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="retryImage" fitHeight="35.0" fitWidth="41.0" layoutX="483.0" layoutY="350.0" onMouseClicked="#handleRetryClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="retryImage" fitHeight="59.5" fitWidth="69.7" layoutX="821.1" layoutY="595.0" onMouseClicked="#handleRetryClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/retry.png" />
          </image>
