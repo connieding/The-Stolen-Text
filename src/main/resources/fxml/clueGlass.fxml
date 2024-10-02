@@ -24,7 +24,7 @@
             <Image url="@../images/judgeHammer.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="90.1" fitWidth="249.9" layoutX="408.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true" rotate="306.0">
+      <ImageView fitHeight="90.1" fitWidth="249.9" layoutX="408.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../images/hair.png" />
          </image>
@@ -57,7 +57,7 @@
             <Image url="@../images/return.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgGlass6.8" fitHeight="255.0" fitWidth="340.0" layoutX="476.0" layoutY="280.5" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgGlass4" fitHeight="255.0" fitWidth="340.0" layoutX="476.0" layoutY="280.5" pickOnBounds="true" preserveRatio="true">
         <cursor>
            <Cursor fx:constant="HAND" />
         </cursor>
@@ -65,7 +65,7 @@
             <Image url="@../images/glass1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgGlass1.7" fitHeight="255.0" fitWidth="340.0" layoutX="311.09999999999997" layoutY="79.89999999999999" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgGlass1" fitHeight="255.0" fitWidth="340.0" layoutX="311.09999999999997" layoutY="79.89999999999999" pickOnBounds="true" preserveRatio="true">
         <cursor>
            <Cursor fx:constant="HAND" />
         </cursor>
@@ -73,7 +73,7 @@
             <Image url="@../images/glass2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgGlass3.4" fitHeight="255.0" fitWidth="340.0" layoutX="496.4" layoutY="159.79999999999998" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgGlass2" fitHeight="255.0" fitWidth="340.0" layoutX="496.4" layoutY="159.79999999999998" pickOnBounds="true" preserveRatio="true">
         <cursor>
            <Cursor fx:constant="HAND" />
         </cursor>
@@ -81,7 +81,7 @@
             <Image url="@../images/glass3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgGlass5.1" fitHeight="255.0" fitWidth="340.0" layoutX="314.5" layoutY="299.2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgGlass3" fitHeight="255.0" fitWidth="340.0" layoutX="314.5" layoutY="299.2" pickOnBounds="true" preserveRatio="true">
         <cursor>
            <Cursor fx:constant="HAND" />
         </cursor>
