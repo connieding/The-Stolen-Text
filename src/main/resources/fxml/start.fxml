@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StartController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1.0" fx:controller="nz.ac.auckland.se206.controllers.StartController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="680.0" fitWidth="680.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/start_background.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblTimer" layoutX="31.0" layoutY="426.0" prefHeight="17.0" prefWidth="50.0" textFill="WHITE" />
-      <Label fx:id="startButton" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="352.0" prefHeight="39.0" prefWidth="180.0" onMouseClicked="#onStart">
+      <Label fx:id="lblTimer" layoutX="52.699999999999996" layoutY="724.1999999999999" prefHeight="28.9" prefWidth="85.0" textFill="WHITE" />
+      <Label fx:id="startButton" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="180.2" layoutY="598.4" prefHeight="66.3" prefWidth="306.0" onMouseClicked="#onStart">
          <font>
-            <Font name="Book Antiqua Bold Italic" size="15.0" />
+            <Font name="Book Antiqua Bold Italic" size="25.5" />
          </font>
 
          <style>
