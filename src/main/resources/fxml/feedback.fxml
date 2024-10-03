@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1.0" fx:controller="nz.ac.auckland.se206.controllers.FeedbackController">
    <children>
-      <Rectangle arcHeight="8.5" arcWidth="8.5" fill="#116468.7c" height="680.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1020.0" />
+      <Rectangle arcHeight="8.5" arcWidth="8.5" fill="#68511c" height="680.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1020.0" />
       <ImageView fitHeight="856.8" fitWidth="1679.6" layoutX="-375.7" layoutY="-90.1" pickOnBounds="true">
          <image>
             <Image url="@../images/guessBook.png" />
