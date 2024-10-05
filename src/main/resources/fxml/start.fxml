@@ -42,5 +42,6 @@
             -fx-cursor: hand;
          </style>
       </Label>
+      <Label fx:id="exitButton" layoutX="70.0" layoutY="405.0" onMouseClicked="#onExit" prefHeight="42.0" prefWidth="121.0" />
    </children>
 </AnchorPane>
