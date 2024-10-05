@@ -8,102 +8,106 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mapPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MapController">
+<AnchorPane fx:id="mapPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MapController">
    <children>
-      <ImageView fx:id="mapBg" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="mapBg" fitHeight="510.0" fitWidth="510.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/transparent%20map.png" />
          </image></ImageView>
-      <ImageView fitHeight="215.0" fitWidth="159.0" layoutX="71.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="365.5" fitWidth="270.3" layoutX="120.7" layoutY="-34.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/mapHeader.png" />
          </image>
       </ImageView>
-      <Text fx:id="mapHead" fill="#ae8533" layoutX="37.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAP" textAlignment="CENTER" wrappingWidth="227.20001220703136">
+      <Text fx:id="mapHead" fill="#ae8533" layoutX="62.9" layoutY="42.5" strokeType="OUTSIDE" strokeWidth="0.0" text="MAP" textAlignment="CENTER" wrappingWidth="386.2400207519533">
          <font>
-            <Font name="Sylfaen" size="15.0" />
+            <Font name="Sylfaen" size="25.5" />
          </font>
       </Text>
-      <ImageView fx:id="historianIcon" fitHeight="49.0" fitWidth="44.0" layoutX="72.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="historianIcon" fitHeight="83.3" fitWidth="74.8" layoutX="122.39999999999999" layoutY="171.7" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/istockphoto-1035205010-612x612(1).png" />
+            <Image url="@../images/historianPin.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="collectorIcon" fitHeight="51.0" fitWidth="47.0" layoutX="121.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="collectorIcon" fitHeight="86.7" fitWidth="79.89999999999999" layoutX="205.7" layoutY="78.2" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/istockphoto-1035205010-612x612(2).png" />
+            <Image url="@../images/collectorPin.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="archivistIcon" fitHeight="55.0" fitWidth="47.0" layoutX="201.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="archivistIcon" fitHeight="93.5" fitWidth="79.89999999999999" layoutX="341.7" layoutY="147.9" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/istockphoto-1035205010-612x612(4).png" />
+            <Image url="@../images/archivistPin.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="libraryIcon" fitHeight="50.0" fitWidth="40.0" layoutX="140.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="libraryIcon" fitHeight="85.0" fitWidth="68.0" layoutX="238.0" layoutY="188.7" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/istockphoto-1035205010-612x612(3).png" />
+            <Image url="@../images/crimePin.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="collector" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="125.0" layoutY="49.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
+      <Rectangle fx:id="collector" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="78.2" layoutX="212.5" layoutY="83.3" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.5">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Rectangle>
-      <Rectangle fx:id="archivist" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="51.0" layoutX="202.0" layoutY="89.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="39.0">
+         </cursor>
+         </Rectangle>
+      <Rectangle fx:id="archivist" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE"  height="86.7" layoutX="343.4" layoutY="151.3" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="66.3">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Rectangle>
-      <Rectangle fx:id="crimescene" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="142.0" layoutY="113.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0">
-         <cursor>
+         </cursor>
+         </Rectangle>
+      <Rectangle fx:id="crimescene" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="78.2" layoutX="241.4" layoutY="192.1" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="57.8">           
+          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Rectangle>
-      <Rectangle fx:id="historian" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="47.0" layoutX="75.0" layoutY="102.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0">
-         <cursor>
+         </cursor>
+         </Rectangle>
+      <Rectangle fx:id="historian" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="79.9" layoutX="127.5" layoutY="173.4" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.5">         
+          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Rectangle>
-      <ImageView fx:id="suspectShowBackground" fitHeight="80.0" fitWidth="172.0" layoutX="87.0" layoutY="176.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/suspectshowbackground.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="collectorPortrait" fitHeight="36.0" fitWidth="38.0" layoutX="139.0" layoutY="184.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/collectorPortrait.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="archivistPortrait" fitHeight="36.0" fitWidth="38.0" layoutX="139.0" layoutY="184.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/archivistPortrait.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="historianPortrait" fitHeight="36.0" fitWidth="38.0" layoutX="139.0" layoutY="184.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/historianPortrait.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="visitCollector" layoutX="95.0" layoutY="233.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visit The Collector" textAlignment="CENTER" wrappingWidth="127.53332519531261">
-         <font>
-            <Font name="Sylfaen" size="12.0" />
-         </font>
-      </Text>
-      <Text fx:id="visitArchivist" layoutX="95.0" layoutY="233.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visit The Archivist" textAlignment="CENTER" wrappingWidth="127.53332519531261">
-         <font>
-            <Font name="Sylfaen" size="12.0" />
-         </font>
-      </Text>
-      <Text fx:id="visitHistorian" layoutX="95.0" layoutY="233.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visit The Historian" textAlignment="CENTER" wrappingWidth="127.53332519531261">
-         <font>
-            <Font name="Sylfaen" size="12.0" />
-         </font>
-      </Text>
-      <ImageView fx:id="libraryImage" fitHeight="36.0" fitWidth="80.0" layoutX="121.0" layoutY="184.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/librarybgImage.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="visitLibrary" layoutX="95.0" layoutY="233.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Go Back To Library" textAlignment="CENTER" wrappingWidth="127.53332519531261">
-         <font>
-            <Font name="Sylfaen" size="12.0" />
-         </font>
-      </Text>
+         </cursor>
+         </Rectangle>
+      <ImageView fx:id="suspectShowBackground" fitHeight="136.0" fitWidth="292.4" layoutX="147.9" layoutY="299.2" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+    <image>
+        <Image url="@../images/suspectshowbackground.png" />
+    </image>
+  </ImageView>
+  <ImageView fx:id="collectorPortrait" fitHeight="61.2" fitWidth="64.6" layoutX="236.3" layoutY="312.8" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+    <image>
+        <Image url="@../images/collectorPortrait.png" />
+    </image>
+  </ImageView>
+  <ImageView fx:id="archivistPortrait" fitHeight="61.2" fitWidth="64.6" layoutX="236.3" layoutY="312.8" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+    <image>
+        <Image url="@../images/archivistPortrait.png" />
+    </image>
+  </ImageView>
+  <ImageView fx:id="historianPortrait" fitHeight="61.2" fitWidth="64.6" layoutX="236.3" layoutY="312.8" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+    <image>
+        <Image url="@../images/historianPortrait.png" />
+    </image>
+  </ImageView>
+  <Text fx:id="visitCollector" layoutX="161.5" layoutY="396.1" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visit The Collector" textAlignment="CENTER" wrappingWidth="216.8">
+    <font>
+        <Font name="Sylfaen" size="20.4" />
+    </font>
+  </Text>
+  <Text fx:id="visitArchivist" layoutX="161.5" layoutY="396.1" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visit The Archivist" textAlignment="CENTER" wrappingWidth="216.8">
+    <font>
+        <Font name="Sylfaen" size="20.4" />
+    </font>
+  </Text>
+  <Text fx:id="visitHistorian" layoutX="161.5" layoutY="396.1" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visit The Historian" textAlignment="CENTER" wrappingWidth="216.8">
+    <font>
+        <Font name="Sylfaen" size="20.4" />
+    </font>
+  </Text>
+  <ImageView fx:id="libraryImage" fitHeight="61.2" fitWidth="136.0" layoutX="205.7" layoutY="312.8" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+    <image>
+        <Image url="@../images/librarybgImage.png" />
+    </image>
+  </ImageView>
+  <Text fx:id="visitLibrary" layoutX="161.5" layoutY="396.1" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Go Back To Library" textAlignment="CENTER" wrappingWidth="216.8">
+    <font>
+        <Font name="Sylfaen" size="20.4" />
+    </font>
+  </Text>                       
    </children>
 </AnchorPane>
