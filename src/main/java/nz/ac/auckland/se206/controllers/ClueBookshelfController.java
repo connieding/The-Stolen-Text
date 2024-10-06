@@ -58,7 +58,7 @@ public class ClueBookshelfController extends ClueController {
           }
 
           // If the book is clicked 3 times, move the arrow
-          if (!hasDragged && clickCount >= 3) {
+          if (!image && !hasDragged && clickCount >= 3) {
             moveArrow();
             clickCount = 0;
           }
