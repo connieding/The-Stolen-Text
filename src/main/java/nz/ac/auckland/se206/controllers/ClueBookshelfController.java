@@ -152,11 +152,15 @@ public class ClueBookshelfController extends ClueController {
     translate.setByX(-200);
 
     // Set the duration and interpolator of the arrow
-    translate.setDuration(javafx.util.Duration.seconds(1));
+    translate.setDuration(javafx.util.Duration.seconds(1.5));
     translate.setInterpolator(Interpolator.EASE_BOTH);
 
     // Hide the arrow when the animation is finished
-    translate.setOnFinished(event -> arrow.setVisible(false));
+    translate.setOnFinished(
+        event -> {
+          arrow.setVisible(false);
+          arrow.setTranslateX(0);
+        });
 
     // Play the animation
     translate.play();
