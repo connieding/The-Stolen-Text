@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.Cursor?>
 
-<AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1.0" fx:controller="nz.ac.auckland.se206.controllers.ClueBookshelfController">
+<AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.ClueBookshelfController">
    <children>
       <ImageView fx:id="crimesceneBg" fitHeight="697.0" fitWidth="1020.0" layoutY="-5.1" pickOnBounds="true" AnchorPane.bottomAnchor="-11.9" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.1">
          <image>
@@ -24,17 +25,17 @@
          </image>
       </ImageView>
       <ImageView fx:id="imageBook" fitHeight="1023.4" fitWidth="1184.8999999999999" layoutX="-76.5" layoutY="-175.1" pickOnBounds="true" preserveRatio="true" />
-      <Rectangle fx:id="buttonClueBook" arcHeight="8.5" arcWidth="8.5" fill="RED" height="406.3" layoutX="275.4" layoutY="195.5" onMouseClicked="#bookClick" onMouseEntered="#highlightBook" onMouseExited="#unhighlightBook" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="49.3" >
+      <Rectangle fx:id="buttonClueBook" arcHeight="8.5" arcWidth="8.5" fill="RED" height="406.3" layoutX="275.4" layoutY="195.5" onMouseClicked="#bookClick" onMouseEntered="#highlightBook" onMouseExited="#unhighlightBook" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="49.3">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
       </Rectangle>
-      <Rectangle fx:id="buttonMap" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="105.39999999999999" layoutX="11.9" layoutY="559.3" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="105.39999999999999" >
+      <Rectangle fx:id="buttonMap" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="105.39999999999999" layoutX="11.9" layoutY="559.3" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="105.39999999999999">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
       </Rectangle>
-      <Rectangle fx:id="buttonAccuse" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="85.0" layoutX="147.9" layoutY="571.1999999999999" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.5" >
+      <Rectangle fx:id="buttonAccuse" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="85.0" layoutX="147.9" layoutY="571.1999999999999" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.5">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
@@ -49,7 +50,7 @@
             <Font name="Sylfaen" size="25.5" />
          </font>
       </Label>
-      <ImageView fx:id="buttonReturn" fitHeight="90.1" fitWidth="85.0" layoutX="909.5" layoutY="584.8" pickOnBounds="true" preserveRatio="true" onMouseClicked="#handleRectangleClicked">
+      <ImageView fx:id="buttonReturn" fitHeight="90.1" fitWidth="85.0" layoutX="909.5" layoutY="584.8" onMouseClicked="#handleRectangleClicked" pickOnBounds="true" preserveRatio="true">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
@@ -63,5 +64,10 @@
          </image>
       </ImageView>
       <AnchorPane fx:id="mapSubScene" disable="true" layoutX="255.0" layoutY="85.0" prefHeight="510.0" prefWidth="510.0" visible="false" />
+      <ImageView fx:id="arrow" fitHeight="215.0" fitWidth="318.0" layoutX="381.0" layoutY="238.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/arrow.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
