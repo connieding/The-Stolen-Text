@@ -176,6 +176,7 @@ public class App extends Application {
     stage.setScene(scene);
     stage.show();
 
+    // Center the start window
     Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     double x = bounds.getMinX() + (bounds.getWidth() - scene.getWidth()) * 0.5;
     double y = bounds.getMinY() + (bounds.getHeight() - scene.getHeight()) * 0.5;
