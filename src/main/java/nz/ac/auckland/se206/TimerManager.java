@@ -59,7 +59,7 @@ public class TimerManager {
                       }
                     });
 
-                // Check if there's 1 minute left
+                // Check if there's 1 minute left, then warning appears
                 if (remainingTime == 60) {
                   Platform.runLater(
                       () -> {
@@ -71,8 +71,8 @@ public class TimerManager {
                       });
                 }
 
-                // To remove warning affter 50 seconds left
-                if (remainingTime == 50) {
+                // To remove warning after 53 seconds left
+                if (remainingTime == 53) {
                   Platform.runLater(
                       () -> {
                         try {
@@ -104,7 +104,7 @@ public class TimerManager {
   }
 
   private void showWarning() throws IOException {
-    App.overlayWarning();  
+    App.overlayWarning();
   }
 
   private void stopWarning() throws IOException {

@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="warningPane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.WarningController">
-    <Text fx:id="warningText" fill="#b50000" layoutX="106.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warning: You Have 1 Minute Left!" textAlignment="CENTER" wrappingWidth="386.2400207519533" style="-fx-border-color: blue; -fx-border-width: 2;" >
+<AnchorPane fx:id="warningPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.WarningController">
+   <ImageView fitHeight="169.0" fitWidth="362.0" layoutX="-17.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/warninglabel.png" />
+      </image>
+   </ImageView>
+    <Text fx:id="warningText" fill="#c30707e5" layoutX="33.0" layoutY="50.0" opacity="0.98" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-border-color: blue; -fx-border-width: 2;" text="Warning: You Have 1 Minute Left!" textAlignment="CENTER" wrappingWidth="238.2400207519533">
         <font>
-            <Font name="Sylfaen" size="25.5" />
+            <Font name="Sylfaen" size="20.0" />
         </font>
     </Text>
 </AnchorPane>
-

@@ -77,7 +77,7 @@
             <Font name="Sylfaen" size="25.5" />
          </font>
       </Label>
-      <AnchorPane fx:id="warningSubScene" layoutX="238.0" layoutY="0" prefHeight="510.0" prefWidth="562.0" visible="false" />
+      <AnchorPane fx:id="warningSubScene" layoutX="97.0" layoutY="13.0" prefHeight="113.0" prefWidth="299.0" visible="false" />
       <AnchorPane fx:id="mapSubScene" disable="true" layoutX="85.0" layoutY="85.0" prefHeight="510.0" prefWidth="510.0" visible="false" />
    </children>
 </AnchorPane>
