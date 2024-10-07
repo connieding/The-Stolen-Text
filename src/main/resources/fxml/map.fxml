@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,10 +8,11 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="mapPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MapController">
+
    <children>
       <ImageView fx:id="mapBg" fitHeight="510.0" fitWidth="510.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/transparent%20map.png" />
+            <Image url="@../images/transparentMap.png" />
          </image></ImageView>
       <ImageView fitHeight="365.5" fitWidth="270.3" layoutX="120.7" layoutY="-34.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,21 +25,25 @@
          </font>
       </Text>
       <ImageView fx:id="historianIcon" fitHeight="83.3" fitWidth="74.8" layoutX="122.39999999999999" layoutY="171.7" pickOnBounds="true" preserveRatio="true">
+
          <image>
             <Image url="@../images/historianPin.png" />
          </image>
       </ImageView>
       <ImageView fx:id="collectorIcon" fitHeight="86.7" fitWidth="79.89999999999999" layoutX="205.7" layoutY="78.2" pickOnBounds="true" preserveRatio="true">
+
          <image>
             <Image url="@../images/collectorPin.png" />
          </image>
       </ImageView>
       <ImageView fx:id="archivistIcon" fitHeight="93.5" fitWidth="79.89999999999999" layoutX="341.7" layoutY="147.9" pickOnBounds="true" preserveRatio="true">
+
          <image>
             <Image url="@../images/archivistPin.png" />
          </image>
       </ImageView>
       <ImageView fx:id="libraryIcon" fitHeight="85.0" fitWidth="68.0" layoutX="238.0" layoutY="188.7" pickOnBounds="true" preserveRatio="true">
+
          <image>
             <Image url="@../images/crimePin.png" />
          </image>
@@ -61,6 +65,7 @@
          </Rectangle>
       <Rectangle fx:id="historian" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="79.9" layoutX="127.5" layoutY="173.4" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.5">         
           <cursor>
+
             <Cursor fx:constant="HAND" />
          </cursor>
          </Rectangle>

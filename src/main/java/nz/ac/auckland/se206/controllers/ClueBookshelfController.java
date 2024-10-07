@@ -1,12 +1,12 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.net.URISyntaxException;
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
@@ -15,6 +15,8 @@ public class ClueBookshelfController extends ClueController {
 
   @FXML private Rectangle buttonClueBook;
   @FXML private ImageView imageBook;
+  @FXML private ImageView crimesceneBg;
+  @FXML private ImageView arrow;
 
   // Book has been found
   private boolean clicked = false;
@@ -24,24 +26,50 @@ public class ClueBookshelfController extends ClueController {
 
   // Sound has been played
   private boolean sound = false;
-  private MediaPlayer cluePlayer;
   private double mouseX;
 
+  // Tracking clicks and drags
+  private int clickCount = 0;
+
+  // Flag for drag detection
+  private boolean hasDragged = false;
+
+  /** Initialize the book scene to open on drag */
   public void initialize() {
+    // Set the mouse X coordinate when the mouse is pressed
     imageBook.setOnMousePressed(
         mouseEvent -> {
           mouseX = mouseEvent.getX();
+          // Reset the drag flag and increment counter
+          hasDragged = false;
+          clickCount++;
         });
+    // If mouse coordinate change horizontally, open/close the book
     imageBook.setOnMouseReleased(
         mouseEvent -> {
           if (mouseEvent.getX() <= mouseX - 80 & !image) {
             openBook(mouseEvent);
+            hasDragged = true;
+            clickCount = 0;
           } else if (mouseEvent.getX() >= mouseX + 80 & image) {
             openBook(mouseEvent);
+            hasDragged = true;
+            clickCount = 0;
+          }
+
+          // If the book is clicked 3 times, move the arrow
+          if (!image && !hasDragged && clickCount >= 3) {
+            moveArrow();
+            clickCount = 0;
           }
         });
   }
 
+  /**
+   * Highlight the book
+   *
+   * @param event
+   */
   @FXML
   public void highlightBook(MouseEvent event) {
     if (!clicked) {
@@ -49,6 +77,11 @@ public class ClueBookshelfController extends ClueController {
     }
   }
 
+  /**
+   * Unhighlight the book
+   *
+   * @param event
+   */
   @FXML
   public void unhighlightBook(MouseEvent event) {
     if (!clicked) {
@@ -61,6 +94,10 @@ public class ClueBookshelfController extends ClueController {
 
     // If the book has not been found, and the book is clicked
     if (image && !clicked) {
+
+      // Set the background to have the book removed
+      crimesceneBg.setImage(
+          new Image(getClass().getResourceAsStream("/images/bookshelfRemoved.jpg")));
 
       // Show the closed book
       imageBook.setImage(new Image(getClass().getResourceAsStream("/images/bookClose.png")));
@@ -87,13 +124,7 @@ public class ClueBookshelfController extends ClueController {
       // If the sound has not been played yet
       if (!sound) {
         try {
-
-          // Play the sound
-          Media clueVoice =
-              new Media(App.class.getResource("/sounds/bookClue.mp3").toURI().toString());
-          cluePlayer = new MediaPlayer(clueVoice);
-          cluePlayer.play();
-          sound = true;
+          ClueController.playClue(App.class.getResource("/sounds/bookClue.mp3").toURI().toString());
         } catch (URISyntaxException e) {
           e.printStackTrace();
         }
@@ -108,5 +139,30 @@ public class ClueBookshelfController extends ClueController {
 
     // Set the book to be open/closed
     image = !image;
+  }
+
+  /** Play hint to open the book */
+  public void moveArrow() {
+    arrow.setVisible(true);
+
+    TranslateTransition translate = new TranslateTransition();
+    translate.setNode(arrow);
+
+    // Set the arrow to move to the left
+    translate.setByX(-200);
+
+    // Set the duration and interpolator of the arrow
+    translate.setDuration(javafx.util.Duration.seconds(1.5));
+    translate.setInterpolator(Interpolator.EASE_BOTH);
+
+    // Hide the arrow when the animation is finished
+    translate.setOnFinished(
+        event -> {
+          arrow.setVisible(false);
+          arrow.setTranslateX(0);
+        });
+
+    // Play the animation
+    translate.play();
   }
 }

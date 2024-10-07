@@ -6,22 +6,48 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StartController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StartController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="701.0" fitWidth="1026.0" layoutX="-3.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/start_background.png" />
+            <Image url="@../images/startScreen.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="lblTimer" layoutX="31.0" layoutY="426.0" prefHeight="17.0" prefWidth="50.0" textFill="WHITE" />
-      <Label fx:id="startButton" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="352.0" prefHeight="39.0" prefWidth="180.0" onMouseClicked="#onStart">
+      <ImageView fitHeight="684.0" fitWidth="1054.0" layoutX="10.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/startTitle.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="71.0" fitWidth="193.0" layoutX="60.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/startBut.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="146.0" layoutX="60.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/exitBut.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="317.0" fitWidth="1026.0" layoutX="-3.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/startInfo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="startButton" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="319.0" onMouseClicked="#onStart" prefHeight="53.0" prefWidth="180.0">
          <font>
-            <Font name="Book Antiqua Bold Italic" size="15.0" />
+            <Font name="Book Antiqua Bold Italic" size="25.5" />
          </font>
 
          <style>
             -fx-cursor: hand;
          </style>
       </Label>
+      <Label fx:id="exitButton" layoutX="70.0" layoutY="405.0" onMouseClicked="#onExit" prefHeight="42.0" prefWidth="121.0" />
+      <ImageView fitHeight="153.0" fitWidth="224.0" layoutX="828.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logoPI.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="warningSubScene" layoutX="97.0" layoutY="13.0" prefHeight="113.0" prefWidth="299.0" visible="false" />
    </children>
 </AnchorPane>

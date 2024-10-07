@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
@@ -19,18 +21,49 @@ public abstract class Controller {
 
   protected boolean isMapOut = false;
 
+  private MediaPlayer hintPlayer;
+
   public abstract void initialize() throws ApiProxyException;
 
   public void setTime(String timeRemaining) {
     lblTimer.setText(timeRemaining);
   }
 
+  /**
+   * Handle guess click and ensure that the player has met all suspects and used a clue before
+   *
+   * @param event
+   * @throws IOException
+   */
   public void handleGuessClicked(MouseEvent event) throws IOException {
+    // Check if the player has met all suspects and used a clue before allowing them to guess
     if (GameData.hasUsedClue()
         & GameData.hasMetSuspect("archivist")
         & GameData.hasMetSuspect("collector")
         & GameData.hasMetSuspect("historian")) {
       App.openGuessScene(buttonAccuse);
+      // Player has not interacted with a clue, play a sound to prevent guessing
+    } else if (!GameData.hasUsedClue()) {
+      try {
+        ClueController.silence();
+        Media hintVoice =
+            new Media(App.class.getResource("/sounds/guessPreventerTwo.mp3").toURI().toString());
+        hintPlayer = new MediaPlayer(hintVoice);
+        hintPlayer.play();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+      // Player has not interacted with all suspects, play a sound to prevent guessing
+    } else {
+      try {
+        ClueController.silence();
+        Media hintVoice =
+            new Media(App.class.getResource("/sounds/guessPreventerOne.mp3").toURI().toString());
+        hintPlayer = new MediaPlayer(hintVoice);
+        hintPlayer.play();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 

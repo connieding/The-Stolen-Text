@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,77 +9,89 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.Cursor?>
 
-<AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CrimesceneController">
+<AnchorPane fx:id="crimescenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.CrimesceneController">
    <children>
-      <ImageView fx:id="crimesceneBg" fitHeight="400.0" fitWidth="665.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="crimesceneBg" fitHeight="680.0" fitWidth="1130.5" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../images/crimesceneBackground.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="66.0" fitWidth="62.0" layoutX="7.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="112.2" fitWidth="105.39999999999999" layoutX="11.9" layoutY="562.6999999999999" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/map.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="88.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="127.5" fitWidth="147.9" layoutX="149.6" layoutY="547.4" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/judgeHammer.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="21.0" fitWidth="52.0" layoutX="199.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.699999999999996" fitWidth="88.39999999999999" layoutX="338.3" layoutY="540.6" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/glassPile.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="8.0" fitWidth="28.0" layoutX="382.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="13.6" fitWidth="47.6" layoutX="649.4" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/handkerchiefCrime.png" />
          </image>
       </ImageView>
 
-      <Polygon fx:id="shardThree" fill="RED" layoutX="255.0" layoutY="277.0" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" points="-51.5, 41.25, -39.25, 42.75, -34.25, 46.25, -36.75, 48.25, -57.0, 42.75" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Polygon fx:id="shardTwo" fill="RED" layoutX="277.0" layoutY="247.0" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" points="-57.5, 78.75, -43.25, 74.25, -25.0, 76.75, -32.5, 80.75, -50.0, 80.75" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Polygon fx:id="shardOne" fill="RED" layoutX="267.0" layoutY="289.0" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" points="-67.49999389648438, 38.200006103515625, -65.0, 42.5, -56.19999694824219, 45.899993896484375, -32.19999694824219, 42.5, -65.0, 36.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fx:id="shardThree" fill="RED" layoutX="433.5" layoutY="470.9" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" points="-87.55, 70.125, -66.725, 72.675, -58.225, 78.625, -62.475, 82.02499999999999, -96.89999999999999, 72.675" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fx:id="shardTwo" fill="RED" layoutX="470.9" layoutY="419.9" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" points="-97.75, 133.875, -73.52499999999999, 126.225, -42.5, 130.475, -55.25, 137.275, -85.0, 137.275" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fx:id="shardOne" fill="RED" layoutX="453.9" layoutY="491.3" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" points="-114.74998962402344, 64.94001037597657, -110.5, 72.25, -95.53999481201171, 78.02998962402343, -54.739994812011716, 72.25, -110.5, 62.05" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
 
-      <Rectangle fx:id="buttonMap" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="14.0" layoutY="336.0" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" >
+      <Rectangle fx:id="buttonMap" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="85.0" layoutX="23.8" layoutY="571.1999999999999" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
       </Rectangle>
-      <Rectangle fx:id="clueGlass" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="32.0" layoutX="189.0" layoutY="312.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="69.0" />
-      <Polygon fx:id="handkerchiefClue" fill="RED" layoutX="367.0" layoutY="269.0" opacity="0.0" points="42.399993896484375, 45.100006103515625, 28.600006103515625, 40.899993896484375, 13.0, 43.100006103515625, 27.0, 49.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Rectangle fx:id="cluePaper" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="26.0" layoutX="372.0" layoutY="299.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="47.0" />
-      <Polygon fx:id="bookshelfClue" fill="RED" layoutX="462.0" layoutY="213.0" opacity="0.0" points="-13.399993896484375, 14.366668701171875, 20.79998779296875, 22.5, 20.79998779296875, -37.09999084472656, -13.399993896484375, -33.899993896484375" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Rectangle fx:id="clueBookshelf" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="168.0" layoutX="423.0" layoutY="129.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="130.0" />
-
-
-      <Rectangle fx:id="buttonAccuse" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="95.0" layoutY="336.0" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" >
+      <Rectangle fx:id="clueGlass" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="54.4" layoutX="321.3" layoutY="530.4" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="117.3">
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Rectangle>
+      <Polygon fx:id="handkerchiefClue" fill="RED" layoutX="623.9" layoutY="457.3" opacity="0.0" points="72.07998962402344, 76.67001037597656, 48.62001037597656, 69.52998962402343, 22.099999999999998, 73.27001037597655, 45.9, 83.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Rectangle fx:id="cluePaper" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="44.199999999999996" layoutX="632.4" layoutY="508.3" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="79.89999999999999">
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Rectangle>
+      <Polygon fx:id="bookshelfClue" fill="RED" layoutX="785.4" layoutY="362.09999999999997" opacity="0.0" points="-22.779989624023436, 24.423336791992188, 35.359979248046876, 38.25, 35.359979248046876, -63.069984436035156, -22.779989624023436, -57.62998962402344" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Rectangle fx:id="clueBookshelf" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="285.59999999999997" layoutX="719.1" layoutY="219.29999999999998" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="221.0">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
       </Rectangle>
 
-      <ImageView fitHeight="98.0" fitWidth="194.0" layoutX="201.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+
+      <Rectangle fx:id="buttonAccuse" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="85.0" layoutX="161.5" layoutY="571.1999999999999" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0">
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Rectangle>
+
+      <ImageView fitHeight="166.6" fitWidth="329.8" layoutX="341.7" layoutY="-10.2" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/headerFrame.png" />
          </image>
       </ImageView>
-      <Text fx:id="crimesceneHead" fill="#ae8533" layoutX="244.0" layoutY="46.0595703125" strokeType="OUTSIDE" strokeWidth="0.0" text="LIBRARY" textAlignment="CENTER" wrappingWidth="108.5" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="247.5" AnchorPane.topAnchor="35.0">
+      <Text fx:id="crimesceneHead" fill="#ae8533" layoutX="414.8" layoutY="78.30126953125" strokeType="OUTSIDE" strokeWidth="0.0" text="LIBRARY" textAlignment="CENTER" wrappingWidth="184.45" AnchorPane.leftAnchor="414.8" AnchorPane.rightAnchor="420.75" AnchorPane.topAnchor="59.5">
          <font>
-            <Font name="Sylfaen" size="15.0" />
+            <Font name="Sylfaen" size="25.5" />
          </font>
       </Text>
-      <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="-13.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fitHeight="76.5" fitWidth="158.1" layoutX="-22.099999999999998" layoutY="27.2" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@../images/pocketWatch.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="24.0" prefHeight="35.0" prefWidth="41.0" text="300" textAlignment="CENTER" textFill="#ae8533">
+      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="20.4" layoutY="40.8" prefHeight="59.5" prefWidth="69.7" text="300.0" textAlignment="CENTER" textFill="#ae8533">
          <font>
-            <Font name="Sylfaen" size="15.0" />
+            <Font name="Sylfaen" size="25.5" />
          </font>
       </Label>
-      <AnchorPane fx:id="mapSubScene" disable="true" layoutX="150.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" visible="false" />
+      <AnchorPane fx:id="warningSubScene" layoutX="97.0" layoutY="13.0" prefHeight="113.0" prefWidth="299.0" visible="false" />
+      <AnchorPane fx:id="mapSubScene" disable="true" layoutX="255.0" layoutY="85.0" prefHeight="510.0" prefWidth="510.0" visible="false" />
    </children>
 </AnchorPane>
