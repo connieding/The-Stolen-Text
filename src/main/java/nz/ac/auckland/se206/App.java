@@ -1,7 +1,6 @@
 package nz.ac.auckland.se206;
 
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -23,6 +22,7 @@ public class App extends Application {
   private static Scene scene;
   private static TimerManager timerManager;
   private static GameData data;
+  private static Stage stage;
 
   /**
    * The main method that launches the JavaFX application.
@@ -85,19 +85,21 @@ public class App extends Application {
    */
   public static void overlayWarning() throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/warning.fxml"));
-    Pane warningPane = loader.load();  
-    Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
+    Pane warningPane = loader.load();
+    Pane warningSubScene;
+    System.out.println(scene);
+    warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
     warningSubScene.getChildren().add(warningPane);
     warningSubScene.setVisible(true);
-}
+  }
 
-/**
- * Hides the warning from the current scene.
- */
-public static void hideWarning() {
-  Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
-  warningSubScene.setVisible(false);
-}
+  /** Hides the warning from the current scene. */
+  public static void hideWarning() {
+    Pane warningSubScene;
+    System.out.println(scene);
+    warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
+    warningSubScene.setVisible(false);
+  }
 
   public static void openScene(Node button, String newScene) throws IOException {
 
@@ -169,10 +171,11 @@ public static void hideWarning() {
    * This method is invoked when the application starts. It loads and shows the "room" scene.
    *
    * @param stage the primary stage of the application
-   * @throws Exception 
+   * @throws Exception
    */
   @Override
   public void start(final Stage stage) throws Exception {
+    this.stage = stage;
     data = new GameData();
     Parent root = loadFxml("start");
     scene = new Scene(root);

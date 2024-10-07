@@ -60,7 +60,7 @@ public class TimerManager {
                     });
 
                 // Check if there's 1 minute left, then warning appears
-                if (remainingTime == 60) {
+                if (remainingTime < 60 && remainingTime > 53 && !GameData.isGuessing()) {
                   Platform.runLater(
                       () -> {
                         try {
@@ -69,10 +69,7 @@ public class TimerManager {
                           e.printStackTrace();
                         }
                       });
-                }
-
-                // To remove warning after 53 seconds left
-                if (remainingTime == 53) {
+                } else if (remainingTime < 53) {
                   Platform.runLater(
                       () -> {
                         try {
