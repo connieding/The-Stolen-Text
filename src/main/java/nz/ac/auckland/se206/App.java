@@ -1,6 +1,7 @@
 package nz.ac.auckland.se206;
 
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -54,6 +55,12 @@ public class App extends Application {
     return new FXMLLoader(App.class.getResource("/fxml/" + fxml + ".fxml")).load();
   }
 
+  /**
+   * Overlays the map on the current scene.
+   *
+   * @param button the button that was clicked to show the map
+   * @throws IOException if the map FXML file is not found
+   */
   public static void overlayMap(Node button) throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/map.fxml"));
     Pane root = loader.load();
@@ -61,9 +68,36 @@ public class App extends Application {
     (((Pane) button.getScene().lookup("#mapSubScene")).getChildren()).add(root);
   }
 
+  /**
+   * Hides the map from the current scene.
+   *
+   * @param button the button that was clicked to hide the map
+   * @throws IOException if the map subscene is not found
+   */
   public static void hideMap(Node button) throws IOException {
     ((Pane) button.getScene().lookup("#mapSubScene")).getChildren().clear();
   }
+
+  /**
+   * Overlays the warning on the current scene.
+   *
+   * @throws IOException if the warning FXML file is not found
+   */
+  public static void overlayWarning() throws IOException {
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/warning.fxml"));
+    Pane warningPane = loader.load();  
+    Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
+    warningSubScene.getChildren().add(warningPane);
+    warningSubScene.setVisible(true);
+}
+
+/**
+ * Hides the warning from the current scene.
+ */
+public static void hideWarning() {
+  Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
+  warningSubScene.setVisible(false);
+}
 
   public static void openScene(Node button, String newScene) throws IOException {
 
@@ -135,10 +169,10 @@ public class App extends Application {
    * This method is invoked when the application starts. It loads and shows the "room" scene.
    *
    * @param stage the primary stage of the application
-   * @throws IOException if the "src/main/resources/fxml/room.fxml" file is not found
+   * @throws Exception 
    */
   @Override
-  public void start(final Stage stage) throws IOException {
+  public void start(final Stage stage) throws Exception {
     data = new GameData();
     Parent root = loadFxml("start");
     scene = new Scene(root);

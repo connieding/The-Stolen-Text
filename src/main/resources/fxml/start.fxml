@@ -48,5 +48,6 @@
             <Image url="@../images/logoPI.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="warningSubScene" layoutX="97.0" layoutY="13.0" prefHeight="113.0" prefWidth="299.0" visible="false" />
    </children>
 </AnchorPane>
