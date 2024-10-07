@@ -59,26 +59,25 @@ public class TimerManager {
                       }
                     });
 
-                    // Check if there's 1 minute left
-                if (remainingTime == 290) {
+                // Check if there's 1 minute left
+                if (remainingTime == 60) {
                   Platform.runLater(
                       () -> {
                         try {
                           showWarning();
                         } catch (IOException e) {
-                          // TODO Auto-generated catch block
                           e.printStackTrace();
                         }
                       });
                 }
 
-                if (remainingTime == 280) {
+                // To remove warning affter 50 seconds left
+                if (remainingTime == 50) {
                   Platform.runLater(
                       () -> {
                         try {
                           stopWarning();
                         } catch (IOException e) {
-                          // TODO Auto-generated catch block
                           e.printStackTrace();
                         }
                       });

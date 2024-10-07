@@ -55,6 +55,12 @@ public class App extends Application {
     return new FXMLLoader(App.class.getResource("/fxml/" + fxml + ".fxml")).load();
   }
 
+  /**
+   * Overlays the map on the current scene.
+   *
+   * @param button the button that was clicked to show the map
+   * @throws IOException if the map FXML file is not found
+   */
   public static void overlayMap(Node button) throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/map.fxml"));
     Pane root = loader.load();
@@ -62,10 +68,21 @@ public class App extends Application {
     (((Pane) button.getScene().lookup("#mapSubScene")).getChildren()).add(root);
   }
 
+  /**
+   * Hides the map from the current scene.
+   *
+   * @param button the button that was clicked to hide the map
+   * @throws IOException if the map subscene is not found
+   */
   public static void hideMap(Node button) throws IOException {
     ((Pane) button.getScene().lookup("#mapSubScene")).getChildren().clear();
   }
 
+  /**
+   * Overlays the warning on the current scene.
+   *
+   * @throws IOException if the warning FXML file is not found
+   */
   public static void overlayWarning() throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/warning.fxml"));
     Pane warningPane = loader.load();  
@@ -74,6 +91,9 @@ public class App extends Application {
     warningSubScene.setVisible(true);
 }
 
+/**
+ * Hides the warning from the current scene.
+ */
 public static void hideWarning() {
   Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
   warningSubScene.setVisible(false);

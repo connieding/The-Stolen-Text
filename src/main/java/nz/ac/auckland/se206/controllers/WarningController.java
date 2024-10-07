@@ -9,5 +9,4 @@ public class WarningController {
 
   @FXML
   public void initialize() {}
-  
 }
