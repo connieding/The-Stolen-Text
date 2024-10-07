@@ -1,6 +1,7 @@
 package nz.ac.auckland.se206;
 
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -64,6 +65,19 @@ public class App extends Application {
   public static void hideMap(Node button) throws IOException {
     ((Pane) button.getScene().lookup("#mapSubScene")).getChildren().clear();
   }
+
+  public static void overlayWarning() throws IOException {
+    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/warning.fxml"));
+    Pane warningPane = loader.load();  
+    Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
+    warningSubScene.getChildren().add(warningPane);
+    warningSubScene.setVisible(true);
+}
+
+public static void hideWarning() {
+  Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
+  warningSubScene.setVisible(false);
+}
 
   public static void openScene(Node button, String newScene) throws IOException {
 
@@ -135,10 +149,10 @@ public class App extends Application {
    * This method is invoked when the application starts. It loads and shows the "room" scene.
    *
    * @param stage the primary stage of the application
-   * @throws IOException if the "src/main/resources/fxml/room.fxml" file is not found
+   * @throws Exception 
    */
   @Override
-  public void start(final Stage stage) throws IOException {
+  public void start(final Stage stage) throws Exception {
     data = new GameData();
     Parent root = loadFxml("start");
     scene = new Scene(root);

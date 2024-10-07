@@ -1,5 +1,6 @@
 package nz.ac.auckland.se206;
 
+import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -58,6 +59,31 @@ public class TimerManager {
                       }
                     });
 
+                    // Check if there's 1 minute left
+                if (remainingTime == 290) {
+                  Platform.runLater(
+                      () -> {
+                        try {
+                          showWarning();
+                        } catch (IOException e) {
+                          // TODO Auto-generated catch block
+                          e.printStackTrace();
+                        }
+                      });
+                }
+
+                if (remainingTime == 280) {
+                  Platform.runLater(
+                      () -> {
+                        try {
+                          stopWarning();
+                        } catch (IOException e) {
+                          // TODO Auto-generated catch block
+                          e.printStackTrace();
+                        }
+                      });
+                }
+
                 // If the time is up, call the timeUp method in the GameData class
               } else {
                 Platform.runLater(
@@ -76,6 +102,14 @@ public class TimerManager {
             0,
             1,
             TimeUnit.SECONDS);
+  }
+
+  private void showWarning() throws IOException {
+    App.overlayWarning();  
+  }
+
+  private void stopWarning() throws IOException {
+    App.hideWarning();
   }
 
   public int getTime() {
