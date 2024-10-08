@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.controllers.GuessController;
 
+/** This class is used to store the game data and handle the game logic. */
 public class GameData {
 
   private static boolean usedClue;
@@ -38,6 +39,7 @@ public class GameData {
 
   private GuessController guessController;
 
+  /** Constructor for the GameData class. */
   public GameData() {
     meetings.put("archivist", false);
     meetings.put("collector", false);
@@ -46,6 +48,15 @@ public class GameData {
     isGuessing = false;
   }
 
+  /**
+   * Handle the time up event. If the player is guessing, submit the guess. If the player has met
+   * all suspects and used the clue, open the guess scene. If the player has not met all suspects,
+   * open the failed scene.
+   *
+   * @param timerLabel the label to display the timer
+   * @throws ApiProxyException if the API proxy is not working
+   * @throws IOException if the scene is not found
+   */
   public void timeUp(Label timerLabel) throws ApiProxyException, IOException {
 
     // If the player is guessing, submit the guess
@@ -66,6 +77,11 @@ public class GameData {
     }
   }
 
+  /**
+   * Set the guess controller.
+   *
+   * @param guessController the guess controller
+   */
   public void setGuessController(GuessController guessController) {
     this.guessController = guessController;
   }

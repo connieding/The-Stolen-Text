@@ -8,6 +8,7 @@ import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 
+/** This class is the controller for the paper clue scene. It handles the handkerchief. */
 public class CluePaperController extends ClueController {
 
   @FXML private ImageView imageAnimate;
@@ -15,6 +16,7 @@ public class CluePaperController extends ClueController {
 
   private int clickCount = 0;
 
+  /** Initialize the handkerchief scene. */
   @FXML
   void handleClickHandkerchief(MouseEvent event) {
 

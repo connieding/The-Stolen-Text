@@ -11,11 +11,13 @@ import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 
+/** This class is the controller for the glass clue scene. It handles the glass shards. */
 public class ClueGlassController extends ClueController implements Initializable {
 
   private static HashMap<Node, Boolean> draggedMap = new HashMap<>();
   private static boolean hasPlayed = false;
 
+  /** Set the glass shard as dragged. */
   public static void setDraggedMap(Node imgGlass, boolean isDragged) {
 
     // Set the current shard to dragged
