@@ -9,16 +9,23 @@ import javafx.scene.media.MediaPlayer;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
 
+/** This class is the controller for the clue scenes. It handles the clues and the return button. */
 public abstract class ClueController extends Controller {
 
   private static MediaPlayer cluePlayer;
 
+  /** Stop the clue audio file. */
   public static void silence() {
     if (cluePlayer != null) {
       cluePlayer.stop();
     }
   }
 
+  /**
+   * Play the clue audio file.
+   *
+   * @param path the path to the audio file
+   */
   public static void playClue(String path) {
     silence();
     Media clueVoice = new Media(path);

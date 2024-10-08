@@ -10,6 +10,9 @@ import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
 
+/**
+ * This class is the controller for the map scene. It handles the map and the corresponding scenes.
+ */
 public class MapController extends Controller {
 
   @FXML private AnchorPane mapPane;
@@ -34,7 +37,7 @@ public class MapController extends Controller {
   @FXML private ImageView historianIcon;
 
   /**
-   * Initializes the map view.
+   * Initializes the map view, setting the opacity of the suspect scenes to 0.
    *
    * @throws ApiProxyException if there is an error communicating with the API proxy
    */
@@ -43,6 +46,12 @@ public class MapController extends Controller {
     // Any required initialization code can be placed here
   }
 
+  /**
+   * Handle rectangle click and open the corresponding scene.
+   *
+   * @param event the mouse event
+   * @throws IOException if the scene is not found
+   */
   public void handleRectangleClicked(MouseEvent event) throws IOException {
 
     System.out.println("");
@@ -51,6 +60,11 @@ public class MapController extends Controller {
     App.openScene(clickedRectangle, clickedRectangle.getId());
   }
 
+  /**
+   * Show the corresponding suspect scene when the mouse enters the scene.
+   *
+   * @param event the mouse event
+   */
   public void handleMouseEntered(MouseEvent event) {
 
     // Determine which scene on map is being hovered over
@@ -79,6 +93,11 @@ public class MapController extends Controller {
     }
   }
 
+  /**
+   * Unshow the corresponding suspect scene when the mouse exits the scene.
+   *
+   * @param event the mouse event
+   */
   public void handleMouseExited(MouseEvent event) {
 
     // Determine which scene on map is being hovered over

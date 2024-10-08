@@ -57,6 +57,18 @@ public class App extends Application {
   }
 
   /**
+   * This method is invoked when the application is closed. It deallocates the synthesizer and stops
+   * the timer.
+   */
+  public static void handleWindowClose() {
+    FreeTextToSpeech.deallocateSynthesizer();
+
+    if (timerManager != null) {
+      timerManager.stopTimer();
+    }
+  }
+
+  /**
    * Overlays the map on the current scene.
    *
    * @param button the button that was clicked to show the map
@@ -90,6 +102,7 @@ public class App extends Application {
     Pane warningSubScene;
     System.out.println(scene);
     warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
+
     warningSubScene.getChildren().add(warningPane);
     warningSubScene.setVisible(true);
   }
@@ -99,9 +112,17 @@ public class App extends Application {
     Pane warningSubScene;
     System.out.println(scene);
     warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
+
     warningSubScene.setVisible(false);
   }
 
+  /**
+   * Opens a new scene and closes the previous scene.
+   *
+   * @param button the button that was clicked to open the new scene
+   * @param newScene the name of the new scene (without extension)
+   * @throws IOException if the new scene FXML file is not found
+   */
   public static void openScene(Node button, String newScene) throws IOException {
 
     // Load the new scene
@@ -136,6 +157,12 @@ public class App extends Application {
     root.requestFocus();
   }
 
+  /**
+   * Opens the guess scene and closes the previous scene.
+   *
+   * @param button the button that was clicked to open the guess scene
+   * @throws IOException if the guess scene FXML file is not found
+   */
   public static void openGuessScene(Node button) throws IOException {
 
     // Load the guess scene
@@ -162,6 +189,7 @@ public class App extends Application {
     root.requestFocus();
   }
 
+  /** Resets the game data and stops the timer. */
   public static void reset() {
     timerManager.stopTimer();
     timerManager = null;
@@ -172,7 +200,7 @@ public class App extends Application {
    * This method is invoked when the application starts. It loads and shows the "room" scene.
    *
    * @param stage the primary stage of the application
-   * @throws Exception
+   * @throws Exception if the FXML file is not found
    */
   @Override
   public void start(final Stage stage) throws Exception {
@@ -182,13 +210,12 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-  }
 
-  public static void handleWindowClose() {
-    FreeTextToSpeech.deallocateSynthesizer();
-
-    if (timerManager != null) {
-      timerManager.stopTimer();
-    }
+    // Center the start window
+    Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+    double x = bounds.getMinX() + (bounds.getWidth() - scene.getWidth()) * 0.5;
+    double y = bounds.getMinY() + (bounds.getHeight() - scene.getHeight()) * 0.5;
+    stage.setX(x);
+    stage.setY(y);
   }
 }
