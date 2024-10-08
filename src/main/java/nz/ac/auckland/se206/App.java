@@ -23,6 +23,7 @@ public class App extends Application {
   private static TimerManager timerManager;
   private static GameData data;
   private static Stage stage;
+  private static final int TIME = 300;
 
   /**
    * The main method that launches the JavaFX application.
@@ -120,7 +121,7 @@ public class App extends Application {
     handleWindowClose();
 
     // Start the timer
-    int remaining = 300;
+    int remaining = TIME;
     if (timerManager != null) {
       remaining = timerManager.getTime();
     }
@@ -175,7 +176,7 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws Exception {
-    this.stage = stage;
+    App.stage = stage;
     data = new GameData();
     Parent root = loadFxml("start");
     scene = new Scene(root);
