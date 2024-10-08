@@ -22,6 +22,8 @@ public class App extends Application {
   private static Scene scene;
   private static TimerManager timerManager;
   private static GameData data;
+  private static Stage stage;
+  private static final int TIME = 300;
 
   /**
    * The main method that launches the JavaFX application.
@@ -97,14 +99,18 @@ public class App extends Application {
   public static void overlayWarning() throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/warning.fxml"));
     Pane warningPane = loader.load();
-    Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
+    Pane warningSubScene;
+    warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
+
     warningSubScene.getChildren().add(warningPane);
     warningSubScene.setVisible(true);
   }
 
   /** Hides the warning from the current scene. */
   public static void hideWarning() {
-    Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
+    Pane warningSubScene;
+    warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
+
     warningSubScene.setVisible(false);
   }
 
@@ -134,7 +140,7 @@ public class App extends Application {
     handleWindowClose();
 
     // Start the timer
-    int remaining = 300;
+    int remaining = TIME;
     if (timerManager != null) {
       remaining = timerManager.getTime();
     }
@@ -196,6 +202,7 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws Exception {
+    App.stage = stage;
     data = new GameData();
     Parent root = loadFxml("start");
     scene = new Scene(root);
