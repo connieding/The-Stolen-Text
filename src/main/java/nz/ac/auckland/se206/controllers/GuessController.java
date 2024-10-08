@@ -19,6 +19,10 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
+/**
+ * This class is the controller for the guess scene. It handles the suspect selection, the motive
+ * and evidence text fields, and the submit button.
+ */
 public class GuessController extends Controller {
 
   private static ApiProxyConfig config;
@@ -72,6 +76,7 @@ public class GuessController extends Controller {
 
   private String selectedSuspect = null; // Variable to hold the selected suspect
 
+  /** Initialize the guess scene. */
   @FXML
   public void initialize() {
 
@@ -92,6 +97,7 @@ public class GuessController extends Controller {
     historianSelect.setOnMouseClicked(event -> setSelectedSuspect("historian"));
   }
 
+  /** Set the selected suspect. */
   private void setSelectedSuspect(String suspect) {
 
     // Set the selected suspect
@@ -116,6 +122,7 @@ public class GuessController extends Controller {
     }
   }
 
+  /** Hide all the circles. */
   private void hideAllCircles() {
 
     // Hide all the circles
@@ -124,6 +131,12 @@ public class GuessController extends Controller {
     circleHistorian.setVisible(false);
   }
 
+  /**
+   * Handle the submit button click and evaluate the player's explanation.
+   *
+   * @throws ApiProxyException if there is an error communicating with the API proxy
+   * @throws IOException if the feedback scene is not found
+   */
   public void handleSubmitClicked() throws ApiProxyException, IOException {
 
     // If the correct suspect hasn't been selected, show the failed scene

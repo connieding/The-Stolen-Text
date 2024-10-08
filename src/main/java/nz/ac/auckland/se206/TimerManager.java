@@ -9,10 +9,17 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+/** This class is used to manage the timer. */
 public class TimerManager {
 
   private static TimerManager instance;
 
+  /**
+   * Get the instance of the TimerManager class.
+   *
+   * @param data the GameData object
+   * @return the TimerManager instance
+   */
   public static synchronized TimerManager getInstance(GameData data) {
     if (instance == null) {
       instance = new TimerManager(data);
@@ -26,10 +33,21 @@ public class TimerManager {
   private int remainingTime;
   @FXML private Label timerLabel;
 
+  /**
+   * Constructor for the TimerManager class.
+   *
+   * @param data the GameData object
+   */
   private TimerManager(GameData data) {
     this.data = data;
   }
 
+  /**
+   * Start the timer.
+   *
+   * @param seconds the number of seconds to set the timer to
+   * @param timerLabel the label to display the timer
+   */
   public void startTimer(int seconds, Label timerLabel) {
 
     // Stop the timer if it is already running
@@ -103,18 +121,34 @@ public class TimerManager {
             TimeUnit.SECONDS);
   }
 
+  /**
+   * Show the warning message, when there is 1 minute left.
+   *
+   * @throws IOException
+   */
   private void showWarning() throws IOException {
     App.overlayWarning();
   }
 
+  /**
+   * Stop the warning message, when there is 53 seconds left.
+   *
+   * @throws IOException
+   */
   private void stopWarning() throws IOException {
     App.hideWarning();
   }
 
+  /**
+   * Get the remaining time on the timer.
+   *
+   * @return the remaining time
+   */
   public int getTime() {
     return remainingTime;
   }
 
+  /** Stop the timer */
   public void stopTimer() {
     instance = null;
     if (timerHandle != null && !timerHandle.isDone()) {

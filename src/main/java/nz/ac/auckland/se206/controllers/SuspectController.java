@@ -20,6 +20,10 @@ import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.GameData;
 import nz.ac.auckland.se206.prompts.PromptEngineering;
 
+/**
+ * This class is the controller for the historian suspect scene. It handles the chat history and the
+ * text entry.
+ */
 public class SuspectController extends Controller {
 
   @FXML private AnchorPane suspectPane;
@@ -74,6 +78,12 @@ public class SuspectController extends Controller {
     }
   }
 
+  /**
+   * Sends the message to the AI and displays the response.
+   *
+   * @throws ApiProxyException if there is an error communicating with the API proxy
+   * @throws IOException if the scene is not found
+   */
   @FXML
   private void onSendMessage() throws ApiProxyException, IOException {
 
@@ -130,9 +140,9 @@ public class SuspectController extends Controller {
   /**
    * Sends message on enter key press
    *
-   * @param event
-   * @throws IOException
-   * @throws ApiProxyException
+   * @param event the key event
+   * @throws IOException if the scene is not found
+   * @throws ApiProxyException if there is an error communicating with the API proxy
    */
   @FXML
   private void onKeyPressed(KeyEvent event) throws IOException, ApiProxyException {
