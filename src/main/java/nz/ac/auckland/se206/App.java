@@ -88,7 +88,6 @@ public class App extends Application {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/warning.fxml"));
     Pane warningPane = loader.load();
     Pane warningSubScene;
-    System.out.println(scene);
     warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
     warningSubScene.getChildren().add(warningPane);
     warningSubScene.setVisible(true);
@@ -97,7 +96,6 @@ public class App extends Application {
   /** Hides the warning from the current scene. */
   public static void hideWarning() {
     Pane warningSubScene;
-    System.out.println(scene);
     warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
     warningSubScene.setVisible(false);
   }
