@@ -93,6 +93,7 @@ public class GuessController extends Controller {
   }
 
   private void setSelectedSuspect(String suspect) {
+    SoundController.playCircle();
 
     // Set the selected suspect
     selectedSuspect = suspect;

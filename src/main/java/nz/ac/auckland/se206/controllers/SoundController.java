@@ -8,11 +8,12 @@ import nz.ac.auckland.se206.App;
 
 public abstract class SoundController extends Controller {
 
-  private static MediaPlayer sound;
+  private static MediaPlayer click;
+  private static MediaPlayer circle;
 
   public static void silence() {
-    if (sound != null) {
-      sound.stop();
+    if (click != null) {
+      click.stop();
     }
   }
 
@@ -20,20 +21,35 @@ public abstract class SoundController extends Controller {
     try {
       // Load the sound resource once
       Media effect = new Media(App.class.getResource("/sounds/click.mp3").toURI().toString());
-      sound = new MediaPlayer(effect);
+      click = new MediaPlayer(effect);
+      Media effect2 = new Media(App.class.getResource("/sounds/circle.mp3").toURI().toString());
+      circle = new MediaPlayer(effect2);
     } catch (NullPointerException | URISyntaxException e) {
       e.printStackTrace();
     }
   }
 
   public static void playSound() {
-    if (sound != null) {
+    if (click != null) {
       // Silence any currently playing sound
       silence();
 
       // Play the sound
-      sound.seek(Duration.ZERO); // Reset to the beginning
-      sound.play();
+      click.seek(Duration.ZERO); // Reset to the beginning
+      click.play();
+    } else {
+      System.out.println("Sound not preloaded!");
+    }
+  }
+
+  public static void playCircle() {
+    if (circle != null) {
+      // Silence any currently playing sound
+      silence();
+
+      // Play the sound
+      circle.seek(Duration.ZERO); // Reset to the beginning
+      circle.play();
     } else {
       System.out.println("Sound not preloaded!");
     }
