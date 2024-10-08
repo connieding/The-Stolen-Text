@@ -28,6 +28,7 @@ public class Draggable {
     node.setOnMouseReleased(
         mouseEvent -> {
           ClueGlassController.setDraggedMap(node, true);
+          ClueGlassController.playGlassDropSound();
         });
   }
 }
