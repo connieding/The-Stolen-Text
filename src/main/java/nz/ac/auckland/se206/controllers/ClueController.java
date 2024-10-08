@@ -18,6 +18,9 @@ public abstract class ClueController extends Controller {
     if (cluePlayer != null) {
       cluePlayer.stop();
     }
+    if (effectPlayer != null) {
+      effectPlayer.stop();
+    }
   }
 
   public static void playClue(String path) {
