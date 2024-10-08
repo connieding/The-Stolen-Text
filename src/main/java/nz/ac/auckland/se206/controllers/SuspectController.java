@@ -138,7 +138,7 @@ public class SuspectController extends Controller {
   }
 
   /**
-   * Sends message on enter key press
+   * Sends message on enter key press.
    *
    * @param event the key event
    * @throws IOException if the scene is not found

@@ -181,12 +181,7 @@ public class App extends Application {
     root.requestFocus();
   }
 
-  /**
-   * Opens the feedback scene and closes the previous scene.
-   *
-   * @param button the button that was clicked to open the feedback scene
-   * @throws IOException if the feedback scene FXML file is not found
-   */
+  /** Resets the game data and stops the timer. */
   public static void reset() {
     timerManager.stopTimer();
     timerManager = null;
@@ -197,7 +192,7 @@ public class App extends Application {
    * This method is invoked when the application starts. It loads and shows the "room" scene.
    *
    * @param stage the primary stage of the application
-   * @throws Exception
+   * @throws Exception if the FXML file is not found
    */
   @Override
   public void start(final Stage stage) throws Exception {
