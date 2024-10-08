@@ -43,6 +43,7 @@ public abstract class ClueController extends Controller {
   public void initialize() throws ApiProxyException {}
 
   public void handleRectangleClicked(MouseEvent event) throws IOException {
+    SoundController.playSound();
     App.openScene(buttonReturn, "crimescene");
   }
 }

@@ -27,8 +27,8 @@ public class Draggable {
     // Set the node as dragged when the mouse is released
     node.setOnMouseReleased(
         mouseEvent -> {
-          ClueGlassController.setDraggedMap(node, true);
           ClueGlassController.playGlassDropSound();
+          ClueGlassController.setDraggedMap(node, true);
         });
   }
 }

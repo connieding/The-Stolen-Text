@@ -125,6 +125,7 @@ public class GuessController extends Controller {
   }
 
   public void handleSubmitClicked() throws ApiProxyException, IOException {
+    SoundController.playSound();
 
     // If the correct suspect hasn't been selected, show the failed scene
     if (selectedSuspect == null || selectedSuspect != "collector") {

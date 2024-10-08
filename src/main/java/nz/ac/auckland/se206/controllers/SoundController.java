@@ -6,7 +6,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
 
-public abstract class SoundController {
+public abstract class SoundController extends Controller {
 
   private static MediaPlayer sound;
 

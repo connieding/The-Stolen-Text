@@ -18,11 +18,13 @@ public class FeedbackController {
   }
 
   public void handleRetryClicked(MouseEvent event) throws IOException {
+    SoundController.playSound();
     App.reset();
     App.openScene((ImageView) event.getSource(), "crimescene");
   }
 
   public void handleExitClicked(MouseEvent event) {
+    SoundController.playSound();
     App.handleWindowClose();
     Platform.exit();
   }

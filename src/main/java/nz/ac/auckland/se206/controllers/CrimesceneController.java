@@ -34,6 +34,7 @@ public class CrimesceneController extends Controller {
   public void initialize() throws ApiProxyException {}
 
   public void handleRectangleClicked(MouseEvent event) throws IOException {
+    SoundController.playSound();
     App.openScene(((Rectangle) event.getSource()), ((Rectangle) event.getSource()).getId());
   }
 
