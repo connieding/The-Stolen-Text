@@ -12,6 +12,9 @@ import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
 
+/**
+ * This class is the controller for the crimescene scene. It handles the clues and the map button.
+ */
 public class CrimesceneController extends Controller {
 
   @FXML private AnchorPane crimescenePane;
@@ -33,10 +36,22 @@ public class CrimesceneController extends Controller {
   @Override
   public void initialize() throws ApiProxyException {}
 
+  /**
+   * Handle the map button click and open the map scene.
+   *
+   * @param event the mouse event
+   * @throws IOException if the scene is not found
+   */
   public void handleRectangleClicked(MouseEvent event) throws IOException {
     App.openScene(((Rectangle) event.getSource()), ((Rectangle) event.getSource()).getId());
   }
 
+  /**
+   * Handle the map button click and open the map scene.
+   *
+   * @param event the mouse event
+   * @throws IOException if the scene is not found
+   */
   public void handleClueEntered(MouseEvent event) {
 
     // Determine which clue is being hovered over
@@ -55,6 +70,11 @@ public class CrimesceneController extends Controller {
     }
   }
 
+  /**
+   * Unhighlight the corresponding clue when the mouse exits the clue.
+   *
+   * @param event the mouse event
+   */
   public void handleClueExited(MouseEvent event) {
 
     // Determine which clue is being hovered over
