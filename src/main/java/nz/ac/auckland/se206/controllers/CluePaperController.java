@@ -16,7 +16,7 @@ public class CluePaperController extends ClueController {
 
   private int clickCount = 0;
 
-  /** Initialize the handkerchief scene. */
+  /** Initialize the paper scene to animate the handkerchief. */
   @FXML
   void handleClickHandkerchief(MouseEvent event) {
 

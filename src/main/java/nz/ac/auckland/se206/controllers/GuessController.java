@@ -76,7 +76,7 @@ public class GuessController extends Controller {
 
   private String selectedSuspect = null; // Variable to hold the selected suspect
 
-  /** Initialize the guess scene. */
+  /** Initialize the guess scene and set the game state to guessing. */
   @FXML
   public void initialize() {
 
@@ -97,7 +97,11 @@ public class GuessController extends Controller {
     historianSelect.setOnMouseClicked(event -> setSelectedSuspect("historian"));
   }
 
-  /** Set the selected suspect. */
+  /**
+   * Update UI to show selected suspect with red circle.
+   *
+   * @param suspect
+   */
   private void setSelectedSuspect(String suspect) {
 
     // Set the selected suspect
@@ -122,7 +126,7 @@ public class GuessController extends Controller {
     }
   }
 
-  /** Hide all the circles. */
+  /** Hide all the circles of the suspects to player. */
   private void hideAllCircles() {
 
     // Hide all the circles

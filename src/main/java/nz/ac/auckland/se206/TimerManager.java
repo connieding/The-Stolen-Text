@@ -43,7 +43,7 @@ public class TimerManager {
   }
 
   /**
-   * Start the timer.
+   * Start the timer with the given number of seconds and label.
    *
    * @param seconds the number of seconds to set the timer to
    * @param timerLabel the label to display the timer
@@ -124,7 +124,7 @@ public class TimerManager {
   /**
    * Show the warning message, when there is 1 minute left.
    *
-   * @throws IOException
+   * @throws IOException if the warning scene is not found
    */
   private void showWarning() throws IOException {
     App.overlayWarning();
@@ -133,7 +133,7 @@ public class TimerManager {
   /**
    * Stop the warning message, when there is 53 seconds left.
    *
-   * @throws IOException
+   * @throws IOException if the warning scene is not found
    */
   private void stopWarning() throws IOException {
     App.hideWarning();
@@ -148,7 +148,7 @@ public class TimerManager {
     return remainingTime;
   }
 
-  /** Stop the timer */
+  /** Stop the timer and set the instance to null. */
   public void stopTimer() {
     instance = null;
     if (timerHandle != null && !timerHandle.isDone()) {

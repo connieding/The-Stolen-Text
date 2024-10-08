@@ -11,6 +11,10 @@ import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 
+/**
+ * This class is the controller for the bookshelf scene. It handles the book click, the book open,
+ * and the arrow movement.
+ */
 public class ClueBookshelfController extends ClueController {
 
   @FXML private Rectangle buttonClueBook;

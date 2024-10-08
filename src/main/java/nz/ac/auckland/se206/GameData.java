@@ -78,7 +78,7 @@ public class GameData {
   }
 
   /**
-   * Set the guess controller.
+   * Set the guess controller for the game data.
    *
    * @param guessController the guess controller
    */

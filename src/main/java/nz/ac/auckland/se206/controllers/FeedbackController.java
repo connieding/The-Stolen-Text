@@ -17,7 +17,7 @@ public class FeedbackController {
   @FXML private Text feedbackText;
 
   /**
-   * Set the feedback message.
+   * Set the feedback message to display to the player.
    *
    * @param feedback the feedback message
    */
@@ -28,8 +28,8 @@ public class FeedbackController {
   /**
    * Handle the retry button click and reset the game.
    *
-   * @param event
-   * @throws IOException
+   * @param event the mouse event
+   * @throws IOException if the scene is not found
    */
   public void handleRetryClicked(MouseEvent event) throws IOException {
     App.reset();
@@ -39,7 +39,7 @@ public class FeedbackController {
   /**
    * Handle the exit button click and close the game.
    *
-   * @param event
+   * @param event the mouse event
    */
   public void handleExitClicked(MouseEvent event) {
     App.handleWindowClose();
