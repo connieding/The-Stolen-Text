@@ -9,10 +9,17 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+/** This class is used to manage the timer. */
 public class TimerManager {
 
   private static TimerManager instance;
 
+  /**
+   * Get the instance of the TimerManager class.
+   *
+   * @param data the GameData object
+   * @return the TimerManager instance
+   */
   public static synchronized TimerManager getInstance(GameData data) {
     if (instance == null) {
       instance = new TimerManager(data);
@@ -26,10 +33,21 @@ public class TimerManager {
   private int remainingTime;
   @FXML private Label timerLabel;
 
+  /**
+   * Constructor for the TimerManager class.
+   *
+   * @param data the GameData object
+   */
   private TimerManager(GameData data) {
     this.data = data;
   }
 
+  /**
+   * Start the timer with the given number of seconds and label.
+   *
+   * @param seconds the number of seconds to set the timer to
+   * @param timerLabel the label to display the timer
+   */
   public void startTimer(int seconds, Label timerLabel) {
 
     // Stop the timer if it is already running
@@ -60,7 +78,7 @@ public class TimerManager {
                     });
 
                 // Check if there's 1 minute left, then warning appears
-                if (remainingTime == 60) {
+                if (remainingTime < 60 && remainingTime > 53 && !GameData.isGuessing()) {
                   Platform.runLater(
                       () -> {
                         try {
@@ -69,10 +87,7 @@ public class TimerManager {
                           e.printStackTrace();
                         }
                       });
-                }
-
-                // To remove warning after 53 seconds left
-                if (remainingTime == 53) {
+                } else if (remainingTime < 53) {
                   Platform.runLater(
                       () -> {
                         try {
@@ -103,18 +118,34 @@ public class TimerManager {
             TimeUnit.SECONDS);
   }
 
+  /**
+   * Show the warning message, when there is 1 minute left.
+   *
+   * @throws IOException if the warning scene is not found
+   */
   private void showWarning() throws IOException {
     App.overlayWarning();
   }
 
+  /**
+   * Stop the warning message, when there is 53 seconds left.
+   *
+   * @throws IOException if the warning scene is not found
+   */
   private void stopWarning() throws IOException {
     App.hideWarning();
   }
 
+  /**
+   * Get the remaining time on the timer.
+   *
+   * @return the remaining time
+   */
   public int getTime() {
     return remainingTime;
   }
 
+  /** Stop the timer and set the instance to null. */
   public void stopTimer() {
     instance = null;
     if (timerHandle != null && !timerHandle.isDone()) {

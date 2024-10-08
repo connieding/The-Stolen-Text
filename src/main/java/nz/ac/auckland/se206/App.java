@@ -1,7 +1,6 @@
 package nz.ac.auckland.se206;
 
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -23,6 +22,8 @@ public class App extends Application {
   private static Scene scene;
   private static TimerManager timerManager;
   private static GameData data;
+  private static Stage stage;
+  private static final int TIME = 300;
 
   /**
    * The main method that launches the JavaFX application.
@@ -56,6 +57,18 @@ public class App extends Application {
   }
 
   /**
+   * This method is invoked when the application is closed. It deallocates the synthesizer and stops
+   * the timer.
+   */
+  public static void handleWindowClose() {
+    FreeTextToSpeech.deallocateSynthesizer();
+
+    if (timerManager != null) {
+      timerManager.stopTimer();
+    }
+  }
+
+  /**
    * Overlays the map on the current scene.
    *
    * @param button the button that was clicked to show the map
@@ -85,20 +98,29 @@ public class App extends Application {
    */
   public static void overlayWarning() throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/warning.fxml"));
-    Pane warningPane = loader.load();  
-    Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
+    Pane warningPane = loader.load();
+    Pane warningSubScene;
+    warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
+
     warningSubScene.getChildren().add(warningPane);
     warningSubScene.setVisible(true);
-}
+  }
 
-/**
- * Hides the warning from the current scene.
- */
-public static void hideWarning() {
-  Pane warningSubScene = (Pane) App.scene.lookup("#warningSubScene");
-  warningSubScene.setVisible(false);
-}
+  /** Hides the warning from the current scene. */
+  public static void hideWarning() {
+    Pane warningSubScene;
+    warningSubScene = (Pane) stage.getScene().lookup("#warningSubScene");
 
+    warningSubScene.setVisible(false);
+  }
+
+  /**
+   * Opens a new scene and closes the previous scene.
+   *
+   * @param button the button that was clicked to open the new scene
+   * @param newScene the name of the new scene (without extension)
+   * @throws IOException if the new scene FXML file is not found
+   */
   public static void openScene(Node button, String newScene) throws IOException {
 
     // Load the new scene
@@ -118,7 +140,7 @@ public static void hideWarning() {
     handleWindowClose();
 
     // Start the timer
-    int remaining = 300;
+    int remaining = TIME;
     if (timerManager != null) {
       remaining = timerManager.getTime();
     }
@@ -133,6 +155,12 @@ public static void hideWarning() {
     root.requestFocus();
   }
 
+  /**
+   * Opens the guess scene and closes the previous scene.
+   *
+   * @param button the button that was clicked to open the guess scene
+   * @throws IOException if the guess scene FXML file is not found
+   */
   public static void openGuessScene(Node button) throws IOException {
 
     // Load the guess scene
@@ -159,6 +187,7 @@ public static void hideWarning() {
     root.requestFocus();
   }
 
+  /** Resets the game data and stops the timer. */
   public static void reset() {
     timerManager.stopTimer();
     timerManager = null;
@@ -169,22 +198,22 @@ public static void hideWarning() {
    * This method is invoked when the application starts. It loads and shows the "room" scene.
    *
    * @param stage the primary stage of the application
-   * @throws Exception 
+   * @throws Exception if the FXML file is not found
    */
   @Override
   public void start(final Stage stage) throws Exception {
+    App.stage = stage;
     data = new GameData();
     Parent root = loadFxml("start");
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-  }
 
-  public static void handleWindowClose() {
-    FreeTextToSpeech.deallocateSynthesizer();
-
-    if (timerManager != null) {
-      timerManager.stopTimer();
-    }
+    // Center the start window
+    Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+    double x = bounds.getMinX() + (bounds.getWidth() - scene.getWidth()) * 0.5;
+    double y = bounds.getMinY() + (bounds.getHeight() - scene.getHeight()) * 0.5;
+    stage.setX(x);
+    stage.setY(y);
   }
 }

@@ -2,12 +2,18 @@ package nz.ac.auckland.se206.controllers;
 
 import javafx.scene.Node;
 
+/** This class is used to make a node draggable. */
 public class Draggable {
 
   // Variables to store the mouse coordinates
   private double mouseX;
   private double mouseY;
 
+  /**
+   * Make a node draggable allowing item to be moved.
+   *
+   * @param node the node to make draggable
+   */
   public void makeDraggable(Node node) {
 
     // Set the mouse coordinates when the mouse is pressed

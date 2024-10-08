@@ -11,6 +11,10 @@ import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 
+/**
+ * This class is the controller for the bookshelf scene. It handles the book click, the book open,
+ * and the arrow movement.
+ */
 public class ClueBookshelfController extends ClueController {
 
   @FXML private Rectangle buttonClueBook;
@@ -34,7 +38,7 @@ public class ClueBookshelfController extends ClueController {
   // Flag for drag detection
   private boolean hasDragged = false;
 
-  /** Initialize the book scene to open on drag */
+  /** Initialize the book scene to open on drag. */
   public void initialize() {
     // Set the mouse X coordinate when the mouse is pressed
     imageBook.setOnMousePressed(
@@ -66,9 +70,9 @@ public class ClueBookshelfController extends ClueController {
   }
 
   /**
-   * Highlight the book
+   * Highlight the book, if the book is being hovered on.
    *
-   * @param event
+   * @param event the mouse event
    */
   @FXML
   public void highlightBook(MouseEvent event) {
@@ -78,9 +82,9 @@ public class ClueBookshelfController extends ClueController {
   }
 
   /**
-   * Unhighlight the book
+   * Unhighlight the book, if the book is not being hovered on.
    *
-   * @param event
+   * @param event the mouse event
    */
   @FXML
   public void unhighlightBook(MouseEvent event) {
@@ -89,6 +93,11 @@ public class ClueBookshelfController extends ClueController {
     }
   }
 
+  /**
+   * Handle the book click and remove the book from the background.
+   *
+   * @param event the mouse event
+   */
   @FXML
   public void bookClick(MouseEvent event) {
 
@@ -115,6 +124,11 @@ public class ClueBookshelfController extends ClueController {
     clicked = true;
   }
 
+  /**
+   * Open the book, if the book is closed, and play the clue sound.
+   *
+   * @param event the mouse event
+   */
   @FXML
   public void openBook(MouseEvent event) {
 
@@ -154,7 +168,7 @@ public class ClueBookshelfController extends ClueController {
     image = !image;
   }
 
-  /** Play hint to open the book */
+  /** Play hint to open the book. */
   public void moveArrow() {
     arrow.setVisible(true);
 

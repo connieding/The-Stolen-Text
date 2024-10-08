@@ -12,6 +12,9 @@ import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameData;
 
+/**
+ * This class is the controller for the scenes. It handles the timer, guess button, and map button.
+ */
 public abstract class Controller {
 
   @FXML protected Label lblTimer;
@@ -30,10 +33,10 @@ public abstract class Controller {
   }
 
   /**
-   * Handle guess click and ensure that the player has met all suspects and used a clue before
+   * Handle guess click and ensure that the player has met all suspects and used a clue before.
    *
-   * @param event
-   * @throws IOException
+   * @param event the mouse event
+   * @throws IOException if the guess scene is not found
    */
   public void handleGuessClicked(MouseEvent event) throws IOException {
     SoundController.playSound();
@@ -69,6 +72,12 @@ public abstract class Controller {
     }
   }
 
+  /**
+   * Handle map click and toggle the map visibility.
+   *
+   * @param event the mouse event
+   * @throws IOException if the map scene is not found
+   */
   public void handleMapClicked(MouseEvent event) throws IOException {
     SoundController.playSound();
 
