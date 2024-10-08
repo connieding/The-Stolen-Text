@@ -12,6 +12,7 @@ import nz.ac.auckland.se206.App;
 public abstract class ClueController extends Controller {
 
   private static MediaPlayer cluePlayer;
+  private static MediaPlayer effectPlayer;
 
   public static void silence() {
     if (cluePlayer != null) {
@@ -24,6 +25,13 @@ public abstract class ClueController extends Controller {
     Media clueVoice = new Media(path);
     cluePlayer = new MediaPlayer(clueVoice);
     cluePlayer.play();
+  }
+
+  public static void playEffect(String path) {
+    silence();
+    Media effect = new Media(path);
+    effectPlayer = new MediaPlayer(effect);
+    effectPlayer.play();
   }
 
   @FXML protected ImageView buttonReturn;

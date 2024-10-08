@@ -104,6 +104,12 @@ public class ClueBookshelfController extends ClueController {
       buttonClueBook.setOpacity(0);
     }
 
+    try {
+      ClueController.playEffect(App.class.getResource("/sounds/pickBook.mp3").toURI().toString());
+    } catch (URISyntaxException e) {
+      e.printStackTrace();
+    }
+
     // Set the book to have been found, and closed
     image = !image;
     clicked = true;
@@ -121,9 +127,17 @@ public class ClueBookshelfController extends ClueController {
       // Set the clue as used
       GameData.setUsedClue(true);
 
+      try {
+
+        ClueController.playEffect(App.class.getResource("/sounds/pageFlip.mp3").toURI().toString());
+      } catch (URISyntaxException e) {
+        e.printStackTrace();
+      }
+
       // If the sound has not been played yet
       if (!sound) {
         try {
+
           ClueController.playClue(App.class.getResource("/sounds/bookClue.mp3").toURI().toString());
         } catch (URISyntaxException e) {
           e.printStackTrace();
