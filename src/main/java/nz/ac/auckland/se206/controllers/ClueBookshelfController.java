@@ -137,7 +137,6 @@ public class ClueBookshelfController extends ClueController {
       // If the sound has not been played yet
       if (!sound) {
         try {
-
           ClueController.playClue(App.class.getResource("/sounds/bookClue.mp3").toURI().toString());
         } catch (URISyntaxException e) {
           e.printStackTrace();

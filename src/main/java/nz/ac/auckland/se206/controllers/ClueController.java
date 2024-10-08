@@ -18,9 +18,6 @@ public abstract class ClueController extends Controller {
     if (cluePlayer != null) {
       cluePlayer.stop();
     }
-    if (effectPlayer != null) {
-      effectPlayer.stop();
-    }
   }
 
   public static void playClue(String path) {
@@ -31,9 +28,8 @@ public abstract class ClueController extends Controller {
   }
 
   public static void playEffect(String path) {
-    silence();
-    Media effect = new Media(path);
-    effectPlayer = new MediaPlayer(effect);
+    Media effectVoice = new Media(path);
+    effectPlayer = new MediaPlayer(effectVoice);
     effectPlayer.play();
   }
 
