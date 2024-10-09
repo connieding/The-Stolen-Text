@@ -87,7 +87,7 @@ public class TimerManager {
                           e.printStackTrace();
                         }
                       });
-                } else if (remainingTime == 53) {
+                } else if (remainingTime == 53 && !GameData.isGuessing()) {
                   Platform.runLater(
                       () -> {
                         try {
