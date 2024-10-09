@@ -89,7 +89,7 @@ public abstract class Controller {
     if (!isMapOut) {
       App.overlayMap(buttonMap);
     } else {
-      App.hideMap(buttonMap);
+      App.hideOverlay(buttonMap);
     }
     isMapOut = !isMapOut;
   }
