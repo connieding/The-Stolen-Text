@@ -43,6 +43,7 @@ public class CrimesceneController extends Controller {
    * @throws IOException if the scene is not found
    */
   public void handleRectangleClicked(MouseEvent event) throws IOException {
+    SoundController.playSound();
     App.openScene(((Rectangle) event.getSource()), ((Rectangle) event.getSource()).getId());
   }
 

@@ -11,12 +11,14 @@ import nz.ac.auckland.se206.App;
  * This class is the controller for the start scene. It handles the start button and the exit
  * button.
  */
-public class StartController {
+public class StartController extends SoundController {
 
   @FXML private Label startButton;
 
   @FXML
-  public void initialize() {}
+  public void initialize() {
+    preloadSound();
+  }
 
   /**
    * Handle the start button click and open the crimescene scene.
@@ -25,6 +27,7 @@ public class StartController {
    */
   @FXML
   private void onStart() throws IOException {
+    playSound();
     App.openScene(startButton, "crimescene");
   }
 
@@ -35,6 +38,7 @@ public class StartController {
    */
   @FXML
   void onExit(MouseEvent event) {
+    playSound();
     App.handleWindowClose();
     Platform.exit();
   }

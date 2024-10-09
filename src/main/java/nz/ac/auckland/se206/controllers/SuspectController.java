@@ -87,6 +87,8 @@ public class SuspectController extends Controller {
   @FXML
   private void onSendMessage() throws ApiProxyException, IOException {
 
+    SoundController.playSound();
+
     String message = textEntry.getText();
 
     if (message.isEmpty()) {

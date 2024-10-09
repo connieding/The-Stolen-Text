@@ -62,4 +62,12 @@ public class ClueGlassController extends ClueController implements Initializable
     draggedMap.put(imgGlass3, false);
     draggedMap.put(imgGlass4, false);
   }
+
+  public static void playGlassDropSound() {
+    try {
+      ClueController.playEffect(App.class.getResource("/sounds/glassDrop.mp3").toURI().toString());
+    } catch (URISyntaxException e) {
+      e.printStackTrace();
+    }
+  }
 }

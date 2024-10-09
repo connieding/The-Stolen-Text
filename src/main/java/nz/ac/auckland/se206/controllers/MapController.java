@@ -53,6 +53,7 @@ public class MapController extends Controller {
    * @throws IOException if the scene is not found
    */
   public void handleRectangleClicked(MouseEvent event) throws IOException {
+    SoundController.playSound();
 
     System.out.println("");
     Rectangle clickedRectangle = (Rectangle) event.getSource();

@@ -39,6 +39,8 @@ public abstract class Controller {
    * @throws IOException if the guess scene is not found
    */
   public void handleGuessClicked(MouseEvent event) throws IOException {
+    SoundController.playSound();
+
     // Check if the player has met all suspects and used a clue before allowing them to guess
     if (GameData.hasUsedClue()
         & GameData.hasMetSuspect("archivist")
@@ -77,6 +79,7 @@ public abstract class Controller {
    * @throws IOException if the map scene is not found
    */
   public void handleMapClicked(MouseEvent event) throws IOException {
+    SoundController.playSound();
 
     // Toggle the map visibility/interaction
     mapSubScene.setVisible(!mapSubScene.isVisible());

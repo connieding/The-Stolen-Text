@@ -32,6 +32,7 @@ public class FeedbackController {
    * @throws IOException if the scene is not found
    */
   public void handleRetryClicked(MouseEvent event) throws IOException {
+    SoundController.playSound();
     App.reset();
     App.openScene((ImageView) event.getSource(), "crimescene");
   }
@@ -42,6 +43,7 @@ public class FeedbackController {
    * @param event the mouse event
    */
   public void handleExitClicked(MouseEvent event) {
+    SoundController.playSound();
     App.handleWindowClose();
     Platform.exit();
   }

@@ -38,6 +38,17 @@ public class CluePaperController extends ClueController {
       new Image(getClass().getResourceAsStream("/images/handkerchief.png")),
     };
 
+    // Animate the images
+    if (clickCount <= images.length) {
+      imageAnimate.setImage(images[clickCount - 1]);
+      try {
+        ClueController.playEffect(
+            App.class.getResource("/sounds/clothFold.mp3").toURI().toString());
+      } catch (URISyntaxException e) {
+        e.printStackTrace();
+      }
+    }
+
     // Play the clue voice after the last image is shown
     if (clickCount == images.length) {
 
@@ -49,11 +60,6 @@ public class CluePaperController extends ClueController {
       } catch (URISyntaxException e) {
         e.printStackTrace();
       }
-    }
-
-    // Animate the images
-    if (clickCount <= images.length) {
-      imageAnimate.setImage(images[clickCount - 1]);
     }
   }
 }

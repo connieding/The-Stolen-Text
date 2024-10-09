@@ -103,6 +103,7 @@ public class GuessController extends Controller {
    * @param suspect
    */
   private void setSelectedSuspect(String suspect) {
+    SoundController.playCircle();
 
     // Set the selected suspect
     selectedSuspect = suspect;
@@ -142,6 +143,7 @@ public class GuessController extends Controller {
    * @throws IOException if the feedback scene is not found
    */
   public void handleSubmitClicked() throws ApiProxyException, IOException {
+    SoundController.playSound();
 
     // If the correct suspect hasn't been selected, show the failed scene
     if (selectedSuspect == null || selectedSuspect != "collector") {
