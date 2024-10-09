@@ -75,8 +75,6 @@ public class GuessController extends Controller {
   @FXML private TextArea textEvidence;
 
   private String selectedSuspect = null; // Variable to hold the selected suspect
-  private boolean soundPlayed =
-      false; // Variable to hold whether the correct/incorrect sound has been played
   private boolean suspectCorrect = true; // Variable to hold whether the player is guessing
 
   /** Initialize the guess scene and set the game state to guessing. */
@@ -154,6 +152,7 @@ public class GuessController extends Controller {
       suspectCorrect = false;
     }
 
+    // Play the appriopriate success sound
     SoundController.guessClick(
         () -> {
           if (!suspectCorrect) {
