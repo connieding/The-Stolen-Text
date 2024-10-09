@@ -1,6 +1,7 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
+import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -46,6 +47,7 @@ public class SuspectController extends Controller {
   public void initialize() throws ApiProxyException {
 
     textEntry.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+    Platform.runLater(() -> textEntry.requestFocus());
 
     // Determine which suspect is being interacted with
     character = textHead.getText().toLowerCase();

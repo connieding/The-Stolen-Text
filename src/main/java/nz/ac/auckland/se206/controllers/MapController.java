@@ -55,7 +55,6 @@ public class MapController extends Controller {
   public void handleRectangleClicked(MouseEvent event) throws IOException {
     SoundController.playSound();
 
-    System.out.println("");
     Rectangle clickedRectangle = (Rectangle) event.getSource();
 
     App.openScene(clickedRectangle, clickedRectangle.getId());
