@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.IntroController">
    <children>
       <ImageView fitHeight="296.0" fitWidth="493.0" layoutX="9.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -29,5 +29,10 @@
             <Font name="Sylfaen" size="18.7" />
          </font>
       </Text>
+      <ImageView fx:id="startImage" fitHeight="26.0" fitWidth="83.0" layoutX="217.0" layoutY="306.0" onMouseClicked="#handleRectangleClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/startBut.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
