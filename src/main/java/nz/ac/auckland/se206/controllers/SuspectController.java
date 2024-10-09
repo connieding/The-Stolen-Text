@@ -5,7 +5,6 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -32,7 +31,7 @@ public class SuspectController extends Controller {
   @FXML private AnchorPane textPane;
   @FXML private Text textHead;
   @FXML private TextArea textHistory;
-  @FXML private TextField textEntry;
+  @FXML private TextArea textEntry;
   @FXML private Button textSend;
 
   private ChatCompletionRequest chatHistory;
@@ -45,6 +44,8 @@ public class SuspectController extends Controller {
    */
   @FXML
   public void initialize() throws ApiProxyException {
+
+    textEntry.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
 
     // Determine which suspect is being interacted with
     character = textHead.getText().toLowerCase();
