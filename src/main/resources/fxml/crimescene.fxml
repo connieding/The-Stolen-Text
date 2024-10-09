@@ -31,7 +31,7 @@
             <Image url="@../images/glassPile.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="13.6" fitWidth="47.6" layoutX="649.4" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="13.6" fitWidth="47.6" layoutX="632.0" layoutY="515.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/handkerchiefCrime.png" />
          </image>
@@ -51,8 +51,8 @@
               <Cursor fx:constant="HAND" />
           </cursor>
       </Rectangle>
-      <Polygon fx:id="handkerchiefClue" fill="RED" layoutX="623.9" layoutY="457.3" opacity="0.0" points="72.07998962402344, 76.67001037597656, 48.62001037597656, 69.52998962402343, 22.099999999999998, 73.27001037597655, 45.9, 83.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Rectangle fx:id="cluePaper" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="44.199999999999996" layoutX="632.4" layoutY="508.3" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="79.89999999999999">
+      <Polygon fx:id="handkerchiefClue" fill="RED" layoutX="606.0" layoutY="445.0" opacity="0.0" points="72.07998962402344, 76.67001037597656, 48.62001037597656, 69.52998962402343, 22.099999999999998, 73.27001037597655, 45.9, 83.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Rectangle fx:id="cluePaper" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="44.199999999999996" layoutX="615.0" layoutY="496.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="79.89999999999999">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
