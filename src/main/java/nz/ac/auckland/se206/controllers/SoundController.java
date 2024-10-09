@@ -16,6 +16,8 @@ public abstract class SoundController extends Controller {
   private static MediaPlayer click2;
   private static MediaPlayer click3;
   private static MediaPlayer circle;
+  private static MediaPlayer correct;
+  private static MediaPlayer incorrect;
 
   // Random number generator
   public static Random random = new Random();
@@ -45,6 +47,10 @@ public abstract class SoundController extends Controller {
       click3 = new MediaPlayer(effect3);
       Media effect4 = new Media(App.class.getResource("/sounds/circle.mp3").toURI().toString());
       circle = new MediaPlayer(effect4);
+      Media effect5 = new Media(App.class.getResource("/sounds/correct.mp3").toURI().toString());
+      correct = new MediaPlayer(effect5);
+      Media effect6 = new Media(App.class.getResource("/sounds/incorrect.mp3").toURI().toString());
+      incorrect = new MediaPlayer(effect6);
     } catch (NullPointerException | URISyntaxException e) {
       e.printStackTrace();
     }
@@ -86,6 +92,59 @@ public abstract class SoundController extends Controller {
       // Play the sound
       circle.seek(Duration.ZERO); // Reset to the beginning
       circle.play();
+    } else {
+      System.out.println("Sound not preloaded!");
+    }
+  }
+
+  /** Play the correct sound from the preloaded sounds. */
+  public static void playSuccess() {
+    if (correct != null) {
+      // Silence any currently playing sound
+      silence();
+
+      // Play the sound
+      correct.seek(Duration.ZERO); // Reset to the beginning
+      correct.play();
+    } else {
+      System.out.println("Sound not preloaded!");
+    }
+  }
+
+  /** Play the incorrect sound from the preloaded sounds. */
+  public static void playFail() {
+    if (incorrect != null) {
+      // Silence any currently playing sound
+      silence();
+
+      // Play the sound
+      incorrect.seek(Duration.ZERO); // Reset to the beginning
+      incorrect.play();
+    } else {
+      System.out.println("Sound not preloaded!");
+    }
+  }
+
+  /**
+   * Play the guess sound from the preloaded sounds.
+   *
+   * @param onFinish the callback to run when the sound finishes
+   */
+  public static void guessClick(Runnable onFinish) {
+    silence(); // Silence any currently playing sound
+
+    MediaPlayer selectedSound = null;
+
+    // Select the sound based on the random choice
+    selectedSound = click;
+
+    if (selectedSound != null) {
+      selectedSound.seek(Duration.ZERO); // Reset to the beginning
+      selectedSound.setOnEndOfMedia(
+          () -> {
+            onFinish.run(); // Call the provided callback
+          });
+      selectedSound.play();
     } else {
       System.out.println("Sound not preloaded!");
     }
