@@ -74,11 +74,11 @@ public class App extends Application {
    * @param button the button that was clicked to show the map
    * @throws IOException if the map FXML file is not found
    */
-  public static void overlayMap(Node button) throws IOException {
+  public static void overlayMap() throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/map.fxml"));
     Pane root = loader.load();
     scene = new Scene(root);
-    (((Pane) button.getScene().lookup("#mapSubScene")).getChildren()).add(root);
+    (((Pane) stage.getScene().lookup("#mapSubScene")).getChildren()).add(root);
   }
 
   /**
@@ -87,11 +87,11 @@ public class App extends Application {
    * @param button the button that was clicked to show the map
    * @throws IOException if the map FXML file is not found
    */
-  public static void overlayIntro(Node button) throws IOException {
+  public static void overlayIntro() throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/intro.fxml"));
     Pane root = loader.load();
     scene = new Scene(root);
-    (((Pane) button.getScene().lookup("#mapSubScene")).getChildren()).add(root);
+    (((Pane) stage.getScene().lookup("#mapSubScene")).getChildren()).add(root);
   }
 
   /**
@@ -100,8 +100,8 @@ public class App extends Application {
    * @param button the button that was clicked to hide the map
    * @throws IOException if the map subscene is not found
    */
-  public static void hideOverlay(Node button) throws IOException {
-    ((Pane) button.getScene().lookup("#mapSubScene")).getChildren().clear();
+  public static void hideOverlay() throws IOException {
+    ((Pane) stage.getScene().lookup("#mapSubScene")).getChildren().clear();
   }
 
   /**

@@ -17,12 +17,16 @@ import nz.ac.auckland.se206.GameData;
  */
 public abstract class Controller {
 
+  private static boolean isMapOut = true;
+
+  public static void setMapOut(boolean mapOut) {
+    isMapOut = mapOut;
+  }
+
   @FXML protected Label lblTimer;
   @FXML protected Rectangle buttonAccuse;
   @FXML protected AnchorPane mapSubScene;
   @FXML protected Rectangle buttonMap;
-
-  protected boolean isMapOut = false;
 
   private MediaPlayer hintPlayer;
 
@@ -87,9 +91,9 @@ public abstract class Controller {
 
     // Toggle the map overlay
     if (!isMapOut) {
-      App.overlayMap(buttonMap);
+      App.overlayMap();
     } else {
-      App.hideOverlay(buttonMap);
+      App.hideOverlay();
     }
     isMapOut = !isMapOut;
   }
