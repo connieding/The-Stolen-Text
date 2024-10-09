@@ -44,6 +44,10 @@ public class App extends Application {
     scene.setRoot(loadFxml(fxml));
   }
 
+  public static Stage getStage() {
+    return stage;
+  }
+
   /**
    * Loads the FXML file and returns the associated node. The method expects that the file is
    * located in "src/main/resources/fxml".
