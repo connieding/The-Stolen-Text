@@ -140,10 +140,7 @@ public abstract class SoundController extends Controller {
 
     if (selectedSound != null) {
       selectedSound.seek(Duration.ZERO); // Reset to the beginning
-      selectedSound.setOnEndOfMedia(
-          () -> {
-            onFinish.run(); // Call the provided callback
-          });
+      selectedSound.setOnEndOfMedia(onFinish); // Directly set the callback
       selectedSound.play();
     } else {
       System.out.println("Sound not preloaded!");

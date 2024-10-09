@@ -148,19 +148,24 @@ public class GuessController extends Controller {
 
     // If the correct suspect hasn't been selected, show the failed scene
     if (selectedSuspect == null || selectedSuspect != "collector") {
-      App.openScene(textEvidence, "failed");
-      suspectCorrect = false;
-    }
-
-    // Play the appriopriate success sound
-    SoundController.guessClick(
-        () -> {
-          if (!suspectCorrect) {
-            SoundController.playFail();
-          } else {
+      // App.openScene(textEvidence, "failed");
+      // suspectCorrect = false;
+      SoundController.guessClick(
+          () -> {
+            SoundController.playFail(); // Play the fail sound after the button click sound
+            try {
+              App.openScene(textEvidence, "failed");
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
+          });
+    } else {
+      // Play the appriopriate success sound
+      SoundController.guessClick(
+          () -> {
             SoundController.playSuccess();
-          }
-        });
+          });
+    }
 
     // Get the motive and evidence from the text fields
     String motive = textMotive.getText().trim();
