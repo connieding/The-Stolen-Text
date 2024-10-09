@@ -86,12 +86,12 @@
             <Image url="@../images/pocketWatch.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="20.4" layoutY="40.8" prefHeight="59.5" prefWidth="69.7" text="300.0" textAlignment="CENTER" textFill="#ae8533">
+      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="20.4" layoutY="40.8" prefHeight="59.5" prefWidth="69.7" text="5:00" textAlignment="CENTER" textFill="#ae8533">
          <font>
             <Font name="Sylfaen" size="25.5" />
          </font>
       </Label>
       <AnchorPane fx:id="warningSubScene" layoutX="97.0" layoutY="13.0" prefHeight="113.0" prefWidth="299.0" visible="false" />
-      <AnchorPane fx:id="mapSubScene" disable="true" layoutX="255.0" layoutY="85.0" prefHeight="510.0" prefWidth="510.0" />
+      <AnchorPane fx:id="mapSubScene" layoutX="255.0" layoutY="85.0" prefHeight="510.0" prefWidth="510.0" />
    </children>
 </AnchorPane>

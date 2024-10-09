@@ -17,7 +17,7 @@ import nz.ac.auckland.se206.GameData;
  */
 public abstract class Controller {
 
-  private static boolean isMapOut = true;
+  private static boolean isMapOut = false;
 
   public static void setMapOut(boolean mapOut) {
     isMapOut = mapOut;
@@ -85,10 +85,6 @@ public abstract class Controller {
   public void handleMapClicked(MouseEvent event) throws IOException {
     SoundController.playSound();
 
-    // Toggle the map visibility/interaction
-    mapSubScene.setVisible(!mapSubScene.isVisible());
-    mapSubScene.setDisable(!mapSubScene.isDisable());
-
     // Toggle the map overlay
     if (!isMapOut) {
       App.overlayMap();
@@ -96,5 +92,9 @@ public abstract class Controller {
       App.hideOverlay();
     }
     isMapOut = !isMapOut;
+
+    // Toggle the map visibility/interaction
+    mapSubScene.setVisible(isMapOut);
+    mapSubScene.setDisable(!isMapOut);
   }
 }
