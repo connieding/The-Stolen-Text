@@ -21,6 +21,8 @@ public class IntroController {
    */
   @FXML
   public void handleRectangleClicked() throws IOException {
+    SoundController.playSound();
+
     App.hideOverlay();
     Controller.setMapOut(false);
   }
