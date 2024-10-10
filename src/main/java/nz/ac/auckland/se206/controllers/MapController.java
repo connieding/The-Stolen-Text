@@ -77,19 +77,19 @@ public class MapController extends Controller {
     if (id.equals("collector")) {
       collectorPortrait.setOpacity(1);
       visitCollector.setOpacity(1);
-      collectorIcon.setOpacity(0.7);
+      collectorIcon.setOpacity(0.8);
     } else if (id.equals("archivist")) {
       archivistPortrait.setOpacity(1);
       visitArchivist.setOpacity(1);
-      archivistIcon.setOpacity(0.7);
+      archivistIcon.setOpacity(0.8);
     } else if (id.equals("historian")) {
       historianPortrait.setOpacity(1);
       visitHistorian.setOpacity(1);
-      historianIcon.setOpacity(0.7);
+      historianIcon.setOpacity(0.8);
     } else {
       libraryImage.setOpacity(1);
       visitLibrary.setOpacity(1);
-      libraryIcon.setOpacity(0.7);
+      libraryIcon.setOpacity(0.8);
     }
   }
 

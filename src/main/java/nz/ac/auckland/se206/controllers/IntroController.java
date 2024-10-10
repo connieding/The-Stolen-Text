@@ -31,4 +31,14 @@ public class IntroController extends Controller {
 
     App.hideOverlay();
   }
+
+  @FXML
+  private void handleMouseEnterStarted() {
+    startImage.setOpacity(0.7);
+  }
+
+  @FXML
+  private void handleMouseExitStarted() {
+    startImage.setOpacity(1);
+  }
 }
