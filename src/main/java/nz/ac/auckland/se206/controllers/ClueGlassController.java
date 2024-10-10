@@ -70,6 +70,7 @@ public class ClueGlassController extends ClueController implements Initializable
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    // Set the glass shard click counter
     setupClickEvent(imgGlass1);
     setupClickEvent(imgGlass2);
     setupClickEvent(imgGlass3);
@@ -94,13 +95,17 @@ public class ClueGlassController extends ClueController implements Initializable
   // New method to handle clicks on glass shards
   private void setupClickEvent(ImageView imgGlass) {
 
+    // Count the number of times the glass shards are clicked
     imgGlass.setOnMouseClicked(
         event -> {
+          // Check if the glass shards been dragged
           if (isDragged) {
             return;
           }
           clickCount++;
+          // Play the animation if the glass shards are clicked 3 times
           if (clickCount == 3) {
+            // Check animation have not already been played
             if (!played) {
               moveArrow();
               played = true;
