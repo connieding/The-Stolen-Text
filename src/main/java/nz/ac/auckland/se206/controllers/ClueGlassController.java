@@ -49,9 +49,19 @@ public class ClueGlassController extends ClueController implements Initializable
   @FXML private ImageView imgGlass4;
   @FXML private ImageView arrow;
   private Draggable draggable = new Draggable();
+  private int clickCount = 0;
+  private boolean played = false;
+  private boolean isDragged = false;
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    played = false;
+
+    setupClickEvent(imgGlass1);
+    setupClickEvent(imgGlass2);
+    setupClickEvent(imgGlass3);
+    setupClickEvent(imgGlass4);
 
     // Make the glass shard draggable
     draggable.makeDraggable(imgGlass1);
@@ -64,8 +74,30 @@ public class ClueGlassController extends ClueController implements Initializable
     draggedMap.put(imgGlass2, false);
     draggedMap.put(imgGlass3, false);
     draggedMap.put(imgGlass4, false);
+  }
 
-    moveArrow();
+  // New method to handle clicks on glass shards
+  private void setupClickEvent(ImageView imgGlass) {
+
+    imgGlass.setOnMouseDragged(
+        event -> {
+          isDragged = true;
+        });
+
+    imgGlass.setOnMouseClicked(
+        event -> {
+          if (isDragged) {
+            return;
+          }
+          clickCount++;
+          if (clickCount == 3) {
+            if (!played) {
+              moveArrow();
+              clickCount = 0;
+              played = true;
+            }
+          }
+        });
   }
 
   /** Play the glass dropping sound. */
@@ -85,8 +117,8 @@ public class ClueGlassController extends ClueController implements Initializable
     translate.setNode(arrow);
 
     // Set the arrow to move to the right
-    translate.setByX(115);
-    translate.setByY(-115);
+    translate.setByX(90);
+    translate.setByY(-90);
 
     // Set the duration and interpolator of the arrow
     translate.setDuration(javafx.util.Duration.seconds(1.4));

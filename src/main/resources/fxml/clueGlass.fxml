@@ -92,7 +92,7 @@
       </ImageView>
       <AnchorPane fx:id="warningSubScene" layoutX="97.0" layoutY="13.0" prefHeight="113.0" prefWidth="299.0" visible="false" />
       <AnchorPane fx:id="mapSubScene" disable="true" layoutX="255.0" layoutY="85.0" prefHeight="510.0" prefWidth="510.0" visible="false" />
-      <ImageView fx:id="arrow" fitHeight="239.0" fitWidth="393.0" layoutX="484.0" layoutY="123.0" mouseTransparent="true" opacity="0.85" pickOnBounds="true" preserveRatio="true" rotate="-41.2">
+      <ImageView fx:id="arrow" fitHeight="239.0" fitWidth="393.0" layoutX="488.0" layoutY="116.0" mouseTransparent="true" opacity="0.85" pickOnBounds="true" preserveRatio="true" rotate="-41.2" visible="false">
          <image>
             <Image url="@../images/arrow.png" />
          </image>
