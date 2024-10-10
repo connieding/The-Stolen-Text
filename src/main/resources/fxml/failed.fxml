@@ -44,11 +44,17 @@
          <image>
             <Image url="@../images/exit.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
       </ImageView>
       <ImageView fx:id="retryImage" fitHeight="59.5" fitWidth="69.7" layoutX="819.4" layoutY="593.3" onMouseExited="#handleMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/retry.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
       </ImageView>
    </children>
 </AnchorPane>
