@@ -18,6 +18,7 @@ public class GameData {
   private static boolean usedClue;
   private static boolean isGuessing;
   private static HashMap<String, Boolean> meetings = new HashMap<String, Boolean>();
+  private static String lastClickedRectangleId = "crimescene";
 
   public static boolean isGuessing() {
     return isGuessing;
@@ -43,6 +44,14 @@ public class GameData {
     isGuessing = guessing;
   }
 
+  public static String getLastClickedRectangleId() {
+    return lastClickedRectangleId;
+  }
+  
+  public static void setLastClickedRectangleId(String rectangleId) {
+    lastClickedRectangleId = rectangleId;
+  }
+
   private GuessController guessController;
 
   /** Constructor for the GameData class. */
@@ -52,6 +61,7 @@ public class GameData {
     meetings.put("historian", false);
     usedClue = false;
     isGuessing = false;
+    lastClickedRectangleId = "crimescene";
   }
 
   /**

@@ -9,6 +9,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameData;
 
 /**
  * This class is the controller for the map scene. It handles the map and the corresponding scenes.
@@ -43,7 +44,17 @@ public class MapController extends Controller {
    */
   @FXML
   public void initialize() throws ApiProxyException {
-    // Any required initialization code can be placed here
+    String lastClickedId = GameData.getLastClickedRectangleId();
+
+    if (lastClickedId.equals("collector")) {
+      collector.setDisable(true);
+    } else if (lastClickedId.equals("archivist")) {
+      archivist.setDisable(true);
+    } else if (lastClickedId.equals("historian")) {
+      historian.setDisable(true);
+    } else {
+      crimescene.setDisable(true);
+    }
   }
 
   /**
@@ -57,7 +68,36 @@ public class MapController extends Controller {
 
     Rectangle clickedRectangle = (Rectangle) event.getSource();
 
+    // Disable the clicked rectangle
+    clickedRectangle.setDisable(true);
+
+    // Enable the previously clicked rectangle if different
+    String lastClickedId = GameData.getLastClickedRectangleId();
+    if (!clickedRectangle.getId().equals(lastClickedId)) {
+      enablePreviousRectangle(lastClickedId);
+    }
+
+    // Update GameData with the new last clicked rectangle
+    GameData.setLastClickedRectangleId(clickedRectangle.getId());
+
     App.openScene(clickedRectangle, clickedRectangle.getId());
+  }
+
+  /**
+   * Enable the previous rectangle based on the last clicked rectangle ID.
+   *
+   * @param lastClickedId the ID of the last clicked rectangle
+   */
+  private void enablePreviousRectangle(String lastClickedId) {
+    if (lastClickedId.equals("collector")) {
+      collector.setDisable(false);
+    } else if (lastClickedId.equals("archivist")) {
+      archivist.setDisable(false);
+    } else if (lastClickedId.equals("historian")) {
+      historian.setDisable(false);
+    } else {
+      crimescene.setDisable(false); // Default case for crimescene
+    }
   }
 
   /**

@@ -99,15 +99,15 @@ public abstract class Controller {
     mapSubScene.setDisable(false);
   }
 
-  /** Handle the map button hover to set opacity low. */
+  /** Handle the map button hover rotate and enlarge */
   @FXML
   private void handleMouseEnterMap() {
-    mapImage.setRotate(30);
+    mapImage.setRotate(17);
     mapImage.setScaleX(1.2);
     mapImage.setScaleY(1.2);
   }
 
-  /** Handle the map button hover exited to set opacity back up. */
+  /** Handle the map button hover exited to set back. */
   @FXML
   private void handleMouseExitMap() {
     mapImage.setRotate(0);
@@ -115,15 +115,15 @@ public abstract class Controller {
     mapImage.setScaleY(1);
   }
 
-  /** Handle the accuse button hover to set opacity low. */
+  /** Handle the accuse button hover to rotate and enlarge */
   @FXML
   private void handleMouseEnterAccuse() {
-    accuseImage.setRotate(30);
+    accuseImage.setRotate(17);
     accuseImage.setScaleX(1.2);
     accuseImage.setScaleY(1.2);
   }
 
-  /** Handle the accuse button hover exited to set opacity back up. */
+  /** Handle the accuse button hover exited to set back */
   @FXML
   private void handleMouseExitAccuse() {
     accuseImage.setRotate(0);
