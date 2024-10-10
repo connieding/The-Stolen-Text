@@ -19,10 +19,6 @@ public abstract class Controller {
 
   private static boolean isMapOut = false;
 
-  public static void setMapOut(boolean mapOut) {
-    isMapOut = mapOut;
-  }
-
   @FXML protected Label lblTimer;
   @FXML protected Rectangle buttonAccuse;
   @FXML protected AnchorPane mapSubScene;
@@ -34,11 +30,6 @@ public abstract class Controller {
 
   public void setTime(String timeRemaining) {
     lblTimer.setText(timeRemaining);
-  }
-
-  public void setMapVisible(boolean mapOut) {
-    mapSubScene.setVisible(mapOut);
-    mapSubScene.setDisable(!mapOut);
   }
 
   /**

@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import nz.ac.auckland.se206.App;
 
 public class IntroController extends Controller {
@@ -24,8 +25,9 @@ public class IntroController extends Controller {
   public void handleRectangleClicked(MouseEvent event) throws IOException {
     SoundController.playSound();
 
-    startImage.getParent().getParent().setVisible(false);
-    startImage.getParent().getParent().setDisable(true);
+    AnchorPane overlay = (AnchorPane) startImage.getParent().getParent();
+    overlay.setVisible(false);
+    overlay.setDisable(true);
 
     App.hideOverlay();
   }
