@@ -41,7 +41,7 @@
       <Polygon fx:id="shardTwo" fill="RED" layoutX="470.9" layoutY="419.9" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" points="-97.75, 133.875, -73.52499999999999, 126.225, -42.5, 130.475, -55.25, 137.275, -85.0, 137.275" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Polygon fx:id="shardOne" fill="RED" layoutX="453.9" layoutY="491.3" onMouseEntered="#handleClueEntered" onMouseExited="#handleClueExited" opacity="0.0" points="-114.74998962402344, 64.94001037597657, -110.5, 72.25, -95.53999481201171, 78.02998962402343, -54.739994812011716, 72.25, -110.5, 62.05" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
 
-      <Rectangle fx:id="buttonMap" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="85.0" layoutX="23.8" layoutY="571.1999999999999" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0">
+      <Rectangle fx:id="buttonMap" arcHeight="8.5" arcWidth="8.5" fill="#ffc800" height="85.0" layoutX="23.8" layoutY="571.1999999999999" onMouseClicked="#handleMapClicked" onMouseEntered="#handleMouseEnterMap" onMouseExited="#handleMouseExitMap" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
@@ -63,9 +63,7 @@
               <Cursor fx:constant="HAND" />
           </cursor>
       </Rectangle>
-
-
-      <Rectangle fx:id="buttonAccuse" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="85.0" layoutX="161.5" layoutY="571.1999999999999" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0">
+      <Rectangle fx:id="buttonAccuse" arcHeight="8.5" arcWidth="8.5" fill="#ffc800" height="85.0" layoutX="161.5" layoutY="571.1999999999999" onMouseClicked="#handleGuessClicked" onMouseEntered="#handleMouseEnterAccuse" onMouseExited="#handleMouseExitAccuse" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="85.0">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>

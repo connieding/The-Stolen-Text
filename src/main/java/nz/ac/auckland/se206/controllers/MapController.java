@@ -73,7 +73,7 @@ public class MapController extends Controller {
 
     suspectShowBackground.setOpacity(1);
 
-    // Show sorresponding suspect scene
+    // Show corresponding suspect scene
     if (id.equals("collector")) {
       collectorPortrait.setOpacity(1);
       visitCollector.setOpacity(1);

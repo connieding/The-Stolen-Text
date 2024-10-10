@@ -93,4 +93,36 @@ public abstract class Controller {
     mapSubScene.setVisible(isMapOut);
     mapSubScene.setDisable(!isMapOut);
   }
+
+  /**
+   * Handle the map button hover to set opacity low.
+   */
+  @FXML
+  private void handleMouseEnterMap() {
+    buttonMap.setOpacity(0.1);
+  }
+
+   /**
+   * Handle the map button hover exited to set opacity back up.
+   */
+  @FXML
+  private void handleMouseExitMap() {
+    buttonMap.setOpacity(0);
+  }
+
+  /**
+   * Handle the accuse button hover to set opacity low.
+   */
+  @FXML
+  private void handleMouseEnterAccuse() {
+    buttonAccuse.setOpacity(0.1);
+  }
+
+  /**
+   * Handle the accuse button hover exited to set opacity back up.
+   */
+  @FXML
+  private void handleMouseExitAccuse() {
+    buttonAccuse.setOpacity(0);
+  }
 }

@@ -50,6 +50,28 @@ public abstract class ClueController extends Controller {
   @Override
   public void initialize() throws ApiProxyException {}
 
+  /* 
+   * Handle the return button hover to set opacity low.
+   */
+  @FXML
+  private void handleMouseEntered() {
+    buttonReturn.setOpacity(0.7);
+  }
+
+  /* 
+   * Handle the return button hover exited to set opacity back up.
+   */
+  @FXML
+  private void handleMouseExited() {
+    buttonReturn.setOpacity(1.0);
+  }
+
+  /**
+   * Handle the return button click and open the crimescene scene.
+   *
+   * @param event the mouse event
+   * @throws IOException if the crimescene scene is not found
+   */
   public void handleRectangleClicked(MouseEvent event) throws IOException {
     SoundController.playSound();
     App.openScene(buttonReturn, "crimescene");

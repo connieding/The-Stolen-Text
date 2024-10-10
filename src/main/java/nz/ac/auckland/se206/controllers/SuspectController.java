@@ -34,6 +34,7 @@ public class SuspectController extends Controller {
   @FXML private TextArea textHistory;
   @FXML private TextArea textEntry;
   @FXML private Button textSend;
+  @FXML private ImageView sendMessage;
 
   private ChatCompletionRequest chatHistory;
   private String character;
@@ -154,5 +155,21 @@ public class SuspectController extends Controller {
     if (event.getCode().equals(KeyCode.ENTER)) {
       onSendMessage();
     }
+  }
+
+    /* 
+   * Handle the return button hover to set opacity low.
+   */
+  @FXML
+  private void handleMouseEnterSend() {
+    sendMessage.setOpacity(0.7);
+  }
+
+  /* 
+   * Handle the return button hover exited to set opacity back up.
+   */
+  @FXML
+  private void handleMouseExitSend() {
+    sendMessage.setOpacity(1.0);
   }
 }
