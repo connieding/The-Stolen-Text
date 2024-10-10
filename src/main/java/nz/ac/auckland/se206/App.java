@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -75,7 +76,6 @@ public class App extends Application {
   /**
    * Overlays the map on the current scene.
    *
-   * @param button the button that was clicked to show the map
    * @throws IOException if the map FXML file is not found
    */
   public static void overlayMap() throws IOException {
@@ -86,23 +86,26 @@ public class App extends Application {
   }
 
   /**
-   * Overlays the map on the current scene.
+   * Overlays the intro on the current scene.
    *
-   * @param button the button that was clicked to show the map
-   * @throws IOException if the map FXML file is not found
+   * @throws IOException if the intro FXML file is not found
    */
   public static void overlayIntro() throws IOException {
+    // Load the intro scene
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/intro.fxml"));
     Pane root = loader.load();
     scene = new Scene(root);
-    (((Pane) stage.getScene().lookup("#mapSubScene")).getChildren()).add(root);
+    // Add the intro scene to the current scene
+    AnchorPane mapSubScene = (AnchorPane) stage.getScene().lookup("#mapSubScene");
+    (mapSubScene.getChildren()).add(root);
+    mapSubScene.setVisible(true);
+    mapSubScene.setDisable(false);
   }
 
   /**
-   * Hides the map from the current scene.
+   * Hides the overlay from the current scene.
    *
-   * @param button the button that was clicked to hide the map
-   * @throws IOException if the map subscene is not found
+   * @throws IOException if the map FXML file is not found
    */
   public static void hideOverlay() throws IOException {
     ((Pane) stage.getScene().lookup("#mapSubScene")).getChildren().clear();
@@ -147,11 +150,6 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-    Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
-    double x = bounds.getMinX() + (bounds.getWidth() - scene.getWidth()) * 0.5;
-    double y = bounds.getMinY() + (bounds.getHeight() - scene.getHeight()) * 0.5;
-    stage.setX(x);
-    stage.setY(y);
 
     // Close the previous scene
     handleWindowClose();

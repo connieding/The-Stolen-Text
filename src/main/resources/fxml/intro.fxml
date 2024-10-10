@@ -31,7 +31,7 @@
       </Text>
       <ImageView fx:id="startImage" fitHeight="26.0" fitWidth="83.0" layoutX="217.0" layoutY="306.0" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEnterStarted" onMouseExited="#handleMouseExitStarted" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/startBut.png" />
+            <Image url="@../images/brownStart.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />

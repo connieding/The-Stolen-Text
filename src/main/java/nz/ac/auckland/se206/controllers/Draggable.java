@@ -9,7 +9,11 @@ public class Draggable {
   private double mouseX;
   private double mouseY;
 
-  /** Make a node draggable. */
+  /**
+   * Make a node draggable by mouse press, drag and release.
+   *
+   * @param node the node to make draggable
+   */
   public void makeDraggable(Node node) {
 
     // Set the mouse coordinates when the mouse is pressed
