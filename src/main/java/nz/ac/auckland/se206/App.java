@@ -76,7 +76,6 @@ public class App extends Application {
   /**
    * Overlays the map on the current scene.
    *
-   * @param button the button that was clicked to show the map
    * @throws IOException if the map FXML file is not found
    */
   public static void overlayMap() throws IOException {
@@ -87,10 +86,9 @@ public class App extends Application {
   }
 
   /**
-   * Overlays the map on the current scene.
+   * Overlays the intro on the current scene.
    *
-   * @param button the button that was clicked to show the map
-   * @throws IOException if the map FXML file is not found
+   * @throws IOException if the intro FXML file is not found
    */
   public static void overlayIntro() throws IOException {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/intro.fxml"));
@@ -103,10 +101,9 @@ public class App extends Application {
   }
 
   /**
-   * Hides the map from the current scene.
+   * Hides the overlay from the current scene.
    *
-   * @param button the button that was clicked to hide the map
-   * @throws IOException if the map subscene is not found
+   * @throws IOException if the map FXML file is not found
    */
   public static void hideOverlay() throws IOException {
     ((Pane) stage.getScene().lookup("#mapSubScene")).getChildren().clear();

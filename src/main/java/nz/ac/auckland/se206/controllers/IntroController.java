@@ -7,10 +7,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import nz.ac.auckland.se206.App;
 
+/** This class is the controller for the intro scene. It handles the start image. */
 public class IntroController extends Controller {
 
   @FXML private ImageView startImage;
 
+  /** Initialize the intro controller of the game. */
   public void initialize() {
     // Any required initialization code can be placed here
   }

@@ -43,6 +43,20 @@ public class ClueGlassController extends ClueController implements Initializable
     }
   }
 
+  /** Play the glass dropping sound. */
+  public static void playGlassDropSound() {
+    try {
+      ClueController.playEffect(App.class.getResource("/sounds/glassDrop.mp3").toURI().toString());
+    } catch (URISyntaxException e) {
+      e.printStackTrace();
+    }
+  }
+
+  /** Set the glass shards as dragged. */
+  public static void isDragged() {
+    isDragged = true;
+  }
+
   @FXML private ImageView buttonReturn;
   @FXML private ImageView imgGlass1;
   @FXML private ImageView imgGlass2;
@@ -56,6 +70,7 @@ public class ClueGlassController extends ClueController implements Initializable
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    // Set the glass shard click counter
     setupClickEvent(imgGlass1);
     setupClickEvent(imgGlass2);
     setupClickEvent(imgGlass3);
@@ -80,28 +95,23 @@ public class ClueGlassController extends ClueController implements Initializable
   // New method to handle clicks on glass shards
   private void setupClickEvent(ImageView imgGlass) {
 
+    // Count the number of times the glass shards are clicked
     imgGlass.setOnMouseClicked(
         event -> {
+          // Check if the glass shards been dragged
           if (isDragged) {
             return;
           }
           clickCount++;
+          // Play the animation if the glass shards are clicked 3 times
           if (clickCount == 3) {
+            // Check animation have not already been played
             if (!played) {
               moveArrow();
               played = true;
             }
           }
         });
-  }
-
-  /** Play the glass dropping sound. */
-  public static void playGlassDropSound() {
-    try {
-      ClueController.playEffect(App.class.getResource("/sounds/glassDrop.mp3").toURI().toString());
-    } catch (URISyntaxException e) {
-      e.printStackTrace();
-    }
   }
 
   /** Move the arrow hint for the glass clue. */
@@ -129,9 +139,5 @@ public class ClueGlassController extends ClueController implements Initializable
 
     // Play the animation
     translate.play();
-  }
-
-  public static void isDragged() {
-    isDragged = true;
   }
 }
