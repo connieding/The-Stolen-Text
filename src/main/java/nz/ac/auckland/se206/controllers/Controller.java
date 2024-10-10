@@ -19,10 +19,6 @@ public abstract class Controller {
 
   private static boolean isMapOut = false;
 
-  public static void setMapOut(boolean mapOut) {
-    isMapOut = mapOut;
-  }
-
   @FXML protected Label lblTimer;
   @FXML protected Rectangle buttonAccuse;
   @FXML protected AnchorPane mapSubScene;

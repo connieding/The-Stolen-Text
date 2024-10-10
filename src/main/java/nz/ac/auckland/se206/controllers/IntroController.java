@@ -3,9 +3,11 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import nz.ac.auckland.se206.App;
 
-public class IntroController {
+public class IntroController extends Controller {
 
   @FXML private ImageView startImage;
 
@@ -20,10 +22,13 @@ public class IntroController {
    * @throws IOException if the overlay is not found
    */
   @FXML
-  public void handleRectangleClicked() throws IOException {
+  public void handleRectangleClicked(MouseEvent event) throws IOException {
     SoundController.playSound();
 
+    AnchorPane overlay = (AnchorPane) startImage.getParent().getParent();
+    overlay.setVisible(false);
+    overlay.setDisable(true);
+
     App.hideOverlay();
-    Controller.setMapOut(false);
   }
 }
