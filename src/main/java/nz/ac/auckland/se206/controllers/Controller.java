@@ -17,8 +17,6 @@ import nz.ac.auckland.se206.GameData;
  */
 public abstract class Controller {
 
-  private static boolean isMapOut = false;
-
   @FXML protected Label lblTimer;
   @FXML protected Rectangle buttonAccuse;
   @FXML protected AnchorPane mapSubScene;
@@ -82,15 +80,19 @@ public abstract class Controller {
     SoundController.playSound();
 
     // Toggle the map overlay
-    if (!isMapOut) {
+    if (!mapSubScene.isVisible()) {
       App.overlayMap();
+      mapSubScene.setVisible(true);
+      mapSubScene.setDisable(false);
     } else {
       App.hideOverlay();
+      mapSubScene.setVisible(false);
+      mapSubScene.setDisable(true);
     }
-    isMapOut = !isMapOut;
+  }
 
-    // Toggle the map visibility/interaction
-    mapSubScene.setVisible(isMapOut);
-    mapSubScene.setDisable(!isMapOut);
+  public void showInfo() throws IOException {
+    mapSubScene.setVisible(true);
+    mapSubScene.setDisable(false);
   }
 }

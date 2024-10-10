@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -95,7 +96,10 @@ public class App extends Application {
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/intro.fxml"));
     Pane root = loader.load();
     scene = new Scene(root);
-    (((Pane) stage.getScene().lookup("#mapSubScene")).getChildren()).add(root);
+    AnchorPane mapSubScene = (AnchorPane) stage.getScene().lookup("#mapSubScene");
+    (mapSubScene.getChildren()).add(root);
+    mapSubScene.setVisible(true);
+    mapSubScene.setDisable(false);
   }
 
   /**
