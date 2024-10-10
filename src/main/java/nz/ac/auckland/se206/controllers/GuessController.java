@@ -100,7 +100,7 @@ public class GuessController extends Controller {
   /**
    * Update UI to show selected suspect with red circle.
    *
-   * @param suspect
+   * @param suspect the selected suspect
    */
   private void setSelectedSuspect(String suspect) {
     SoundController.playCircle();
