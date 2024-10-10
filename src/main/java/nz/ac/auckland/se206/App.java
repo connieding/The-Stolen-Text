@@ -150,11 +150,6 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-    Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
-    double x = bounds.getMinX() + (bounds.getWidth() - scene.getWidth()) * 0.5;
-    double y = bounds.getMinY() + (bounds.getHeight() - scene.getHeight()) * 0.5;
-    stage.setX(x);
-    stage.setY(y);
 
     // Close the previous scene
     handleWindowClose();
