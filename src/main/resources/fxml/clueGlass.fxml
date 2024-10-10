@@ -50,7 +50,7 @@
             <Font name="Sylfaen" size="25.5" />
          </font>
       </Label>
-      <ImageView fx:id="buttonReturn" fitHeight="90.1" fitWidth="85.0" layoutX="909.5" layoutY="584.8" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEnterReturn" onMouseExited="#handleMouseExitedReturn" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonReturn" fitHeight="90.1" fitWidth="85.0" layoutX="909.5" layoutY="584.8" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEnterReturn" onMouseExited="#handleMouseExitReturn" pickOnBounds="true" preserveRatio="true">
         <cursor>
            <Cursor fx:constant="HAND" />
         </cursor>
