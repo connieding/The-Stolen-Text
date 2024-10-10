@@ -15,12 +15,12 @@
             <Image url="@../images/flooring.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="112.2" fitWidth="105.39999999999999" layoutX="11.9" layoutY="562.6999999999999" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="mapImage" fitHeight="112.2" fitWidth="105.39999999999999" layoutX="11.9" layoutY="562.6999999999999" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/map.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="127.5" fitWidth="147.9" layoutX="149.6" layoutY="547.4" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="accuseImage" fitHeight="127.5" fitWidth="147.9" layoutX="149.6" layoutY="547.4" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/judgeHammer.png" />
          </image>
