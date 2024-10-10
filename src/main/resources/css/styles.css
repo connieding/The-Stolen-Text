@@ -1,0 +1,15 @@
+.text-area .scroll-pane .scroll-bar:vertical,
+.text-area .scroll-pane .scroll-bar:horizontal {
+  -fx-opacity: 0;
+  opacity: 0;
+  -fx-pref-width: 0;
+  -fx-pref-height: 0;
+  -fx-min-width: 0;
+  min-width: 0;
+  -fx-min-height: 0;
+  min-height: 0;
+  -fx-max-width: 0;
+  max-width: 0;
+  -fx-max-height: 0;
+  max-height: 0;
+}

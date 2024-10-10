@@ -2,9 +2,15 @@ package nz.ac.auckland.se206;
 
 import java.io.IOException;
 import java.util.HashMap;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import nz.ac.auckland.apiproxy.exceptions.ApiProxyException;
+import nz.ac.auckland.se206.controllers.FeedbackController;
 import nz.ac.auckland.se206.controllers.GuessController;
+import nz.ac.auckland.se206.prompts.PromptEngineering;
 
 /** This class is used to store the game data and handle the game logic. */
 public class GameData {
@@ -73,7 +79,27 @@ public class GameData {
 
       // If the player has not met all suspects, open the failed scene
     } else {
-      App.openScene(timerLabel, "failed");
+      // Open the feedback scene
+      FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/failed.fxml"));
+      Parent root = loader.load();
+      FeedbackController feedbackController = loader.getController();
+
+      // Set the feedback, based on the failure type
+      if (!GameData.hasUsedClue()) {
+        feedbackController.setFeedback(
+            PromptEngineering.getResource("feedback", "clueFail", "txt"));
+      } else if (!GameData.hasMetSuspect("archivist")
+          | !GameData.hasMetSuspect("collector")
+          | !GameData.hasMetSuspect("historian")) {
+        feedbackController.setFeedback(
+            PromptEngineering.getResource("feedback", "chatFail", "txt"));
+      } else {
+        feedbackController.setFeedback(
+            PromptEngineering.getResource("feedback", "guessFail", "txt"));
+      }
+
+      Stage stage = (Stage) App.getStage();
+      stage.setScene(new Scene(root));
     }
   }
 

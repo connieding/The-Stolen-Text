@@ -29,6 +29,7 @@ public class StartController extends SoundController {
   private void onStart() throws IOException {
     playSound();
     App.openScene(startButton, "crimescene");
+    App.overlayIntro();
   }
 
   /**

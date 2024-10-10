@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.IntroController">
+   <children>
+      <ImageView fitHeight="296.0" fitWidth="493.0" layoutX="9.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/suspectshowbackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="282.0" fitWidth="347.0" layoutX="114.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/mapHeader.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="mapHead" fill="#ae8533" layoutX="62.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INTRO" textAlignment="CENTER" wrappingWidth="386.2400207519533">
+         <font>
+            <Font name="Sylfaen" size="25.5" />
+         </font>
+      </Text>
+      <Text fill="#68380e" layoutX="28.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A valuable historical text has been stolen from the archives, and you've been hired to find the culprit. You've narrowed it down to three suspects; the head archivist, an interested collector, and a historian of the relevant topic. Interact with the suspects, and investigate the clues to figure out who took the text. And WHY!" textAlignment="CENTER" wrappingWidth="455.60003662109375">
+         <font>
+            <Font name="Sylfaen" size="18.7" />
+         </font>
+      </Text>
+      <ImageView fx:id="startImage" fitHeight="26.0" fitWidth="83.0" layoutX="217.0" layoutY="306.0" onMouseClicked="#handleRectangleClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/startBut.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
