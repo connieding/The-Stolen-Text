@@ -34,7 +34,7 @@
             <Image url="@../images/startInfo.png" />
          </image>
       </ImageView>
-      <Label fx:id="startButton" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="319.0" onMouseClicked="#onStart" prefHeight="53.0" prefWidth="180.0">
+      <Label fx:id="startButton" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="319.0" onMouseClicked="#onStart" onMouseEntered="#handleMouseEnterAccuse" onMouseExited="#handleMouseExitAccuse" prefHeight="53.0" prefWidth="180.0">
          <font>
             <Font name="Book Antiqua Bold Italic" size="25.5" />
          </font>

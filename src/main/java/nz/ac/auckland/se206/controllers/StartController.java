@@ -32,6 +32,22 @@ public class StartController extends SoundController {
     App.overlayIntro();
   }
 
+  private void onMouseEnterStart() {
+    startButton.setOpacity(0.7);
+  }
+
+  private void onMouseExitStart() {
+    startButton.setOpacity(1);
+  }
+
+  private void onMouseEnterExit() {
+    startButton.setOpacity(0.7);
+  }
+
+  private void onMouseExitExit() {
+    startButton.setOpacity(1);
+  }
+
   /**
    * Handle the exit button click and close the game.
    *

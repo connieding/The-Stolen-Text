@@ -54,7 +54,7 @@ public abstract class ClueController extends Controller {
    * Handle the return button hover to set opacity low.
    */
   @FXML
-  private void handleMouseEntered() {
+  private void handleMouseEnterReturn() {
     buttonReturn.setOpacity(0.7);
   }
 
@@ -62,7 +62,7 @@ public abstract class ClueController extends Controller {
    * Handle the return button hover exited to set opacity back up.
    */
   @FXML
-  private void handleMouseExited() {
+  private void handleMouseExitReturn() {
     buttonReturn.setOpacity(1.0);
   }
 
