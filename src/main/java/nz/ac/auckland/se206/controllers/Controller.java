@@ -3,6 +3,7 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
@@ -21,6 +22,8 @@ public abstract class Controller {
   @FXML protected Rectangle buttonAccuse;
   @FXML protected AnchorPane mapSubScene;
   @FXML protected Rectangle buttonMap;
+  @FXML protected ImageView mapImage;
+  @FXML protected ImageView accuseImage;
 
   private MediaPlayer hintPlayer;
 
@@ -96,35 +99,35 @@ public abstract class Controller {
     mapSubScene.setDisable(false);
   }
 
-  /**
-   * Handle the map button hover to set opacity low.
-   */
+  /** Handle the map button hover to set opacity low. */
   @FXML
   private void handleMouseEnterMap() {
-    buttonMap.setOpacity(0.1);
+    mapImage.setRotate(30);
+    mapImage.setScaleX(1.2);
+    mapImage.setScaleY(1.2);
   }
 
-   /**
-   * Handle the map button hover exited to set opacity back up.
-   */
+  /** Handle the map button hover exited to set opacity back up. */
   @FXML
   private void handleMouseExitMap() {
-    buttonMap.setOpacity(0);
+    mapImage.setRotate(0);
+    mapImage.setScaleX(1);
+    mapImage.setScaleY(1);
   }
 
-  /**
-   * Handle the accuse button hover to set opacity low.
-   */
+  /** Handle the accuse button hover to set opacity low. */
   @FXML
   private void handleMouseEnterAccuse() {
-    buttonAccuse.setOpacity(0.1);
+    accuseImage.setRotate(30);
+    accuseImage.setScaleX(1.2);
+    accuseImage.setScaleY(1.2);
   }
 
-  /**
-   * Handle the accuse button hover exited to set opacity back up.
-   */
+  /** Handle the accuse button hover exited to set opacity back up. */
   @FXML
   private void handleMouseExitAccuse() {
-    buttonAccuse.setOpacity(0);
+    accuseImage.setRotate(0);
+    accuseImage.setScaleX(1);
+    accuseImage.setScaleY(1);
   }
 }
