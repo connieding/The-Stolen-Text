@@ -9,11 +9,7 @@ public class Draggable {
   private double mouseX;
   private double mouseY;
 
-  /**
-   * Make a node draggable allowing item to be moved.
-   *
-   * @param node the node to make draggable
-   */
+  /** Make a node draggable. */
   public void makeDraggable(Node node) {
 
     // Set the mouse coordinates when the mouse is pressed
@@ -28,6 +24,7 @@ public class Draggable {
         mouseEvent -> {
           node.setLayoutX(mouseEvent.getSceneX() - mouseX);
           node.setLayoutY(mouseEvent.getSceneY() - mouseY);
+          ClueGlassController.isDragged();
         });
 
     // Set the node as dragged when the mouse is released

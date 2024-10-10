@@ -17,6 +17,7 @@ import nz.ac.auckland.se206.GameData;
 public class ClueGlassController extends ClueController implements Initializable {
 
   private static HashMap<Node, Boolean> draggedMap = new HashMap<>();
+  private static boolean isDragged = false;
   private static boolean hasPlayed = false;
 
   /** Set the glass shard as dragged. */
@@ -51,12 +52,9 @@ public class ClueGlassController extends ClueController implements Initializable
   private Draggable draggable = new Draggable();
   private int clickCount = 0;
   private boolean played = false;
-  private boolean isDragged = false;
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    played = false;
 
     setupClickEvent(imgGlass1);
     setupClickEvent(imgGlass2);
@@ -74,15 +72,13 @@ public class ClueGlassController extends ClueController implements Initializable
     draggedMap.put(imgGlass2, false);
     draggedMap.put(imgGlass3, false);
     draggedMap.put(imgGlass4, false);
+
+    played = false;
+    isDragged = false;
   }
 
   // New method to handle clicks on glass shards
   private void setupClickEvent(ImageView imgGlass) {
-
-    imgGlass.setOnMouseDragged(
-        event -> {
-          isDragged = true;
-        });
 
     imgGlass.setOnMouseClicked(
         event -> {
@@ -93,7 +89,6 @@ public class ClueGlassController extends ClueController implements Initializable
           if (clickCount == 3) {
             if (!played) {
               moveArrow();
-              clickCount = 0;
               played = true;
             }
           }
@@ -134,5 +129,9 @@ public class ClueGlassController extends ClueController implements Initializable
 
     // Play the animation
     translate.play();
+  }
+
+  public static void isDragged() {
+    isDragged = true;
   }
 }
