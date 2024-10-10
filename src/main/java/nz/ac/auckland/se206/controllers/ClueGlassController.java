@@ -43,6 +43,20 @@ public class ClueGlassController extends ClueController implements Initializable
     }
   }
 
+  /** Play the glass dropping sound. */
+  public static void playGlassDropSound() {
+    try {
+      ClueController.playEffect(App.class.getResource("/sounds/glassDrop.mp3").toURI().toString());
+    } catch (URISyntaxException e) {
+      e.printStackTrace();
+    }
+  }
+
+  /** Set the glass shards as dragged. */
+  public static void isDragged() {
+    isDragged = true;
+  }
+
   @FXML private ImageView buttonReturn;
   @FXML private ImageView imgGlass1;
   @FXML private ImageView imgGlass2;
@@ -95,15 +109,6 @@ public class ClueGlassController extends ClueController implements Initializable
         });
   }
 
-  /** Play the glass dropping sound. */
-  public static void playGlassDropSound() {
-    try {
-      ClueController.playEffect(App.class.getResource("/sounds/glassDrop.mp3").toURI().toString());
-    } catch (URISyntaxException e) {
-      e.printStackTrace();
-    }
-  }
-
   /** Move the arrow hint for the glass clue. */
   public void moveArrow() {
     arrow.setVisible(true);
@@ -129,9 +134,5 @@ public class ClueGlassController extends ClueController implements Initializable
 
     // Play the animation
     translate.play();
-  }
-
-  public static void isDragged() {
-    isDragged = true;
   }
 }
