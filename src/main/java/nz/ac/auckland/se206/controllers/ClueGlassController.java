@@ -4,6 +4,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -45,6 +47,7 @@ public class ClueGlassController extends ClueController implements Initializable
   @FXML private ImageView imgGlass2;
   @FXML private ImageView imgGlass3;
   @FXML private ImageView imgGlass4;
+  @FXML private ImageView arrow;
   private Draggable draggable = new Draggable();
 
   @Override
@@ -61,6 +64,8 @@ public class ClueGlassController extends ClueController implements Initializable
     draggedMap.put(imgGlass2, false);
     draggedMap.put(imgGlass3, false);
     draggedMap.put(imgGlass4, false);
+
+    moveArrow();
   }
 
   /** Play the glass dropping sound. */
@@ -70,5 +75,32 @@ public class ClueGlassController extends ClueController implements Initializable
     } catch (URISyntaxException e) {
       e.printStackTrace();
     }
+  }
+
+  /** Move the arrow hint for the glass clue. */
+  public void moveArrow() {
+    arrow.setVisible(true);
+
+    TranslateTransition translate = new TranslateTransition();
+    translate.setNode(arrow);
+
+    // Set the arrow to move to the right
+    translate.setByX(115);
+    translate.setByY(-115);
+
+    // Set the duration and interpolator of the arrow
+    translate.setDuration(javafx.util.Duration.seconds(1.4));
+    translate.setInterpolator(Interpolator.EASE_BOTH);
+
+    // Hide the arrow when the animation is finished
+    translate.setOnFinished(
+        event -> {
+          arrow.setVisible(false);
+          arrow.setTranslateX(0);
+          arrow.setTranslateY(0);
+        });
+
+    // Play the animation
+    translate.play();
   }
 }
