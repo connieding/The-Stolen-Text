@@ -75,6 +75,7 @@ public class GuessController extends Controller {
   @FXML private TextArea textEvidence;
 
   private String selectedSuspect = null; // Variable to hold the selected suspect
+  private boolean suspectCorrect = true; // Variable to hold whether the player is guessing
 
   /** Initialize the guess scene and set the game state to guessing. */
   @FXML
@@ -144,28 +145,34 @@ public class GuessController extends Controller {
    */
   public void handleSubmitClicked() throws ApiProxyException, IOException {
     SoundController.playSound();
+    App.reset();
 
     // If the correct suspect hasn't been selected, show the failed scene
     if (selectedSuspect == null || selectedSuspect != "collector") {
       App.openScene(textEvidence, "failed");
+      suspectCorrect = false;
+      SoundController.playFail();
+    } else {
+      // Play the appriopriate success sound
+      SoundController.playSuccess();
+
+      // Get the motive and evidence from the text fields
+      String motive = textMotive.getText().trim();
+      String evidence = textEvidence.getText().trim();
+
+      // Get the correct explanation from the prompts
+      String correctExplanation = PromptEngineering.getResource("prompts", "marking", "txt");
+
+      // Evaluate the explanation
+      String feedback = evaluateExplanation(selectedSuspect, motive, evidence, correctExplanation);
+
+      // Open the feedback scene
+      FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/feedback.fxml"));
+      Parent root = loader.load();
+      FeedbackController feedbackController = loader.getController();
+      feedbackController.setFeedback(feedback);
+      Stage stage = (Stage) textMotive.getScene().getWindow();
+      stage.setScene(new Scene(root));
     }
-
-    // Get the motive and evidence from the text fields
-    String motive = textMotive.getText().trim();
-    String evidence = textEvidence.getText().trim();
-
-    // Get the correct explanation from the prompts
-    String correctExplanation = PromptEngineering.getResource("prompts", "marking", "txt");
-
-    // Evaluate the explanation
-    String feedback = evaluateExplanation(selectedSuspect, motive, evidence, correctExplanation);
-
-    // Open the feedback scene
-    FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/feedback.fxml"));
-    Parent root = loader.load();
-    FeedbackController feedbackController = loader.getController();
-    feedbackController.setFeedback(feedback);
-    Stage stage = (Stage) textMotive.getScene().getWindow();
-    stage.setScene(new Scene(root));
   }
 }

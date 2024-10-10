@@ -34,6 +34,11 @@ public abstract class ClueController extends Controller {
     cluePlayer.play();
   }
 
+  /**
+   * Play the effect audio file.
+   *
+   * @param path the path to the audio file
+   */
   public static void playEffect(String path) {
     Media effectVoice = new Media(path);
     effectPlayer = new MediaPlayer(effectVoice);
