@@ -2,6 +2,7 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -47,13 +48,13 @@ public class MapController extends Controller {
     String lastClickedId = GameData.getLastClickedRectangleId();
 
     if (lastClickedId.equals("collector")) {
-      collector.setDisable(true);
+      disableRectangle(collector, collectorIcon, "collectorIconDisabled.png");
     } else if (lastClickedId.equals("archivist")) {
-      archivist.setDisable(true);
+      disableRectangle(archivist, archivistIcon, "archivistIconDisabled.png");
     } else if (lastClickedId.equals("historian")) {
-      historian.setDisable(true);
+      disableRectangle(historian, historianIcon, "historianIconDisabled.png");
     } else {
-      crimescene.setDisable(true);
+      disableRectangle(crimescene, libraryIcon, "crimeIconDisabled.png"); // crimescene
     }
   }
 
@@ -68,10 +69,12 @@ public class MapController extends Controller {
 
     Rectangle clickedRectangle = (Rectangle) event.getSource();
 
-    // Disable the clicked rectangle
-    clickedRectangle.setDisable(true);
+    ImageView clickedIcon = getIconForRectangle(clickedRectangle); // Get the correct icon
 
-    // Enable the previously clicked rectangle if different
+    // Disable the clicked rectangle and update its icon
+    disableRectangle(clickedRectangle, clickedIcon, getDisabledIconFileName(clickedRectangle));
+
+    // Enable the previously clicked rectangle and restore its icon
     String lastClickedId = GameData.getLastClickedRectangleId();
     if (!clickedRectangle.getId().equals(lastClickedId)) {
       enablePreviousRectangle(lastClickedId);
@@ -84,19 +87,79 @@ public class MapController extends Controller {
   }
 
   /**
-   * Enable the previous rectangle based on the last clicked rectangle ID.
+   * Enable the previous rectangle based on the last clicked rectangle ID and restore its icon.
    *
    * @param lastClickedId the ID of the last clicked rectangle
    */
   private void enablePreviousRectangle(String lastClickedId) {
     if (lastClickedId.equals("collector")) {
-      collector.setDisable(false);
+      enableRectangle(collector, collectorIcon, "/images/collectorIcon.png");
     } else if (lastClickedId.equals("archivist")) {
-      archivist.setDisable(false);
+      enableRectangle(archivist, archivistIcon, "/images/archivistIcon.png");
     } else if (lastClickedId.equals("historian")) {
-      historian.setDisable(false);
+      enableRectangle(historian, historianIcon, "/images/historianIcon.png");
     } else {
-      crimescene.setDisable(false); // Default case for crimescene
+      enableRectangle(crimescene, libraryIcon, "/images/crimeIcon.png"); // crimescene
+    }
+  }
+
+  /**
+   * Disables a rectangle and changes its icon.
+   *
+   * @param rectangle the rectangle to disable
+   * @param icon the associated icon to change
+   * @param disabledIconFile the file name of the disabled icon
+   */
+  private void disableRectangle(Rectangle rectangle, ImageView icon, String disabledIconFile) {
+    rectangle.setDisable(true);
+    icon.setImage(new Image(getClass().getResourceAsStream("/images/" + disabledIconFile)));
+  }
+
+  /**
+   * Enables a rectangle and restores its original icon.
+   *
+   * @param rectangle the rectangle to enable
+   * @param icon the associated icon to restore
+   * @param enabledIconFile the file name of the original icon
+   */
+  private void enableRectangle(Rectangle rectangle, ImageView icon, String enabledIconFile) {
+    rectangle.setDisable(false);
+    icon.setImage(new Image(getClass().getResourceAsStream(enabledIconFile)));
+  }
+
+  /**
+   * Get the icon file name for the disabled state based on the rectangle.
+   *
+   * @param rectangle the rectangle that was clicked
+   * @return the file name of the corresponding disabled icon
+   */
+  private String getDisabledIconFileName(Rectangle rectangle) {
+    if (rectangle == collector) {
+      return "collectorIconDisabled.png";
+    } else if (rectangle == archivist) {
+      return "archivistIconDisabled.png";
+    } else if (rectangle == historian) {
+      return "historianIconDisabled.png";
+    } else {
+      return "crimeIconDisabled.png"; // crimescene
+    }
+  }
+
+  /**
+   * Get the icon associated with a rectangle.
+   *
+   * @param rectangle the rectangle
+   * @return the ImageView associated with the rectangle
+   */
+  private ImageView getIconForRectangle(Rectangle rectangle) {
+    if (rectangle == collector) {
+      return collectorIcon;
+    } else if (rectangle == archivist) {
+      return archivistIcon;
+    } else if (rectangle == historian) {
+      return historianIcon;
+    } else {
+      return libraryIcon; // crimescene
     }
   }
 
