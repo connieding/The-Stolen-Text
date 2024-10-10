@@ -91,9 +91,11 @@ public class App extends Application {
    * @throws IOException if the intro FXML file is not found
    */
   public static void overlayIntro() throws IOException {
+    // Load the intro scene
     FXMLLoader loader = new FXMLLoader(App.class.getResource("/fxml/intro.fxml"));
     Pane root = loader.load();
     scene = new Scene(root);
+    // Add the intro scene to the current scene
     AnchorPane mapSubScene = (AnchorPane) stage.getScene().lookup("#mapSubScene");
     (mapSubScene.getChildren()).add(root);
     mapSubScene.setVisible(true);

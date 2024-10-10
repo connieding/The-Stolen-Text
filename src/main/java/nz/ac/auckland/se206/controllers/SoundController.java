@@ -133,10 +133,8 @@ public abstract class SoundController extends Controller {
   public static void guessClick(Runnable onFinish) {
     silence(); // Silence any currently playing sound
 
-    MediaPlayer selectedSound = null;
-
     // Select the sound based on the random choice
-    selectedSound = click;
+    MediaPlayer selectedSound = click;
 
     if (selectedSound != null) {
       selectedSound.seek(Duration.ZERO); // Reset to the beginning
