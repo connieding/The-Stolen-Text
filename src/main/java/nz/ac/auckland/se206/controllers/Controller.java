@@ -36,6 +36,11 @@ public abstract class Controller {
     lblTimer.setText(timeRemaining);
   }
 
+  public void setMapVisible(boolean mapOut) {
+    mapSubScene.setVisible(mapOut);
+    mapSubScene.setDisable(!mapOut);
+  }
+
   /**
    * Handle guess click and ensure that the player has met all suspects and used a clue before.
    *
