@@ -76,9 +76,6 @@ public class CluePaperController extends ClueController {
     // Stop the existing timeline if it's running
     if (arrowTimeline != null) {
       arrowTimeline.stop();
-    } else if (clickCount >= 6) {
-      arrowTimeline.stop();
-      return;
     }
 
     // Only show the arrow if not on the last image
