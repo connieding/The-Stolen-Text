@@ -74,6 +74,8 @@ public class GuessController extends Controller {
   @FXML private TextArea textMotive;
   @FXML private TextArea textEvidence;
 
+  @FXML private ImageView btnSubmit;
+
   private String selectedSuspect = null; // Variable to hold the selected suspect
 
   /** Initialize the guess scene and set the game state to guessing. */
@@ -134,6 +136,18 @@ public class GuessController extends Controller {
     circleArchivist.setVisible(false);
     circleCollector.setVisible(false);
     circleHistorian.setVisible(false);
+  }
+
+  /** Handle the submit button hover opacity lower */
+  @FXML
+  private void handleMouseEnterSubmit() {
+    btnSubmit.setOpacity(0.7);
+  }
+
+  /** Handle the submit button opacity back up */
+  @FXML
+  private void handleMouseExitSubmit() {
+    btnSubmit.setOpacity(1.0);
   }
 
   /**

@@ -15,22 +15,22 @@
             <Image url="@../images/handkerchiefBackground.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="112.2" fitWidth="105.39999999999999" layoutX="11.9" layoutY="562.6999999999999" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="mapImage" fitHeight="112.2" fitWidth="105.39999999999999" layoutX="11.9" layoutY="562.6999999999999" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/map.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="127.5" fitWidth="147.9" layoutX="149.6" layoutY="547.4" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="accuseImage" fitHeight="127.5" fitWidth="147.9" layoutX="149.6" layoutY="547.4" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/judgeHammer.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="buttonMap" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="105.39999999999999" layoutX="10.2" layoutY="562.6999999999999" onMouseClicked="#handleMapClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="105.39999999999999">
+      <Rectangle fx:id="buttonMap" arcHeight="8.5" arcWidth="8.5" fill="#ffc800" height="105.39999999999999" layoutX="10.2" layoutY="562.6999999999999" onMouseClicked="#handleMapClicked" onMouseEntered="#handleMouseEnterMap" onMouseExited="#handleMouseExitMap" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="105.39999999999999">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
       </Rectangle>
-      <Rectangle fx:id="buttonAccuse" arcHeight="8.5" arcWidth="8.5" fill="DODGERBLUE" height="85.0" layoutX="147.9" layoutY="571.1999999999999" onMouseClicked="#handleGuessClicked" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.5">
+      <Rectangle fx:id="buttonAccuse" arcHeight="8.5" arcWidth="8.5" fill="#ffc800" height="85.0" layoutX="147.9" layoutY="571.1999999999999" onMouseClicked="#handleGuessClicked" onMouseEntered="#handleMouseEnterAccuse" onMouseExited="#handleMouseExitAccuse" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.5">
           <cursor>
               <Cursor fx:constant="HAND" />
           </cursor>
@@ -45,7 +45,7 @@
             <Font name="Sylfaen" size="25.5" />
          </font>
       </Label>
-      <ImageView fx:id="buttonReturn" fitHeight="90.1" fitWidth="85.0" layoutX="909.5" layoutY="584.8" onMouseClicked="#handleRectangleClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonReturn" fitHeight="90.1" fitWidth="85.0" layoutX="909.5" layoutY="584.8" onMouseClicked="#handleRectangleClicked" onMouseEntered="#handleMouseEnterReturn" onMouseExited="#handleMouseExitReturn" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="HAND" />
           </cursor>

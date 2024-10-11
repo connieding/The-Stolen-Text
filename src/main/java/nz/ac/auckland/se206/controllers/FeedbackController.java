@@ -15,6 +15,8 @@ import nz.ac.auckland.se206.App;
 public class FeedbackController {
 
   @FXML private Text feedbackText;
+  @FXML private ImageView retryImage; 
+  @FXML private ImageView exitImage;
 
   /**
    * Set the feedback message to display to the player.
@@ -34,6 +36,38 @@ public class FeedbackController {
   public void handleRetryClicked(MouseEvent event) throws IOException {
     SoundController.playSound();
     App.openScene((ImageView) event.getSource(), "crimescene");
+  }
+
+  /**
+   * Handle the retry button mouse enter and lower opacity.
+   */
+  @FXML
+  public void handleMouseEnterRetry() {
+    retryImage.setOpacity(0.7);
+  }
+
+  /**
+   * Handle the retry button mouse exit and raise opacity.
+   */
+  @FXML
+  public void handleMouseExitRetry() {
+    retryImage.setOpacity(1);
+  }
+  
+  /**
+   * Handle the exit button mouse enter and lower opacity.
+   */
+  @FXML
+  public void handleMouseEnterExitGame() {
+    exitImage.setOpacity(0.7);
+  }
+
+  /**
+   * Handle the exit button mouse exit and raise opacity.
+   */
+  @FXML
+  public void handleMouseExitExitGame() {
+    exitImage.setOpacity(1);
   }
 
   /**

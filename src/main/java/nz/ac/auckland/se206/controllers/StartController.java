@@ -3,8 +3,9 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.App;
 
 /**
@@ -13,11 +14,42 @@ import nz.ac.auckland.se206.App;
  */
 public class StartController extends SoundController {
 
-  @FXML private Label startButton;
+  @FXML private ImageView startButtonImage;
+  @FXML private ImageView exitButtonImage;
+
+  private Image defaultImageStart;
+  private Image hoverImageStart;
+  private Image defaultImageExit;
+  private Image hoverImageExit;
+
 
   @FXML
   public void initialize() {
     preloadSound();
+    defaultImageStart = new Image(getClass().getResourceAsStream("/images/startBut.png"));
+    hoverImageStart = new Image(getClass().getResourceAsStream("/images/startButGlow.png"));
+    defaultImageExit = new Image(getClass().getResourceAsStream("/images/exitBut.png"));
+    hoverImageExit = new Image(getClass().getResourceAsStream("/images/exitButGlow.png"));
+  }
+
+  @FXML
+  private void handleMouseEnterStart() {
+    startButtonImage.setImage(hoverImageStart);
+  }
+
+  @FXML
+  private void handleMouseExitStart() {
+    startButtonImage.setImage(defaultImageStart);
+  }
+
+  @FXML
+  private void handleMouseEnterExit() {
+    exitButtonImage.setImage(hoverImageExit);
+  }
+
+  @FXML
+  private void handleMouseExitExit() {
+    exitButtonImage.setImage(defaultImageExit);
   }
 
   /**
@@ -28,7 +60,7 @@ public class StartController extends SoundController {
   @FXML
   private void onStart() throws IOException {
     playSound();
-    App.openScene(startButton, "crimescene");
+    App.openScene(startButtonImage, "crimescene");
     App.overlayIntro();
   }
 
