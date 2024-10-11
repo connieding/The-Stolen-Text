@@ -41,7 +41,7 @@
             <Font name="Sylfaen" size="40.8" />
          </font>
       </Text>
-      <ImageView fx:id="exitImage" fitHeight="59.5" fitWidth="62.9" layoutX="906.1" layoutY="598.4" onMouseEntered="#handleMouseEnterExitGame" onMouseExited="#handleMouseExitExitGame" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="exitImage" fitHeight="59.5" fitWidth="62.9" layoutX="906.1" layoutY="598.4" onMouseClicked="#handleExitClicked" onMouseEntered="#handleMouseEnterExitGame" onMouseExited="#handleMouseExitExitGame" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/exit.png" />
          </image>
@@ -49,7 +49,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
       </ImageView>
-      <ImageView fx:id="retryImage" fitHeight="59.5" fitWidth="69.7" layoutX="819.4" layoutY="593.3" onMouseEntered="#handleMouseEnterRetry" onMouseExited="#handleMouseExitRetry" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="retryImage" fitHeight="59.5" fitWidth="69.7" layoutX="819.4" layoutY="593.3" onMouseClicked="#handleRetryClicked" onMouseEntered="#handleMouseEnterRetry" onMouseExited="#handleMouseExitRetry" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/retry.png" />
          </image>
