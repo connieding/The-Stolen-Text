@@ -2,7 +2,6 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import java.io.InputStream;
-
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -88,7 +87,7 @@ public class MapController extends Controller {
     App.openScene(clickedRectangle, clickedRectangle.getId());
   }
 
-   /**
+  /**
    * Enable the previous rectangle based on the last clicked rectangle ID and restore its icon.
    *
    * @param lastClickedId the ID of the last clicked rectangle
@@ -117,7 +116,7 @@ public class MapController extends Controller {
     String imagePath = "/images/" + disabledPinFile;
     InputStream imageStream = getClass().getResourceAsStream(imagePath);
     if (imageStream == null) {
-        throw new RuntimeException("Image not found: " + imagePath);
+      throw new RuntimeException("Image not found: " + imagePath);
     }
     icon.setImage(new Image(imageStream));
   }

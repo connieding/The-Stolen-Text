@@ -4,8 +4,8 @@ import java.io.IOException;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.App;
 
 /**
@@ -22,7 +22,7 @@ public class StartController extends SoundController {
   private Image defaultImageExit;
   private Image hoverImageExit;
 
-
+  /** Initializes the start view. */
   @FXML
   public void initialize() {
     preloadSound();
@@ -32,21 +32,25 @@ public class StartController extends SoundController {
     hoverImageExit = new Image(getClass().getResourceAsStream("/images/exitButGlow.png"));
   }
 
+  /** Handle the start button hover to change image. */
   @FXML
   private void handleMouseEnterStart() {
     startButtonImage.setImage(hoverImageStart);
   }
 
+  /** Handle the start button hover to change image. */
   @FXML
   private void handleMouseExitStart() {
     startButtonImage.setImage(defaultImageStart);
   }
 
+  /** Handle the exit button hover to change image. */
   @FXML
   private void handleMouseEnterExit() {
     exitButtonImage.setImage(hoverImageExit);
   }
 
+  /** Handle the exit button hover to change image. */
   @FXML
   private void handleMouseExitExit() {
     exitButtonImage.setImage(defaultImageExit);

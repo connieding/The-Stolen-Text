@@ -27,6 +27,17 @@ public class GuessController extends Controller {
 
   private static ApiProxyConfig config;
 
+  /**
+   * Evaluate the player's explanation using the AI.
+   *
+   * @param suspect the selected suspect
+   * @param motive the motive entered by the player
+   * @param evidence the evidence entered by the player
+   * @param correctExplanation the correct explanation
+   * @return the AI's response
+   * @throws IOException if the feedback scene is not found
+   * @throws ApiProxyException if there is an error communicating with the API proxy
+   */
   private static String evaluateExplanation(
       String suspect, String motive, String evidence, String correctExplanation)
       throws IOException, ApiProxyException {
@@ -138,13 +149,13 @@ public class GuessController extends Controller {
     circleHistorian.setVisible(false);
   }
 
-  /** Handle the submit button hover opacity lower */
+  /** Handle the submit button hover opacity lower. */
   @FXML
   private void handleMouseEnterSubmit() {
     btnSubmit.setOpacity(0.7);
   }
 
-  /** Handle the submit button opacity back up */
+  /** Handle the submit button opacity back up. */
   @FXML
   private void handleMouseExitSubmit() {
     btnSubmit.setOpacity(1.0);
