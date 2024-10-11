@@ -103,8 +103,7 @@ public abstract class Controller {
    * Handle the accuse button click and ensure that the player has met all suspects and used a clue
    * before.
    *
-   * @param event the mouse event
-   * @throws IOException if the accuse scene is not found
+   * @throws IOException
    */
   public void showInfo() throws IOException {
     // show map overlay

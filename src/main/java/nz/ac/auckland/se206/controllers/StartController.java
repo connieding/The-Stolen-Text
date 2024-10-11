@@ -22,7 +22,7 @@ public class StartController extends SoundController {
   private Image defaultImageExit;
   private Image hoverImageExit;
 
-  /** Initializes the start view. */
+  /** Initializes the start screen to preload sound and button images. */
   @FXML
   public void initialize() {
     preloadSound();
