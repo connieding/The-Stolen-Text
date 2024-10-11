@@ -157,17 +157,13 @@ public class SuspectController extends Controller {
     }
   }
 
-    /* 
-   * Handle the return button hover to set opacity low.
-   */
+  /** Handle the return button hover to set opacity low. */
   @FXML
   private void handleMouseEnterSend() {
     sendMessage.setOpacity(0.7);
   }
 
-  /* 
-   * Handle the return button hover exited to set opacity back up.
-   */
+  /** Handle the return button hover exited to set opacity back up. */
   @FXML
   private void handleMouseExitSend() {
     sendMessage.setOpacity(1.0);

@@ -29,6 +29,11 @@ public abstract class Controller {
 
   public abstract void initialize() throws ApiProxyException;
 
+  /**
+   * Set the time remaining on the timer.
+   *
+   * @param timeRemaining the time remaining
+   */
   public void setTime(String timeRemaining) {
     lblTimer.setText(timeRemaining);
   }
@@ -94,14 +99,23 @@ public abstract class Controller {
     }
   }
 
+  /**
+   * Handle the accuse button click and ensure that the player has met all suspects and used a clue
+   * before.
+   *
+   * @param event the mouse event
+   * @throws IOException if the accuse scene is not found
+   */
   public void showInfo() throws IOException {
+    // show map overlay
     mapSubScene.setVisible(true);
     mapSubScene.setDisable(false);
   }
 
-  /** Handle the map button hover rotate and enlarge */
+  /** Handle the map button hover rotate and enlarge. */
   @FXML
   private void handleMouseEnterMap() {
+    // Rotate and enlarge the map button
     mapImage.setRotate(17);
     mapImage.setScaleX(1.2);
     mapImage.setScaleY(1.2);
@@ -110,14 +124,16 @@ public abstract class Controller {
   /** Handle the map button hover exited to set back. */
   @FXML
   private void handleMouseExitMap() {
+    // Set the map button back to normal
     mapImage.setRotate(0);
     mapImage.setScaleX(1);
     mapImage.setScaleY(1);
   }
 
-  /** Handle the accuse button hover to rotate and enlarge */
+  /** Handle the accuse button hover to rotate and enlarge. */
   @FXML
   private void handleMouseEnterAccuse() {
+    // Rotate and enlarge the accuse button if the player has met all suspects and used a clue
     if (GameData.hasUsedClue()
         & GameData.hasMetSuspect("archivist")
         & GameData.hasMetSuspect("collector")
@@ -128,9 +144,10 @@ public abstract class Controller {
     }
   }
 
-  /** Handle the accuse button hover exited to set back */
+  /** Handle the accuse button hover exited to set back. */
   @FXML
   private void handleMouseExitAccuse() {
+    // Set the accuse button back to normal
     accuseImage.setRotate(0);
     accuseImage.setScaleX(1);
     accuseImage.setScaleY(1);
