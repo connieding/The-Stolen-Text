@@ -79,12 +79,12 @@ public class CluePaperController extends ClueController {
     }
 
     // Only show the arrow if not on the last image
-    if (clickCount <= 5) {
+    if (clickCount < 5) {
       // Create a new timeline for showing the arrow
       arrowTimeline =
           new Timeline(
               new KeyFrame(
-                  Duration.seconds(5),
+                  Duration.seconds(6),
                   event -> {
                     arrow.setVisible(true); // Make the arrow visible
                     playClickAnimation(arrow);
