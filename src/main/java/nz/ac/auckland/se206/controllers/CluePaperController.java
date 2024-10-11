@@ -47,9 +47,8 @@ public class CluePaperController extends ClueController {
     // Animate the images
     if (clickCount <= images.length) {
       imageAnimate.setImage(images[clickCount - 1]);
-      if (clickCount <= images.length - 1) {
-        showArrowAfterDelay();
-      }
+      showArrowAfterDelay();
+
       try {
         ClueController.playEffect(
             App.class.getResource("/sounds/clothFold.mp3").toURI().toString());
@@ -79,12 +78,12 @@ public class CluePaperController extends ClueController {
     }
 
     // Only show the arrow if not on the last image
-    if (clickCount < 5) {
+    if (clickCount <= 5) {
       // Create a new timeline for showing the arrow
       arrowTimeline =
           new Timeline(
               new KeyFrame(
-                  Duration.seconds(6),
+                  Duration.seconds(5),
                   event -> {
                     arrow.setVisible(true); // Make the arrow visible
                     playClickAnimation(arrow);

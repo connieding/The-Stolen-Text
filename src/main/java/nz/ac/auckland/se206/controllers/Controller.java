@@ -103,7 +103,7 @@ public abstract class Controller {
    * Handle the accuse button click and ensure that the player has met all suspects and used a clue
    * before.
    *
-   * @throws IOException
+   * @throws IOException if the guess scene is not found
    */
   public void showInfo() throws IOException {
     // show map overlay
