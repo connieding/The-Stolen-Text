@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.Cursor?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1.0" fx:controller="nz.ac.auckland.se206.controllers.FeedbackController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.FeedbackController">
    <children>
       <Rectangle arcHeight="8.5" arcWidth="8.5" fill="#68511c" height="680.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1020.0" />
       <ImageView fitHeight="856.8" fitWidth="1679.6" layoutX="-374.0" layoutY="-91.8" pickOnBounds="true">
@@ -40,7 +41,7 @@
             <Font name="Sylfaen" size="40.8" />
          </font>
       </Text>
-      <ImageView fx:id="exitImage" fitHeight="59.5" fitWidth="62.9" layoutX="906.1" layoutY="598.4" onMouseExited="#handleMouseExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="exitImage" fitHeight="59.5" fitWidth="62.9" layoutX="906.1" layoutY="598.4" onMouseEntered="#handleMouseEnterExitGame" onMouseExited="#handleMouseExitExitGame" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/exit.png" />
          </image>
@@ -48,7 +49,7 @@
             <Cursor fx:constant="HAND" />
         </cursor>
       </ImageView>
-      <ImageView fx:id="retryImage" fitHeight="59.5" fitWidth="69.7" layoutX="819.4" layoutY="593.3" onMouseExited="#handleMouseExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="retryImage" fitHeight="59.5" fitWidth="69.7" layoutX="819.4" layoutY="593.3" onMouseEntered="#handleMouseEnterRetry" onMouseExited="#handleMouseExitRetry" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/retry.png" />
          </image>
