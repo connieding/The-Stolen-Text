@@ -118,9 +118,14 @@ public abstract class Controller {
   /** Handle the accuse button hover to rotate and enlarge */
   @FXML
   private void handleMouseEnterAccuse() {
-    accuseImage.setRotate(17);
-    accuseImage.setScaleX(1.2);
-    accuseImage.setScaleY(1.2);
+    if (GameData.hasUsedClue()
+        & GameData.hasMetSuspect("archivist")
+        & GameData.hasMetSuspect("collector")
+        & GameData.hasMetSuspect("historian")) {
+      accuseImage.setRotate(17);
+      accuseImage.setScaleX(1.2);
+      accuseImage.setScaleY(1.2);
+    }
   }
 
   /** Handle the accuse button hover exited to set back */
