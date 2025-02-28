@@ -1,6 +1,8 @@
 # The Stolen Text
 A project created in SOFTENG 206: Software Engineering Design 1.
+
 ![image](https://github.com/user-attachments/assets/125a191c-245b-4fe6-8c4c-a0507270879d)
+
 ![image](https://github.com/user-attachments/assets/78b77183-4df1-4315-bc4e-72784e45c9d8)
 
 ## Developers:
